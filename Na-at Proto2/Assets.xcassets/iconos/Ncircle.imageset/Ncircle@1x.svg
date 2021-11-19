@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>41805F29-999C-4198-B4F6-23A72A7BE5D0@1x</title>
+    <defs>
+        <linearGradient x1="0%" y1="-10.5263158%" x2="98.8419745%" y2="110.526316%" id="linearGradient-1">
+            <stop stop-color="#FF8355" offset="0%"></stop>
+            <stop stop-color="#FF4485" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Original" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-412.000000, -79.000000)">
+            <g id="iconos/Ncircle" transform="translate(412.000000, 79.000000)">
+                <circle id="cambiar-color-del-fondo" fill="url(#linearGradient-1)" cx="21" cy="21" r="21"></circle>
+                <path d="M29.1853306,10.3278689 L29.1853306,31.6721311 L19.1768197,23.6998689 L8.95081967,15.5098689 L8.95081967,10.3278689 L24.8793838,22.3709438 L24.8793838,10.3278689 L29.1853306,10.3278689 Z M8.95081967,18.5158689 L13.4218197,22.3238689 L13.4222466,31.6721311 L8.95081967,31.6721311 L8.95081967,18.5158689 Z M34.12846,10.36444 C35.4336985,10.36444 36.4918033,11.4531694 36.4918033,12.7961851 C36.4918033,14.1392008 35.4336985,15.2279301 34.12846,15.2279301 C32.8232216,15.2279301 31.7651168,14.1392008 31.7651168,12.7961851 C31.7651168,11.4531694 32.8232216,10.36444 34.12846,10.36444 Z" id="cambiar-color-de-la-N" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

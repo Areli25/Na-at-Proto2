@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FAAECA2C-51E9-433F-B530-EA31EECFB4C3"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BB842E1-4F9A-4391-B7F0-8AAD189E6752"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Na-at Proto2/presenter/ViewControllerRoot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getAllNews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCFA61B8-4278-4F2C-8F84-380C471C5A8B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Na-at Proto2/view/CustomTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA7A6248-F580-4AB8-BFCB-85A175212C2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Na-at Proto2/view/CustomTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "BA7A6248-F580-4AB8-BFCB-85A175212C2A - 2dd0226c6dfc26f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Na_at_Proto2.CustomTableViewCell.delegate.getter : Swift.Optional&lt;Na_at_Proto2.CustomCell&gt;"
+                  moduleName = "Na-at Proto2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpacheco/Documents/Na-at%20Proto2/Na-at%20Proto2/view/CustomTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "BA7A6248-F580-4AB8-BFCB-85A175212C2A - 41f54643e62a12c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Na_at_Proto2.CustomTableViewCell.delegate.setter : Swift.Optional&lt;Na_at_Proto2.CustomCell&gt;"
+                  moduleName = "Na-at Proto2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpacheco/Documents/Na-at%20Proto2/Na-at%20Proto2/view/CustomTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "BA7A6248-F580-4AB8-BFCB-85A175212C2A - 9ab43000788c5e02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Na_at_Proto2.CustomTableViewCell.delegate.modify : Swift.Optional&lt;Na_at_Proto2.CustomCell&gt;"
+                  moduleName = "Na-at Proto2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpacheco/Documents/Na-at%20Proto2/Na-at%20Proto2/view/CustomTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "BA7A6248-F580-4AB8-BFCB-85A175212C2A - 8de8fa732e727785"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Na_at_Proto2.CustomTableViewCell.delegate.modify : Swift.Optional&lt;Na_at_Proto2.CustomCell&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Na-at Proto2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpacheco/Documents/Na-at%20Proto2/Na-at%20Proto2/view/CustomTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "BA7A6248-F580-4AB8-BFCB-85A175212C2A - cbdc041db8f8b4d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Na_at_Proto2.CustomTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Na_at_Proto2.CustomTableViewCell"
+                  moduleName = "Na-at Proto2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpacheco/Documents/Na-at%20Proto2/Na-at%20Proto2/view/CustomTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "BA7A6248-F580-4AB8-BFCB-85A175212C2A - 9e829b780168660a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Na_at_Proto2.CustomTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Na_at_Proto2.CustomTableViewCell&gt;"
+                  moduleName = "Na-at Proto2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpacheco/Documents/Na-at%20Proto2/Na-at%20Proto2/view/CustomTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "352">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

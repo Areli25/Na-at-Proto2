@@ -1,0 +1,6 @@
+framework module Pods_Na_at_Proto2 {
+  umbrella header "Pods-Na-at Proto2-umbrella.h"
+
+  export *
+  module * { export * }
+}

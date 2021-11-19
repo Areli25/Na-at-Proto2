@@ -1,0 +1,6 @@
+framework module Pods_Na_at_Proto2_Na_at_Proto2UITests {
+  umbrella header "Pods-Na-at Proto2-Na-at Proto2UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

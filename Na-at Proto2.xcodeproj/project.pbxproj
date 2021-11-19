@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BEBA1AFA8938F9F7CCCECDC /* Pods_Na_at_Proto2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067168FF2BEFFBF426DA2C8E /* Pods_Na_at_Proto2.framework */; };
+		642BDC37273C983800464BA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 642BDC36273C983800464BA6 /* GoogleService-Info.plist */; };
+		647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647AC6CD2744751000EA81DB /* GenericViewController.swift */; };
+		648368B0273EBBFD00C9F570 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368AF273EBBFD00C9F570 /* ClientsViewController.swift */; };
+		648368B3273ECB7700C9F570 /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */; };
+		648368B4273ECB7700C9F570 /* ProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648368B2273ECB7700C9F570 /* ProjectsTableViewCell.xib */; };
+		648368B7273EF5A900C9F570 /* CellActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368B5273EF5A900C9F570 /* CellActivitiesTableViewCell.swift */; };
+		648368B8273EF5A900C9F570 /* CellActivitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648368B6273EF5A900C9F570 /* CellActivitiesTableViewCell.xib */; };
+		648368BA273EF6CF00C9F570 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368B9273EF6CF00C9F570 /* ProjectsViewController.swift */; };
+		648368BC273F2E6A00C9F570 /* ActivityHourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368BB273F2E6A00C9F570 /* ActivityHourViewController.swift */; };
 		64870595273AC9FD00670137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64870594273AC9FD00670137 /* AppDelegate.swift */; };
 		64870597273AC9FD00670137 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64870596273AC9FD00670137 /* SceneDelegate.swift */; };
 		64870599273AC9FD00670137 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64870598273AC9FD00670137 /* ViewController.swift */; };
@@ -15,6 +25,34 @@
 		648705A1273AC9FE00670137 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6487059F273AC9FE00670137 /* LaunchScreen.storyboard */; };
 		648705AC273AC9FE00670137 /* Na_at_Proto2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705AB273AC9FE00670137 /* Na_at_Proto2Tests.swift */; };
 		648705B7273AC9FE00670137 /* Na_at_Proto2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705B6273AC9FE00670137 /* Na_at_Proto2UITests.swift */; };
+		648705C9273AD26600670137 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 648705C7273AD26600670137 /* Colours.xcassets */; };
+		648705CD273AE69A00670137 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705CB273AE69A00670137 /* CustomTableViewCell.swift */; };
+		648705CE273AE69A00670137 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648705CC273AE69A00670137 /* CustomTableViewCell.xib */; };
+		648705D8273AF1A500670137 /* ContentHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705D7273AF1A500670137 /* ContentHeaders.swift */; };
+		648705DA273AF1B300670137 /* ContentHeaders.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648705D9273AF1B300670137 /* ContentHeaders.xib */; };
+		648705DC273AFD1300670137 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705DB273AFD1300670137 /* LoginViewController.swift */; };
+		648705DE273AFE3F00670137 /* ViewControllerRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705DD273AFE3F00670137 /* ViewControllerRoot.swift */; };
+		648705E0273B0C1D00670137 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705DF273B0C1D00670137 /* MainTabViewController.swift */; };
+		648705E2273B1E4D00670137 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705E1273B1E4D00670137 /* Service.swift */; };
+		648705E4273B2E0000670137 /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648705E3273B2DFF00670137 /* Structure.swift */; };
+		64A2A116273DAF2100002EE1 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A2A115273DAF2100002EE1 /* NewsDetailViewController.swift */; };
+		64A2A12F273DE58E00002EE1 /* NunitoItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64A2A128273DE58E00002EE1 /* NunitoItalic.ttf */; };
+		64A2A130273DE58E00002EE1 /* Proxima_Nova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64A2A129273DE58E00002EE1 /* Proxima_Nova.ttf */; };
+		64A2A131273DE58E00002EE1 /* Europa_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64A2A12A273DE58E00002EE1 /* Europa_Bold.ttf */; };
+		64A2A132273DE58E00002EE1 /* NunitoRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64A2A12B273DE58E00002EE1 /* NunitoRegular.ttf */; };
+		64A2A133273DE58E00002EE1 /* ProximaNova_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64A2A12C273DE58E00002EE1 /* ProximaNova_Regular.ttf */; };
+		64A2A134273DE58E00002EE1 /* Proxima_Nova_Sbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64A2A12D273DE58E00002EE1 /* Proxima_Nova_Sbold.otf */; };
+		64A2A135273DE58E00002EE1 /* NunitoSemibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64A2A12E273DE58E00002EE1 /* NunitoSemibold.ttf */; };
+		64A3B3562746CA8A001B8990 /* CellActivityResumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A3B3542746CA8A001B8990 /* CellActivityResumeTableViewCell.swift */; };
+		64A3B3572746CA8A001B8990 /* CellActivityResumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A3B3552746CA8A001B8990 /* CellActivityResumeTableViewCell.xib */; };
+		64A3B3592746D62D001B8990 /* GlobalParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A3B3582746D62D001B8990 /* GlobalParameters.swift */; };
+		64A591E72745794500A4513D /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A591E52745794500A4513D /* HeaderTableViewCell.swift */; };
+		64A591E82745794500A4513D /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A591E62745794500A4513D /* HeaderTableViewCell.xib */; };
+		64A591EA2745841D00A4513D /* ResumeActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A591E92745841D00A4513D /* ResumeActivityViewController.swift */; };
+		64AAE669273C3B3D00619D19 /* ActyvityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAE668273C3B3D00619D19 /* ActyvityViewController.swift */; };
+		64AAE66B273C3C0200619D19 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAE66A273C3C0200619D19 /* NotificationsViewController.swift */; };
+		AF6DDF7AADD3F24A842BC51B /* Pods_Na_at_Proto2_Na_at_Proto2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39FB0A1B0DC51579181F375 /* Pods_Na_at_Proto2_Na_at_Proto2UITests.framework */; };
+		B4EC3238306B53FE85CDEEBA /* Pods_Na_at_Proto2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6978C9A1EFE695430AE6D976 /* Pods_Na_at_Proto2Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +73,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		067168FF2BEFFBF426DA2C8E /* Pods_Na_at_Proto2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Na_at_Proto2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C173344FF19E59A6C94BC57 /* Pods-Na-at Proto2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Na-at Proto2Tests.release.xcconfig"; path = "Target Support Files/Pods-Na-at Proto2Tests/Pods-Na-at Proto2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		47E500F01AEBBC2B0CBFC224 /* Pods-Na-at Proto2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Na-at Proto2Tests.debug.xcconfig"; path = "Target Support Files/Pods-Na-at Proto2Tests/Pods-Na-at Proto2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		489D90AECFEA87913B0DF60D /* Pods-Na-at Proto2-Na-at Proto2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Na-at Proto2-Na-at Proto2UITests.release.xcconfig"; path = "Target Support Files/Pods-Na-at Proto2-Na-at Proto2UITests/Pods-Na-at Proto2-Na-at Proto2UITests.release.xcconfig"; sourceTree = "<group>"; };
+		642BDC36273C983800464BA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		647AC6CD2744751000EA81DB /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		648368AF273EBBFD00C9F570 /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
+		648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
+		648368B2273ECB7700C9F570 /* ProjectsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectsTableViewCell.xib; sourceTree = "<group>"; };
+		648368B5273EF5A900C9F570 /* CellActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellActivitiesTableViewCell.swift; sourceTree = "<group>"; };
+		648368B6273EF5A900C9F570 /* CellActivitiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellActivitiesTableViewCell.xib; sourceTree = "<group>"; };
+		648368B9273EF6CF00C9F570 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		648368BB273F2E6A00C9F570 /* ActivityHourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHourViewController.swift; sourceTree = "<group>"; };
 		64870591273AC9FD00670137 /* Na-at Proto2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Na-at Proto2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64870594273AC9FD00670137 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64870596273AC9FD00670137 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +100,37 @@
 		648705B2273AC9FE00670137 /* Na-at Proto2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Na-at Proto2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		648705B6273AC9FE00670137 /* Na_at_Proto2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Na_at_Proto2UITests.swift; sourceTree = "<group>"; };
 		648705B8273AC9FE00670137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		648705C7273AD26600670137 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colours.xcassets; path = ../../../Downloads/Colours.xcassets; sourceTree = "<group>"; };
+		648705CB273AE69A00670137 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		648705CC273AE69A00670137 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		648705D7273AF1A500670137 /* ContentHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeaders.swift; sourceTree = "<group>"; };
+		648705D9273AF1B300670137 /* ContentHeaders.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentHeaders.xib; sourceTree = "<group>"; };
+		648705DB273AFD1300670137 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		648705DD273AFE3F00670137 /* ViewControllerRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRoot.swift; sourceTree = "<group>"; };
+		648705DF273B0C1D00670137 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		648705E1273B1E4D00670137 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		648705E3273B2DFF00670137 /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
+		64A2A115273DAF2100002EE1 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		64A2A128273DE58E00002EE1 /* NunitoItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NunitoItalic.ttf; path = ../../../../../Downloads/founts/NunitoItalic.ttf; sourceTree = "<group>"; };
+		64A2A129273DE58E00002EE1 /* Proxima_Nova.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Proxima_Nova.ttf; path = ../../../../../Downloads/founts/Proxima_Nova.ttf; sourceTree = "<group>"; };
+		64A2A12A273DE58E00002EE1 /* Europa_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Europa_Bold.ttf; path = ../../../../../Downloads/founts/Europa_Bold.ttf; sourceTree = "<group>"; };
+		64A2A12B273DE58E00002EE1 /* NunitoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NunitoRegular.ttf; path = ../../../../../Downloads/founts/NunitoRegular.ttf; sourceTree = "<group>"; };
+		64A2A12C273DE58E00002EE1 /* ProximaNova_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProximaNova_Regular.ttf; path = ../../../../../Downloads/founts/ProximaNova_Regular.ttf; sourceTree = "<group>"; };
+		64A2A12D273DE58E00002EE1 /* Proxima_Nova_Sbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Proxima_Nova_Sbold.otf; path = ../../../../../Downloads/founts/Proxima_Nova_Sbold.otf; sourceTree = "<group>"; };
+		64A2A12E273DE58E00002EE1 /* NunitoSemibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NunitoSemibold.ttf; path = ../../../../../Downloads/founts/NunitoSemibold.ttf; sourceTree = "<group>"; };
+		64A3B3542746CA8A001B8990 /* CellActivityResumeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellActivityResumeTableViewCell.swift; sourceTree = "<group>"; };
+		64A3B3552746CA8A001B8990 /* CellActivityResumeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellActivityResumeTableViewCell.xib; sourceTree = "<group>"; };
+		64A3B3582746D62D001B8990 /* GlobalParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalParameters.swift; sourceTree = "<group>"; };
+		64A591E52745794500A4513D /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		64A591E62745794500A4513D /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		64A591E92745841D00A4513D /* ResumeActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeActivityViewController.swift; sourceTree = "<group>"; };
+		64AAE668273C3B3D00619D19 /* ActyvityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActyvityViewController.swift; sourceTree = "<group>"; };
+		64AAE66A273C3C0200619D19 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		6978C9A1EFE695430AE6D976 /* Pods_Na_at_Proto2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Na_at_Proto2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A28140AA98EE758DADA9CF0 /* Pods-Na-at Proto2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Na-at Proto2.debug.xcconfig"; path = "Target Support Files/Pods-Na-at Proto2/Pods-Na-at Proto2.debug.xcconfig"; sourceTree = "<group>"; };
+		A924DE919A16BB867EE1F403 /* Pods-Na-at Proto2-Na-at Proto2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Na-at Proto2-Na-at Proto2UITests.debug.xcconfig"; path = "Target Support Files/Pods-Na-at Proto2-Na-at Proto2UITests/Pods-Na-at Proto2-Na-at Proto2UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE4B13FD4734C5CF2CEEC3E6 /* Pods-Na-at Proto2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Na-at Proto2.release.xcconfig"; path = "Target Support Files/Pods-Na-at Proto2/Pods-Na-at Proto2.release.xcconfig"; sourceTree = "<group>"; };
+		E39FB0A1B0DC51579181F375 /* Pods_Na_at_Proto2_Na_at_Proto2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Na_at_Proto2_Na_at_Proto2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BEBA1AFA8938F9F7CCCECDC /* Pods_Na_at_Proto2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4EC3238306B53FE85CDEEBA /* Pods_Na_at_Proto2Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +154,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6DDF7AADD3F24A842BC51B /* Pods_Na_at_Proto2_Na_at_Proto2UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C699A774310483F42B88946 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				067168FF2BEFFBF426DA2C8E /* Pods_Na_at_Proto2.framework */,
+				E39FB0A1B0DC51579181F375 /* Pods_Na_at_Proto2_Na_at_Proto2UITests.framework */,
+				6978C9A1EFE695430AE6D976 /* Pods_Na_at_Proto2Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		64870588273AC9FD00670137 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +178,8 @@
 				648705AA273AC9FE00670137 /* Na-at Proto2Tests */,
 				648705B5273AC9FE00670137 /* Na-at Proto2UITests */,
 				64870592273AC9FD00670137 /* Products */,
+				8E75028827949C56E61B1654 /* Pods */,
+				2C699A774310483F42B88946 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +196,16 @@
 		64870593273AC9FD00670137 /* Na-at Proto2 */ = {
 			isa = PBXGroup;
 			children = (
+				64A2A126273DE47100002EE1 /* resources */,
+				648705C7273AD26600670137 /* Colours.xcassets */,
+				648705C6273ACA1C00670137 /* presenter */,
+				648705C5273ACA1700670137 /* model */,
+				648705C4273ACA0F00670137 /* view */,
 				64870594273AC9FD00670137 /* AppDelegate.swift */,
 				64870596273AC9FD00670137 /* SceneDelegate.swift */,
-				64870598273AC9FD00670137 /* ViewController.swift */,
-				6487059A273AC9FD00670137 /* Main.storyboard */,
 				6487059D273AC9FE00670137 /* Assets.xcassets */,
 				6487059F273AC9FE00670137 /* LaunchScreen.storyboard */,
+				642BDC36273C983800464BA6 /* GoogleService-Info.plist */,
 				648705A2273AC9FE00670137 /* Info.plist */,
 			);
 			path = "Na-at Proto2";
@@ -128,6 +229,90 @@
 			path = "Na-at Proto2UITests";
 			sourceTree = "<group>";
 		};
+		648705C4273ACA0F00670137 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				6487059A273AC9FD00670137 /* Main.storyboard */,
+				648705D7273AF1A500670137 /* ContentHeaders.swift */,
+				648705CB273AE69A00670137 /* CustomTableViewCell.swift */,
+				648705CC273AE69A00670137 /* CustomTableViewCell.xib */,
+				648705D9273AF1B300670137 /* ContentHeaders.xib */,
+				648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */,
+				648368B2273ECB7700C9F570 /* ProjectsTableViewCell.xib */,
+				648368B5273EF5A900C9F570 /* CellActivitiesTableViewCell.swift */,
+				648368B6273EF5A900C9F570 /* CellActivitiesTableViewCell.xib */,
+				64A3B3542746CA8A001B8990 /* CellActivityResumeTableViewCell.swift */,
+				64A3B3552746CA8A001B8990 /* CellActivityResumeTableViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		648705C5273ACA1700670137 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		648705C6273ACA1C00670137 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				64870598273AC9FD00670137 /* ViewController.swift */,
+				648705DB273AFD1300670137 /* LoginViewController.swift */,
+				648705DD273AFE3F00670137 /* ViewControllerRoot.swift */,
+				648705DF273B0C1D00670137 /* MainTabViewController.swift */,
+				648705E1273B1E4D00670137 /* Service.swift */,
+				64AAE668273C3B3D00619D19 /* ActyvityViewController.swift */,
+				64AAE66A273C3C0200619D19 /* NotificationsViewController.swift */,
+				64A2A115273DAF2100002EE1 /* NewsDetailViewController.swift */,
+				648705E3273B2DFF00670137 /* Structure.swift */,
+				648368AF273EBBFD00C9F570 /* ClientsViewController.swift */,
+				648368B9273EF6CF00C9F570 /* ProjectsViewController.swift */,
+				648368BB273F2E6A00C9F570 /* ActivityHourViewController.swift */,
+				647AC6CD2744751000EA81DB /* GenericViewController.swift */,
+				64A591E52745794500A4513D /* HeaderTableViewCell.swift */,
+				64A591E62745794500A4513D /* HeaderTableViewCell.xib */,
+				64A591E92745841D00A4513D /* ResumeActivityViewController.swift */,
+				64A3B3582746D62D001B8990 /* GlobalParameters.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		64A2A126273DE47100002EE1 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				64A2A127273DE47B00002EE1 /* fonts */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		64A2A127273DE47B00002EE1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				64A2A12A273DE58E00002EE1 /* Europa_Bold.ttf */,
+				64A2A128273DE58E00002EE1 /* NunitoItalic.ttf */,
+				64A2A12B273DE58E00002EE1 /* NunitoRegular.ttf */,
+				64A2A12E273DE58E00002EE1 /* NunitoSemibold.ttf */,
+				64A2A12D273DE58E00002EE1 /* Proxima_Nova_Sbold.otf */,
+				64A2A129273DE58E00002EE1 /* Proxima_Nova.ttf */,
+				64A2A12C273DE58E00002EE1 /* ProximaNova_Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		8E75028827949C56E61B1654 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A28140AA98EE758DADA9CF0 /* Pods-Na-at Proto2.debug.xcconfig */,
+				CE4B13FD4734C5CF2CEEC3E6 /* Pods-Na-at Proto2.release.xcconfig */,
+				A924DE919A16BB867EE1F403 /* Pods-Na-at Proto2-Na-at Proto2UITests.debug.xcconfig */,
+				489D90AECFEA87913B0DF60D /* Pods-Na-at Proto2-Na-at Proto2UITests.release.xcconfig */,
+				47E500F01AEBBC2B0CBFC224 /* Pods-Na-at Proto2Tests.debug.xcconfig */,
+				0C173344FF19E59A6C94BC57 /* Pods-Na-at Proto2Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +320,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 648705BB273AC9FE00670137 /* Build configuration list for PBXNativeTarget "Na-at Proto2" */;
 			buildPhases = (
+				F57BE7E6F38953D5EC5DECAF /* [CP] Check Pods Manifest.lock */,
 				6487058D273AC9FD00670137 /* Sources */,
 				6487058E273AC9FD00670137 /* Frameworks */,
 				6487058F273AC9FD00670137 /* Resources */,
+				F001E791823E789E70B60D99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +339,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 648705BE273AC9FE00670137 /* Build configuration list for PBXNativeTarget "Na-at Proto2Tests" */;
 			buildPhases = (
+				4B01DD513B7673E641BEEC21 /* [CP] Check Pods Manifest.lock */,
 				648705A3273AC9FE00670137 /* Sources */,
 				648705A4273AC9FE00670137 /* Frameworks */,
 				648705A5273AC9FE00670137 /* Resources */,
@@ -170,9 +358,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 648705C1273AC9FE00670137 /* Build configuration list for PBXNativeTarget "Na-at Proto2UITests" */;
 			buildPhases = (
+				51471CAC589CFF1D96B4CFFE /* [CP] Check Pods Manifest.lock */,
 				648705AE273AC9FE00670137 /* Sources */,
 				648705AF273AC9FE00670137 /* Frameworks */,
 				648705B0273AC9FE00670137 /* Resources */,
+				E59C695334C4DE6D2F814150 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,9 +421,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A2A133273DE58E00002EE1 /* ProximaNova_Regular.ttf in Resources */,
+				642BDC37273C983800464BA6 /* GoogleService-Info.plist in Resources */,
+				64A2A135273DE58E00002EE1 /* NunitoSemibold.ttf in Resources */,
+				64A591E82745794500A4513D /* HeaderTableViewCell.xib in Resources */,
+				648705DA273AF1B300670137 /* ContentHeaders.xib in Resources */,
 				648705A1273AC9FE00670137 /* LaunchScreen.storyboard in Resources */,
+				648705CE273AE69A00670137 /* CustomTableViewCell.xib in Resources */,
 				6487059E273AC9FE00670137 /* Assets.xcassets in Resources */,
+				64A2A131273DE58E00002EE1 /* Europa_Bold.ttf in Resources */,
 				6487059C273AC9FD00670137 /* Main.storyboard in Resources */,
+				64A2A132273DE58E00002EE1 /* NunitoRegular.ttf in Resources */,
+				648705C9273AD26600670137 /* Colours.xcassets in Resources */,
+				64A2A130273DE58E00002EE1 /* Proxima_Nova.ttf in Resources */,
+				648368B8273EF5A900C9F570 /* CellActivitiesTableViewCell.xib in Resources */,
+				64A2A134273DE58E00002EE1 /* Proxima_Nova_Sbold.otf in Resources */,
+				64A2A12F273DE58E00002EE1 /* NunitoItalic.ttf in Resources */,
+				648368B4273ECB7700C9F570 /* ProjectsTableViewCell.xib in Resources */,
+				64A3B3572746CA8A001B8990 /* CellActivityResumeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,13 +458,136 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4B01DD513B7673E641BEEC21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Na-at Proto2Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51471CAC589CFF1D96B4CFFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Na-at Proto2-Na-at Proto2UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E59C695334C4DE6D2F814150 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Na-at Proto2-Na-at Proto2UITests/Pods-Na-at Proto2-Na-at Proto2UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Na-at Proto2-Na-at Proto2UITests/Pods-Na-at Proto2-Na-at Proto2UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Na-at Proto2-Na-at Proto2UITests/Pods-Na-at Proto2-Na-at Proto2UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F001E791823E789E70B60D99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Na-at Proto2/Pods-Na-at Proto2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Na-at Proto2/Pods-Na-at Proto2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Na-at Proto2/Pods-Na-at Proto2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F57BE7E6F38953D5EC5DECAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Na-at Proto2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6487058D273AC9FD00670137 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648705DC273AFD1300670137 /* LoginViewController.swift in Sources */,
+				64A3B3592746D62D001B8990 /* GlobalParameters.swift in Sources */,
+				648368BA273EF6CF00C9F570 /* ProjectsViewController.swift in Sources */,
+				648705E0273B0C1D00670137 /* MainTabViewController.swift in Sources */,
 				64870599273AC9FD00670137 /* ViewController.swift in Sources */,
+				64AAE66B273C3C0200619D19 /* NotificationsViewController.swift in Sources */,
+				648705D8273AF1A500670137 /* ContentHeaders.swift in Sources */,
+				647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */,
+				64AAE669273C3B3D00619D19 /* ActyvityViewController.swift in Sources */,
+				648368B0273EBBFD00C9F570 /* ClientsViewController.swift in Sources */,
+				648368B3273ECB7700C9F570 /* ProjectsTableViewCell.swift in Sources */,
+				64A591EA2745841D00A4513D /* ResumeActivityViewController.swift in Sources */,
+				64A3B3562746CA8A001B8990 /* CellActivityResumeTableViewCell.swift in Sources */,
+				648368B7273EF5A900C9F570 /* CellActivitiesTableViewCell.swift in Sources */,
+				64A2A116273DAF2100002EE1 /* NewsDetailViewController.swift in Sources */,
+				648705DE273AFE3F00670137 /* ViewControllerRoot.swift in Sources */,
+				648705E2273B1E4D00670137 /* Service.swift in Sources */,
 				64870595273AC9FD00670137 /* AppDelegate.swift in Sources */,
+				648705E4273B2E0000670137 /* Structure.swift in Sources */,
+				64A591E72745794500A4513D /* HeaderTableViewCell.swift in Sources */,
+				648705CD273AE69A00670137 /* CustomTableViewCell.swift in Sources */,
+				648368BC273F2E6A00C9F570 /* ActivityHourViewController.swift in Sources */,
 				64870597273AC9FD00670137 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +761,7 @@
 		};
 		648705BC273AC9FE00670137 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A28140AA98EE758DADA9CF0 /* Pods-Na-at Proto2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +780,7 @@
 		};
 		648705BD273AC9FE00670137 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE4B13FD4734C5CF2CEEC3E6 /* Pods-Na-at Proto2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +799,7 @@
 		};
 		648705BF273AC9FE00670137 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47E500F01AEBBC2B0CBFC224 /* Pods-Na-at Proto2Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +821,7 @@
 		};
 		648705C0273AC9FE00670137 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C173344FF19E59A6C94BC57 /* Pods-Na-at Proto2Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +843,7 @@
 		};
 		648705C2273AC9FE00670137 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A924DE919A16BB867EE1F403 /* Pods-Na-at Proto2-Na-at Proto2UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +863,7 @@
 		};
 		648705C3273AC9FE00670137 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 489D90AECFEA87913B0DF60D /* Pods-Na-at Proto2-Na-at Proto2UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
