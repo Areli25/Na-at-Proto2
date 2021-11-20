@@ -7,8 +7,7 @@
 
 import UIKit
 
-class NewsDetailViewController: GenericViewController,HeaderProtocol {
-    
+class NewsDetailViewController: GenericViewController,HeaderProtocol{
 
     @IBOutlet weak var ivImageNews: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
@@ -22,6 +21,7 @@ class NewsDetailViewController: GenericViewController,HeaderProtocol {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         headerView.delegateGoBack = self
+        headerView.delegateSesion = self
     }
     func getNewsDetail(){
         Service.shared.getDetailNews(id: idNewsDetail, completion: {[self]
@@ -41,10 +41,10 @@ class NewsDetailViewController: GenericViewController,HeaderProtocol {
             case .failure(let err):
                     print("Error en la petición: ", err)
             }
-            
         })
     }
     func goBack() {
         super.goToBack()
     }
+
 }

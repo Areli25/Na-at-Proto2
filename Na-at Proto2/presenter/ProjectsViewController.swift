@@ -20,6 +20,7 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         super.viewDidLoad()
         
         headerView.delegateGoBack = self
+        headerView.delegateSesion = self
         tableProjectsById.register(UINib(nibName: "ProjectsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProjectsTableViewCell")
         tableProjectsById.dataSource = self
         tableProjectsById.delegate = self

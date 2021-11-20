@@ -7,7 +7,8 @@
 
 import UIKit
 
-class GenericViewController: UIViewController {
+class GenericViewController: UIViewController, SignOutProtocol {
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +34,13 @@ class GenericViewController: UIViewController {
     public func goToBack() {
         self.navigationController?.popViewController(animated: true)
     }
-
+    
+    public func goLogin(){
+        (self.tabBarController as! MainTabViewController).loginController?.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func signOut() {
+        (self.tabBarController as! MainTabViewController).loginController?.navigationController?.popToRootViewController(animated: true)
+    }
+    
 }

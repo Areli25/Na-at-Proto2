@@ -538,8 +538,8 @@
                                 <rect key="frame" x="16" y="217" width="382" height="460"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horas trabajadas en el proyecto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiT-gi-A4U">
-                                <rect key="frame" x="16" y="704" width="242" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiT-gi-A4U">
+                                <rect key="frame" x="16" y="704" width="378" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="9qw-Lg-jIv"/>
                                 </constraints>
@@ -583,6 +583,7 @@
                     </view>
                     <connections>
                         <outlet property="headerView" destination="gfQ-zn-was" id="fUN-cm-76R"/>
+                        <outlet property="labelTotalHours" destination="yiT-gi-A4U" id="iAj-We-Wmw"/>
                         <outlet property="tableActivityHour" destination="f1u-AG-CzW" id="UIi-dR-lVL"/>
                     </connections>
                 </viewController>
@@ -684,7 +685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZl-3T-kWH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6895.652173913044" y="-619.41964285714278"/>
+            <point key="canvasLocation" x="7006" y="-632"/>
         </scene>
         <!--Home-->
         <scene sceneID="XMC-ag-KiE">

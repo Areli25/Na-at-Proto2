@@ -7,23 +7,33 @@
 
 import UIKit
 
-class ActivityHourViewController: GenericViewController, HeaderProtocol{
+class ActivityHourViewController: GenericViewController, HeaderProtocol, ActivityHourProtocol{
+    
 
+    @IBOutlet weak var labelTotalHours: UILabel!
     @IBOutlet weak var tableActivityHour: UITableView!
     @IBOutlet weak var headerView: ContentHeaders!
     var activityHour:ActivityHour?
     var activityHourList:[ActivityHour] = []
     var idActivity = ""
+    var count = 0
+    var totalHours = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         headerView.delegateGoBack = self
+        headerView.delegateSesion = self
         tableActivityHour.register(UINib(nibName: "CellActivitiesTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivitiesTableViewCell")
         tableActivityHour.delegate = self
         tableActivityHour.dataSource = self
         tableActivityHour.separatorStyle = .none
+        setupLabelTotalHours()
         getAllActivities()
+    }
+    func setupLabelTotalHours(){
+        labelTotalHours.text = "Horas trabajadas en el proyecto "
+        //\(totalHours)
     }
     
     func getAllActivities(){
@@ -72,8 +82,29 @@ extension ActivityHourViewController:UITableViewDataSource{
         return cell
     }
     
+    func updateStatusButton(){
+        
+    }
+    
     func goBack() {
         super.goToBack()
+    }
+    
+    func addHours() {
+        if count < 8{
+            count += 1
+            //cell.labelHours.text = "\(count) hrs"
+            totalHours = totalHours + count
+      }
+    }
+    
+    func lessHours() {
+        if count > 0{
+            count -= 1
+            /*btnLess.tintColor = salmon
+            labelHours.text = "\(count) hrs"*/
+            totalHours = totalHours + count
+        }
     }
 }
 

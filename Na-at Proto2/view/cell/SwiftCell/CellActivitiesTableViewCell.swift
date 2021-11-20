@@ -12,9 +12,13 @@ class CellActivitiesTableViewCell: UITableViewCell {
     @IBOutlet weak var btnLess: UIButton!
     @IBOutlet weak var labelHours: UILabel!
     @IBOutlet weak var btnAdd: UIButton!
+    let salmon = UIColor(red: 255.0/255.0, green: 101.0/255.0, blue: 108.0/255.0, alpha: 1.0)
     @IBOutlet weak var activityView: UIView!
+    var delegateHours:ActivityHourProtocol!
    // var delegateButton:Hours
     var count = 0
+    var totalHours = 0
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,16 +46,14 @@ class CellActivitiesTableViewCell: UITableViewCell {
     }
     
     @IBAction func addHours(_ sender: Any) {
-        if count < 8{
-            count += 1
-            labelHours.text = "\(count) hrs"
-      }
+        delegateHours?.addHours()
     }
+
     @IBAction func lessHours(_ sender: Any) {
-        if count > 0{
-            count -= 1
-            
-            labelHours.text = "\(count) hrs"
-        }
+        delegateHours?.lessHours()
     }
+}
+protocol ActivityHourProtocol {
+    func addHours()
+    func lessHours()
 }

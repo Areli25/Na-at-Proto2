@@ -57,5 +57,11 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: "goNews", sender: nil)
         })
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goNews"{
+            let viewController = segue.destination as! MainTabViewController
+            viewController.loginController = self
+        }
+    }
 }
 

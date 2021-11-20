@@ -23,7 +23,8 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        headerView.delegateSesion = self
+        headerView.delegateGoBack = self
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
         headerView.delegateGoBack = self
         tableResumeActivity.delegate = self

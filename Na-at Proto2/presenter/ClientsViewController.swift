@@ -19,6 +19,7 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         headerView.delegateGoBack = self
+        headerView.delegateSesion = self
         tableProjects.register(UINib(nibName: "ProjectsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProjectsTableViewCell")
         tableProjects.dataSource = self
         tableProjects.delegate = self

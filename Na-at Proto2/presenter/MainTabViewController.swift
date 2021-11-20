@@ -8,13 +8,9 @@
 import UIKit
 
 class MainTabViewController: UITabBarController {
-
+    var loginController:LoginViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedIndex = 1
-
-        // Do any additional setup after loading the view.
     }
-
-
 }
