@@ -40,7 +40,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="isa-PT-O7E"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,22 +48,22 @@
                                 <rect key="frame" x="-7" y="232" width="428" height="322"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Al continuar aceptas nuestros" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuq-gI-7xa">
-                                <rect key="frame" x="43" y="726" width="173" height="23"/>
+                                <rect key="frame" x="22" y="726" width="185.5" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Xn8-kc-pkj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Terminos y condiciones" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V0-LZ-dbQ">
-                                <rect key="frame" x="216" y="726" width="137" height="23"/>
+                                <rect key="frame" x="207.5" y="726" width="145.5" height="23"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="S4j-SU-3w8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                <color key="textColor" name="Salmon"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZS-iq-Rgf">
@@ -473,7 +473,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿En qué proyecto trabajaste?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKX-Qt-cyr">
-                                <rect key="frame" x="16" y="180" width="228.5" height="21"/>
+                                <rect key="frame" x="16" y="180" width="224" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="jJV-iz-MIs"/>
                                 </constraints>
@@ -526,7 +526,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué actividades realizaste?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3t-vt-5nA">
-                                <rect key="frame" x="16" y="180" width="223.5" height="21"/>
+                                <rect key="frame" x="16" y="180" width="218" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="anE-up-oSX"/>
                                 </constraints>
@@ -582,6 +582,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnRegister" destination="OWd-aI-Cux" id="2dY-EP-fPq"/>
                         <outlet property="headerView" destination="gfQ-zn-was" id="fUN-cm-76R"/>
                         <outlet property="labelTotalHours" destination="yiT-gi-A4U" id="iAj-We-Wmw"/>
                         <outlet property="tableActivityHour" destination="f1u-AG-CzW" id="UIi-dR-lVL"/>
@@ -732,7 +733,7 @@
         <image name="google" width="22" height="22"/>
         <image name="home" width="22" height="22"/>
         <image name="login" width="328" height="313"/>
-        <image name="naat" width="224" height="27"/>
+        <image name="naat" width="131" height="16"/>
         <image name="notificaciones" width="22" height="22"/>
         <namedColor name="Salmon">
             <color red="1" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

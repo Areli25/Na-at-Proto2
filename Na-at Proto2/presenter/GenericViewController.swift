@@ -8,6 +8,11 @@
 import UIKit
 
 class GenericViewController: UIViewController, SignOutProtocol {
+    
+    let salmon = UIColor(red: 255.0/255.0, green: 101.0/255.0, blue: 108.0/255.0, alpha: 1.0)
+        let end_gradient = UIColor(red: 255.0/255.0, green: 68.0/255.0, blue: 133.0/255.0, alpha: 1.0)
+        let first_gradient = UIColor(red: 255.0/255.0, green: 131.0/255.0, blue: 85.0/255.0, alpha: 1.0)
+
  
 
     override func viewDidLoad() {
@@ -44,3 +49,18 @@ class GenericViewController: UIViewController, SignOutProtocol {
     }
     
 }
+
+extension UIView {
+   func applyGradient(colours: [UIColor]) -> Void {
+       self.applyGradient(colours: colours, locations: nil)
+   }
+
+   func applyGradient(colours: [UIColor], locations: [NSNumber]?) -> Void {
+       let gradient: CAGradientLayer = CAGradientLayer()
+       gradient.frame = self.bounds
+       gradient.colors = colours.map { $0.cgColor }
+       gradient.locations = locations
+       self.layer.insertSublayer(gradient, at: 0)
+   }
+}
+

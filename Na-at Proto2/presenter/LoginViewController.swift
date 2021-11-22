@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: GenericViewController {
     
     @IBOutlet weak var labelTeminos: UILabel!
     @IBOutlet weak var labelContinuar: UILabel!
@@ -18,26 +18,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         setupLabel()
         setupButton()
         gidConfigure = GIDConfiguration.init(clientID: "172083403533-bq0mfp199apgm4s70m8t3hdrsp32jr8e.apps.googleusercontent.com")
  
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
     
     func setupButton(){
         btnLogin.tintColor = .white
         btnLogin.layer.cornerRadius = 20
+        btnLogin.applyGradient(colours: [first_gradient,end_gradient])
         
     }
     func setupLabel(){

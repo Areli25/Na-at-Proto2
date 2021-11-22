@@ -13,6 +13,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     @IBOutlet weak var labelTotalHours: UILabel!
     @IBOutlet weak var tableActivityHour: UITableView!
     @IBOutlet weak var headerView: ContentHeaders!
+    @IBOutlet weak var btnRegister: UIButton!
     var activityHour:ActivityHour?
     var activityHourList:[ActivityHour] = []
     var idActivity = ""
@@ -29,11 +30,14 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         tableActivityHour.dataSource = self
         tableActivityHour.separatorStyle = .none
         setupLabelTotalHours()
+        setupButton()
         getAllActivities()
+    }
+    func setupButton(){
+        btnRegister.applyGradient(colours: [first_gradient,end_gradient])
     }
     func setupLabelTotalHours(){
         labelTotalHours.text = "Horas trabajadas en el proyecto "
-        //\(totalHours)
     }
     
     func getAllActivities(){

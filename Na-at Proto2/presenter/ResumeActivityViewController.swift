@@ -27,8 +27,12 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
         headerView.delegateGoBack = self
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
         headerView.delegateGoBack = self
+        setupButtonn()
         tableResumeActivity.delegate = self
         tableResumeActivity.dataSource = self
+    }
+    func setupButtonn(){
+        btnRegisterHours.applyGradient(colours: [first_gradient,end_gradient])
     }
     func goBack() {
         super.goToBack()
