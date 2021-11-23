@@ -24,8 +24,9 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     func setupView(){
-        tableCell.layer.cornerRadius = 8
+        tableCell.layer.cornerRadius = 4
         tableCell.layer.borderColor = UIColor.init(red: 198/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
+        tableCell.layer.shadowColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.08).cgColor
         tableCell.layer.borderWidth = 1
     }
     @IBAction func goNewsDetail(_ sender: Any) {

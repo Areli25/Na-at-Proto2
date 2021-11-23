@@ -7,6 +7,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoRegular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="NunitoSemibold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,15 +35,15 @@
                                     <constraint firstAttribute="width" constant="192" id="NRn-tE-w7U"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="192" id="vhf-xW-0OJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="15"/>
+                                <color key="textColor" name="black_333333"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHN-4J-UYo">
-                                <rect key="frame" x="282" y="6.5" width="22" height="21"/>
+                                <rect key="frame" x="282" y="6.5" width="22" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Cl4-0x-bDh"/>
-                                    <constraint firstAttribute="width" constant="22" id="Z9z-DP-SE2"/>
+                                    <constraint firstAttribute="width" constant="22" id="3zf-cZ-QTP"/>
+                                    <constraint firstAttribute="height" constant="23" id="kjp-Yx-fMh"/>
                                 </constraints>
                                 <color key="tintColor" name="Salmon"/>
                                 <state key="normal" backgroundImage="plus.circle" catalog="system"/>
@@ -43,11 +51,21 @@
                                     <action selector="addHours:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9jh-nH-Ovv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9p-4k-2fl">
+                                <rect key="frame" x="241" y="6" width="39" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="OVZ-5m-bbx"/>
+                                    <constraint firstAttribute="width" constant="39" id="WnY-9P-R0C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                                <color key="textColor" name="black_333333"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tq-MW-fsq">
-                                <rect key="frame" x="211" y="5.5" width="22" height="21"/>
+                                <rect key="frame" x="216" y="4.5" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="6qf-Bw-UFz"/>
-                                    <constraint firstAttribute="height" constant="22" id="84u-Fi-RCL"/>
+                                    <constraint firstAttribute="height" constant="23" id="84u-Fi-RCL"/>
                                 </constraints>
                                 <color key="tintColor" white="0.75393282309999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" backgroundImage="minus.circle" catalog="system">
@@ -60,41 +78,32 @@
                                     <action selector="lessHours:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CEx-02-rHx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 hrs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9p-4k-2fl">
-                                <rect key="frame" x="235" y="6" width="39" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="OVZ-5m-bbx"/>
-                                    <constraint firstAttribute="width" constant="39" id="WnY-9P-R0C"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.98867984693877553" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WhY-9u-g8A" firstAttribute="leading" secondItem="GCY-n1-QtW" secondAttribute="leading" constant="16" id="0ac-4T-zzJ"/>
-                            <constraint firstItem="8Tq-MW-fsq" firstAttribute="leading" secondItem="WhY-9u-g8A" secondAttribute="trailing" constant="3" id="7RZ-j7-l9q"/>
+                            <constraint firstItem="QHN-4J-UYo" firstAttribute="leading" secondItem="w9p-4k-2fl" secondAttribute="trailing" constant="2" id="4Tj-Lz-INT"/>
+                            <constraint firstItem="8Tq-MW-fsq" firstAttribute="leading" secondItem="WhY-9u-g8A" secondAttribute="trailing" constant="8" id="7RZ-j7-l9q"/>
                             <constraint firstAttribute="bottom" secondItem="w9p-4k-2fl" secondAttribute="bottom" constant="9" id="Cgk-JQ-JJK"/>
-                            <constraint firstItem="8Tq-MW-fsq" firstAttribute="leading" secondItem="WhY-9u-g8A" secondAttribute="trailing" constant="3" id="FTM-CM-Cgs"/>
+                            <constraint firstItem="8Tq-MW-fsq" firstAttribute="leading" secondItem="WhY-9u-g8A" secondAttribute="trailing" constant="8" id="FTM-CM-Cgs"/>
                             <constraint firstAttribute="height" constant="36" id="L7R-cn-8Ex"/>
-                            <constraint firstItem="w9p-4k-2fl" firstAttribute="leading" secondItem="8Tq-MW-fsq" secondAttribute="trailing" constant="2" id="Mcn-bo-HhL"/>
+                            <constraint firstItem="w9p-4k-2fl" firstAttribute="leading" secondItem="8Tq-MW-fsq" secondAttribute="trailing" constant="3" id="Mcn-bo-HhL"/>
                             <constraint firstItem="WhY-9u-g8A" firstAttribute="centerY" secondItem="GCY-n1-QtW" secondAttribute="centerY" id="QBC-54-bkf"/>
                             <constraint firstAttribute="width" constant="320" id="dt5-68-dWj"/>
-                            <constraint firstItem="QHN-4J-UYo" firstAttribute="leading" secondItem="w9p-4k-2fl" secondAttribute="trailing" constant="8" symbolic="YES" id="ecM-RB-8PW"/>
-                            <constraint firstAttribute="trailing" secondItem="QHN-4J-UYo" secondAttribute="trailing" constant="16" id="hIy-Zq-FJV"/>
-                            <constraint firstItem="QHN-4J-UYo" firstAttribute="top" secondItem="GCY-n1-QtW" secondAttribute="top" constant="6" id="iT7-6g-9Gz"/>
+                            <constraint firstItem="w9p-4k-2fl" firstAttribute="leading" secondItem="8Tq-MW-fsq" secondAttribute="trailing" constant="3" id="tg7-xH-Nm9"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="GCY-n1-QtW" secondAttribute="bottom" constant="4" id="0du-y4-dpw"/>
                     <constraint firstItem="GCY-n1-QtW" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="6aS-CE-o6h"/>
+                    <constraint firstItem="QHN-4J-UYo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="7ef-Uu-t39"/>
+                    <constraint firstAttribute="bottom" secondItem="QHN-4J-UYo" secondAttribute="bottom" constant="11" id="8Cg-wT-AZq"/>
                     <constraint firstAttribute="bottom" secondItem="8Tq-MW-fsq" secondAttribute="bottom" constant="13" id="PjQ-H8-sC9"/>
                     <constraint firstItem="w9p-4k-2fl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Rjn-fs-1A0"/>
                     <constraint firstItem="GCY-n1-QtW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="YcP-9z-Arc"/>
                     <constraint firstItem="GCY-n1-QtW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aFj-SK-beq"/>
-                    <constraint firstItem="8Tq-MW-fsq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="wUU-DP-aPU"/>
+                    <constraint firstItem="8Tq-MW-fsq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="wUU-DP-aPU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -113,6 +122,9 @@
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Salmon">
             <color red="1" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black_333333">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_A6A6A6">
             <color red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

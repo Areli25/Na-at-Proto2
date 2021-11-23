@@ -35,6 +35,8 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     }
     func setupButton(){
         btnRegister.applyGradient(colours: [first_gradient,end_gradient])
+        btnRegister.layer.cornerRadius = 20;
+        btnRegister.layer.masksToBounds = true;
     }
     func setupLabelTotalHours(){
         labelTotalHours.text = "Horas trabajadas en el proyecto "

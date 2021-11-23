@@ -18,11 +18,10 @@ class LoginViewController: GenericViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupLabel()
         setupButton()
+        btnLogin.layer.cornerRadius = 20;
+        btnLogin.layer.masksToBounds = true;
         gidConfigure = GIDConfiguration.init(clientID: "172083403533-bq0mfp199apgm4s70m8t3hdrsp32jr8e.apps.googleusercontent.com")
- 
     }
     
     func setupButton(){
@@ -32,10 +31,8 @@ class LoginViewController: GenericViewController {
         
     }
     func setupLabel(){
-        labelTeminos.textColor = UIColor.init(named: "Salmon")
-        //labelTeminos.font = UIFont(name: "NunitoRegular", size: 13)
-        labelContinuar.textColor = UIColor.init(named: "gray_9B9B9B")
-        //labelContinuar.font = UIFont(name: "NunitoRegular", size: 13)
+        labelTeminos.textColor = UIColor(named: "Salmon")
+        labelContinuar.textColor = UIColor(named: "gray_9B9B9B")
     }
   
     @IBAction func goNews(_ sender: Any) {

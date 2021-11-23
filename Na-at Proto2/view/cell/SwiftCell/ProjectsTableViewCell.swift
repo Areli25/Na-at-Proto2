@@ -18,7 +18,7 @@ class ProjectsTableViewCell: UITableViewCell {
         
     }
     func setupView(){
-        viewClients.layer.cornerRadius = 8
+        viewClients.layer.cornerRadius = 4
         viewClients.layer.borderColor = UIColor.init(red: 198/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
         viewClients.layer.borderWidth = 1
         

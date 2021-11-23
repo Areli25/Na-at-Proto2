@@ -16,6 +16,11 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
     @IBOutlet weak var tableResumeActivity: UITableView!
     @IBOutlet weak var btnAddMoreHours: UIButton!
     @IBOutlet weak var btnRegisterHours: UIButton!
+    let buttonAttributes: [NSAttributedString.Key: Any] = [
+         .font: UIFont.systemFont(ofSize: 15),
+         .foregroundColor: UIColor.white,
+         .underlineStyle: NSUnderlineStyle.single.rawValue
+     ]
     
     var heigOfHeader: CGFloat = 44
     var listProjectsName = ["uno","dos","tres"]
@@ -28,11 +33,19 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
         headerView.delegateGoBack = self
         setupButtonn()
+       /* let attributeString = NSMutableAttributedString(
+                string: "Agregar mas horas en otro proyecto ",
+                attributes: buttonAttributes
+             )
+             btnAddMoreHours.setAttributedTitle(attributeString, for: .normal)*/
         tableResumeActivity.delegate = self
         tableResumeActivity.dataSource = self
     }
     func setupButtonn(){
         btnRegisterHours.applyGradient(colours: [first_gradient,end_gradient])
+        btnRegisterHours.layer.cornerRadius = 20;
+        btnRegisterHours.layer.masksToBounds = true;
+        
     }
     func goBack() {
         super.goToBack()

@@ -7,20 +7,31 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Europa_Bold.ttf">
+            <string>Europa-Bold</string>
+        </array>
+        <array key="NunitoRegular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="NunitoSemibold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="137" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="Na_at_Proto2" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xQO-Mx-bA4">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQO-Mx-bA4">
                         <rect key="frame" x="0.0" y="4" width="320" height="109"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-uX-TzZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-uX-TzZ">
                                 <rect key="frame" x="0.0" y="-4" width="83" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="83" id="QCp-22-gaA"/>
@@ -33,8 +44,8 @@
                                     <constraint firstAttribute="width" constant="206" id="e1W-ck-Chn"/>
                                     <constraint firstAttribute="height" constant="18" id="wsc-fF-asJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Europa-Bold" family="Europa-Bold" pointSize="15"/>
+                                <color key="textColor" name="black_333333"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SJ-7p-7K6">
@@ -43,8 +54,8 @@
                                     <constraint firstAttribute="height" constant="12" id="3FD-Hu-sXQ"/>
                                     <constraint firstAttribute="width" constant="206" id="7Tj-Cu-rfF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                <color key="textColor" name="gray_9B9B9B"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omM-lz-lBw">
@@ -53,8 +64,8 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="nyi-j6-CQB"/>
                                     <constraint firstAttribute="width" constant="214" id="zUb-N3-DTq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                <color key="textColor" name="gray_9B9B9B"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO8-Z2-vnh">
@@ -63,6 +74,7 @@
                                     <constraint firstAttribute="height" constant="24" id="IPd-Ot-v2C"/>
                                     <constraint firstAttribute="width" constant="97" id="jha-0s-2YX"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="14"/>
                                 <state key="normal" title="VER NOTICIA">
                                     <color key="titleColor" name="Salmon"/>
                                 </state>
@@ -84,7 +96,6 @@
                             <constraint firstItem="aJw-uX-TzZ" firstAttribute="centerY" secondItem="xQO-Mx-bA4" secondAttribute="centerY" id="Y4D-NP-VBY"/>
                             <constraint firstItem="iO8-Z2-vnh" firstAttribute="leading" secondItem="3SJ-7p-7K6" secondAttribute="leading" id="a3u-Ku-j9Y"/>
                             <constraint firstItem="5Js-61-s2m" firstAttribute="top" secondItem="xQO-Mx-bA4" secondAttribute="top" constant="6" id="esg-o1-kt6"/>
-                            <constraint firstItem="aJw-uX-TzZ" firstAttribute="height" secondItem="xQO-Mx-bA4" secondAttribute="height" multiplier="1.07339" id="iCL-z2-PT7"/>
                             <constraint firstItem="3SJ-7p-7K6" firstAttribute="width" secondItem="xQO-Mx-bA4" secondAttribute="width" multiplier="0.64375" id="ki6-JP-sPH"/>
                             <constraint firstItem="iO8-Z2-vnh" firstAttribute="leading" secondItem="omM-lz-lBw" secondAttribute="leading" id="yD0-1n-tgN"/>
                             <constraint firstItem="aJw-uX-TzZ" firstAttribute="width" secondItem="xQO-Mx-bA4" secondAttribute="width" multiplier="0.259375" id="ywc-jd-WL7"/>
@@ -116,6 +127,12 @@
     <resources>
         <namedColor name="Salmon">
             <color red="1" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black_333333">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_9B9B9B">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

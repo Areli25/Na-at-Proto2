@@ -15,7 +15,7 @@ class ContentHeaders: UIView {
     var delegateGoBack:HeaderProtocol!
     var delegateSesion:SignOutProtocol!
     
-    let yourAttributes: [NSAttributedString.Key: Any] = [
+    let labelAttributes: [NSAttributedString.Key: Any] = [
          .font: UIFont.systemFont(ofSize: 15),
          .foregroundColor: UIColor.white,
          .underlineStyle: NSUnderlineStyle.single.rawValue
@@ -77,7 +77,7 @@ class ContentHeaders: UIView {
         
         let attributeString = NSMutableAttributedString(
                 string: "Cerrar Sesión",
-                attributes: yourAttributes
+                attributes: labelAttributes
              )
              btnCerrarSesion.setAttributedTitle(attributeString, for: .normal)
     }
