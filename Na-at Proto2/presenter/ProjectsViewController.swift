@@ -26,6 +26,7 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         tableProjectsById.delegate = self
         tableProjectsById.separatorStyle = .none
         getAllProjects()
+        
 
     }
     

@@ -24,7 +24,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
     
     var heigOfHeader: CGFloat = 44
     var listProjectsName = ["uno","dos","tres"]
-    var listActivitiesName = ["Activity 1","Activity 2","Activity 3"]
+    var listActivitiesName = ["Activity 1","Activity 2","Activity 2","Activity 2","Activity 2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

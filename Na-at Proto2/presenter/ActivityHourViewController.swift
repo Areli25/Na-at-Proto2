@@ -17,8 +17,6 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     var activityHour:ActivityHour?
     var activityHourList:[ActivityHour] = []
     var idActivity = ""
-    var count = 0
-    var totalHours = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +26,25 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         tableActivityHour.register(UINib(nibName: "CellActivitiesTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivitiesTableViewCell")
         tableActivityHour.delegate = self
         tableActivityHour.dataSource = self
-        tableActivityHour.separatorStyle = .none
         setupLabelTotalHours()
+        btnRegister.isHidden = true
         setupButton()
         getAllActivities()
+    }
+    func showButton(){
+        if totalHours == 0{
+            btnRegister.isHidden = true
+        }else{
+            btnRegister.isHidden = false
+        }
     }
     func setupButton(){
         btnRegister.applyGradient(colours: [first_gradient,end_gradient])
         btnRegister.layer.cornerRadius = 20;
-        btnRegister.layer.masksToBounds = true;
+        btnRegister.layer.masksToBounds = true
     }
     func setupLabelTotalHours(){
-        labelTotalHours.text = "Horas trabajadas en el proyecto "
+        labelTotalHours.text = " Horas trabajadas en el proyecto "
     }
     
     func getAllActivities(){
@@ -69,7 +74,9 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     }
 }
 extension ActivityHourViewController:UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
 }
 extension ActivityHourViewController:UITableViewDataSource{
@@ -84,34 +91,37 @@ extension ActivityHourViewController:UITableViewDataSource{
         let activity:ActivityHour
         activity = activityHourList[indexPath.row]
         cell.labelNameActivity.text = activity.name
+        cell.delegateHours = self
+        cell.totalHours = self.totalHours
+        _ = cell.updateStatusButton(operation: false)
+        
+        if self.totalHours == 8{
+            cell.disabledAddButton()
+            showButton()
+        }else if self.totalHours < 8{
+            cell.enabledAddButton()
+            showButton()
+        }
         
         return cell
     }
-    
-    func updateStatusButton(){
-        
-    }
-    
+
     func goBack() {
         super.goToBack()
     }
     
     func addHours() {
-        if count < 8{
-            count += 1
-            //cell.labelHours.text = "\(count) hrs"
-            totalHours = totalHours + count
-      }
+        totalHours = totalHours + 1
+        labelTotalHours.text = " Horas trabajadas en el proyecto: \(totalHours) hrs"
+        tableActivityHour.reloadData()
     }
     
     func lessHours() {
-        if count > 0{
-            count -= 1
-            /*btnLess.tintColor = salmon
-            labelHours.text = "\(count) hrs"*/
-            totalHours = totalHours + count
-        }
+        totalHours = totalHours - 1
+        labelTotalHours.text = " Horas trabajadas en el proyecto: \(totalHours) hrs"
+        tableActivityHour.reloadData()
     }
+    
 }
 
 

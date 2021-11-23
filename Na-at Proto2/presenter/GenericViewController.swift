@@ -9,6 +9,9 @@ import UIKit
 
 class GenericViewController: UIViewController, SignOutProtocol {
     
+    var totalHours = 0
+    var count  = 0
+    var isEnabled = true
     let salmon = UIColor(red: 255.0/255.0, green: 101.0/255.0, blue: 108.0/255.0, alpha: 1.0)
         let end_gradient = UIColor(red: 255.0/255.0, green: 68.0/255.0, blue: 133.0/255.0, alpha: 1.0)
         let first_gradient = UIColor(red: 255.0/255.0, green: 131.0/255.0, blue: 85.0/255.0, alpha: 1.0)
