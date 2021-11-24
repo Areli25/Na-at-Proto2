@@ -17,6 +17,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     var activityHour:ActivityHour?
     var activityHourList:[ActivityHour] = []
     var idActivity = ""
+    var activityName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,11 +74,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         })
     }
 }
-extension ActivityHourViewController:UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
+extension ActivityHourViewController:UITableViewDelegate{    
 }
 extension ActivityHourViewController:UITableViewDataSource{
     

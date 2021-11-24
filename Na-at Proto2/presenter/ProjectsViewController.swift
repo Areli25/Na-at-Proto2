@@ -15,6 +15,7 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
     var projects:Projects?
     var projectsList:[Projects] = []
     var idProject = ""
+    var nameProject = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,6 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         tableProjectsById.delegate = self
         tableProjectsById.separatorStyle = .none
         getAllProjects()
-        
-
     }
     
     func goBack() {
@@ -62,17 +61,19 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         
     }
     
-    func goToActivityList(activityId:String){
+    func goToActivityList(activityId:String, nameActivity:String){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let activityHourViewController = storyboard.instantiateViewController(withIdentifier: "activityHourViewController") as! ActivityHourViewController
         activityHourViewController.idActivity = activityId
+        activityHourViewController.activityName = nameActivity
         self.navigationController?.pushViewController(activityHourViewController, animated: true)
     }
 }
 extension ProjectsViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let idActivity = projectsList[indexPath.row].id
-        goToActivityList(activityId: idActivity)
+        let activityName = projectsList[indexPath.row].name
+        goToActivityList(activityId: idActivity, nameActivity: activityName)
     }
     
 }

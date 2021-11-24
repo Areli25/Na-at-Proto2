@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoRegular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderDateView" customModule="Na_at_Proto2" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="CNV-ob-DmE"/>
+                <outlet property="contentViewDate" destination="7Ny-5N-Q9s" id="qvs-gP-EVu"/>
+                <outlet property="labelDate" destination="J9g-WA-RFc" id="miB-ls-2RR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ny-5N-Q9s" userLabel="view_1">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Martes 10 de Agosto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9g-WA-RFc">
+                            <rect key="frame" x="20" y="24.5" width="141.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="J9g-WA-RFc" firstAttribute="leading" secondItem="7Ny-5N-Q9s" secondAttribute="leading" constant="20" id="Pcj-ES-z3M"/>
+                        <constraint firstAttribute="height" constant="50" id="Rlm-hy-63A"/>
+                        <constraint firstAttribute="bottom" secondItem="J9g-WA-RFc" secondAttribute="bottom" constant="5" id="Zbt-YM-63W"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7Ny-5N-Q9s" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="Oa2-k7-3S4"/>
+                <constraint firstItem="7Ny-5N-Q9s" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="YCl-Hh-Uqz"/>
+                <constraint firstAttribute="trailing" secondItem="7Ny-5N-Q9s" secondAttribute="trailing" id="fa1-9z-G6l"/>
+                <constraint firstItem="7Ny-5N-Q9s" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="uXY-d7-liB"/>
+                <constraint firstItem="7Ny-5N-Q9s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zwg-NG-kGg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="66.666666666666671" y="369.30803571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

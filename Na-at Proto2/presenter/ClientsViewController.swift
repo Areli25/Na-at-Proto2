@@ -51,10 +51,11 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
         })
     }
     
-    func goToProjectsList(projectId:String){
+    func goToProjectsList(projectId:String, projectName:String){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let projectsViewController = storyboard.instantiateViewController(withIdentifier: "porjectsViewController") as! ProjectsViewController
         projectsViewController.idProject = projectId
+        projectsViewController.nameProject = projectName
         
         self.navigationController?.pushViewController(projectsViewController, animated: true)
     }
@@ -63,7 +64,8 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
 extension ClientsViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let idClient = clientsList[indexPath.row].id
-        goToProjectsList(projectId: idClient)
+        let nameProject = clientsList[indexPath.row].name
+        goToProjectsList(projectId: idClient, projectName: nameProject)
     }  
 }
 
