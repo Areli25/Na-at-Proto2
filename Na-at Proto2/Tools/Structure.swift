@@ -41,6 +41,13 @@ struct ActivityHour:Decodable{
     var id: String
     var name:String
 }
+struct NotificationStructure{
+    var title:String
+    var date:String
+    var body:String
+    var priority:Int
+}
+
 //Struct ActivityHour
 
 struct ActivityHourShow{

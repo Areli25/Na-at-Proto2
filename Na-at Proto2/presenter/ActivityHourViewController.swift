@@ -85,6 +85,8 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     func goToResumeScreen(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let activityResumeViewController = storyboard.instantiateViewController(withIdentifier: "resumeActivityViewController") as! ResumeActivityViewController
+        activityResumeViewController.projectName = projectName
+        
         //agregamos los datos recabados a lista que usaremos para pintar la pnatalla de resumen
         GlobalParameters.shared.listProjects.append(activityRecord)
         //print(GlobalParameters.shared.listProjects)

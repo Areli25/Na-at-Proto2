@@ -19,9 +19,9 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
          .foregroundColor: UIColor.white,
          .underlineStyle: NSUnderlineStyle.single.rawValue
      ]
+    var projectName = ""
     
     var heigOfHeader: CGFloat = 44
-    var listActivitiesName = ["Activity 1","Activity 2","Activity 2","Activity 2","Activity 2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +48,20 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     }
     
     func modifyActivityRecord() {
+        super.goToBack()
         print("modify")
     }
     
     func deleteActivityRecord() {
+        // create the alert
+        let alert = UIAlertController(title: "", message: "¿Estas seguro de eliminar las horas del proyecto? Proyecto \(projectName)", preferredStyle: UIAlertController.Style.alert)
+
+                // add the actions (buttons)
+                alert.addAction(UIAlertAction(title: "Si eliminar", style: UIAlertAction.Style.default, handler: nil))
+                
+
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
         print("delete")
     }
 }
@@ -99,5 +109,6 @@ extension ResumeActivityViewController:UITableViewDataSource{
         return cell
     }
 }
+
 
 
