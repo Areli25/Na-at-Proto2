@@ -8,7 +8,7 @@
 import UIKit
 
 class ActivityHourViewController: GenericViewController, HeaderProtocol, ActivityHourProtocol{
- 
+
     @IBOutlet weak var labelTotalHours: UILabel!
     @IBOutlet weak var tableActivityHour: UITableView!
     @IBOutlet weak var headerView: ContentHeaders!
@@ -37,7 +37,6 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         tableActivityHour.register(UINib(nibName: "CellActivitiesTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivitiesTableViewCell")
         tableActivityHour.delegate = self
         tableActivityHour.dataSource = self
-        setupLabelTotalHours()
         btnRegister.isHidden = true
         setupButton()
         getAllActivities()
@@ -53,9 +52,6 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         btnRegister.applyGradient(colours: [first_gradient,end_gradient])
         btnRegister.layer.cornerRadius = 20;
         btnRegister.layer.masksToBounds = true
-    }
-    func setupLabelTotalHours(){
-        labelTotalHours.text = " Horas trabajadas en el proyecto "
     }
     
     @IBAction func goToResumeScreen(_ sender: Any) {
@@ -91,7 +87,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         let activityResumeViewController = storyboard.instantiateViewController(withIdentifier: "resumeActivityViewController") as! ResumeActivityViewController
         //agregamos los datos recabados a lista que usaremos para pintar la pnatalla de resumen
         GlobalParameters.shared.listProjects.append(activityRecord)
-        print(GlobalParameters.shared.listProjects)
+        //print(GlobalParameters.shared.listProjects)
         
         self.navigationController?.pushViewController(activityResumeViewController, animated: true)
     }
@@ -130,7 +126,7 @@ extension ActivityHourViewController:UITableViewDataSource{
     }
     func addHours(nameActivity:String, duration:Int) {
         totalHours = totalHours + 1
-        labelTotalHours.text = " Horas trabajadas en el proyecto: \(totalHours) hrs"
+        labelTotalHours.text = "\(totalHours) hrs"
 
         print(duration)
         if duration == 1{
@@ -154,7 +150,7 @@ extension ActivityHourViewController:UITableViewDataSource{
     
     func lessHours(nameActivity:String, duration:Int) {
         totalHours = totalHours - 1
-        labelTotalHours.text = " Horas trabajadas en el proyecto: \(totalHours) hrs"
+        labelTotalHours.text = "\(totalHours) hrs"
         
         if duration == 0{
             //remover actividad

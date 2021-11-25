@@ -36,9 +36,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi proyecto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQx-Zg-k0V">
-                        <rect key="frame" x="16" y="19" width="80" height="21"/>
+                        <rect key="frame" x="16" y="19" width="182" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="LRw-7Y-CF4"/>
+                            <constraint firstAttribute="width" constant="182" id="LRw-7Y-CF4"/>
                             <constraint firstAttribute="height" constant="21" id="yek-Sq-7Xv"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="15"/>
@@ -55,9 +55,12 @@
                         <state key="normal" title="Eliminar">
                             <color key="titleColor" name="Salmon"/>
                         </state>
+                        <connections>
+                            <action selector="deleteActivityRecord:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1Th-X0-A7N"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLf-tp-0bL">
-                        <rect key="frame" x="258" y="8.5" width="3" height="14"/>
+                        <rect key="frame" x="258" y="5.5" width="3" height="16.5"/>
                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
                         <color key="textColor" name="Salmon"/>
                         <nil key="highlightedColor"/>
@@ -72,6 +75,9 @@
                         <state key="normal" title="Modificar">
                             <color key="titleColor" name="Salmon"/>
                         </state>
+                        <connections>
+                            <action selector="modyfyActivityRecord:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="R8u-rY-YG1"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -94,7 +100,7 @@
                 <outlet property="btnModify" destination="6Uf-jl-M4f" id="7WS-hQ-peC"/>
                 <outlet property="projectName" destination="RQx-Zg-k0V" id="vmF-oN-IqV"/>
             </connections>
-            <point key="canvasLocation" x="139" y="79"/>
+            <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>
         </tableViewCell>
     </objects>
     <resources>

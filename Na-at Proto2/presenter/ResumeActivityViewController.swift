@@ -7,14 +7,13 @@
 
 import UIKit
 
-class ResumeActivityViewController: GenericViewController, HeaderProtocol {
+class ResumeActivityViewController: GenericViewController, HeaderProtocol, DelegateButtonAction {
     
     @IBOutlet weak var headerView: ContentHeaders!
     @IBOutlet weak var tableResumeActivity: UITableView!
     @IBOutlet weak var btnAddMoreHours: UIButton!
     @IBOutlet weak var btnRegisterHours: UIButton!
-    var globalParemeters:GlobalParameters!
-    var activityRecord:ActivityHourShow!
+    var activityHourList:[ActivityHourShow] = []
     let buttonAttributes: [NSAttributedString.Key: Any] = [
          .font: UIFont.systemFont(ofSize: 15),
          .foregroundColor: UIColor.white,
@@ -22,11 +21,12 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
      ]
     
     var heigOfHeader: CGFloat = 44
-    var listProjectsName = ["uno","dos","tres"]
     var listActivitiesName = ["Activity 1","Activity 2","Activity 2","Activity 2","Activity 2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityHourList = GlobalParameters.shared.listProjects
+        print(activityHourList)
         headerView.delegateSesion = self
         headerView.delegateGoBack = self
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
@@ -35,14 +35,24 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
         tableResumeActivity.delegate = self
         tableResumeActivity.dataSource = self
     }
+    
     func setupButtonn(){
         btnRegisterHours.applyGradient(colours: [first_gradient,end_gradient])
         btnRegisterHours.layer.cornerRadius = 20;
         btnRegisterHours.layer.masksToBounds = true;
         
     }
+    
     func goBack() {
         super.goToBack()
+    }
+    
+    func modifyActivityRecord() {
+        print("modify")
+    }
+    
+    func deleteActivityRecord() {
+        print("delete")
     }
 }
 extension ResumeActivityViewController:UITableViewDelegate{
@@ -52,8 +62,9 @@ extension ResumeActivityViewController:UITableViewDelegate{
 extension ResumeActivityViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return listProjectsName.count
+        return activityHourList.count
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return heigOfHeader
     }
@@ -61,20 +72,32 @@ extension ResumeActivityViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = Bundle.main.loadNibNamed("HeaderTableViewCell", owner: self, options: nil)?.first as! HeaderTableViewCell
          //asignacion de datos
-        headerCell.projectName.text = listProjectsName[section]
+        headerCell.delegateButtons = self
+        headerCell.index = section
+        //asignacion de nombre del proyecto
+        headerCell.projectName.text = activityHourList[section].project.name
         
         return headerCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listActivitiesName.count
+        return activityHourList[section].activity.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableResumeActivity.dequeueReusableCell(withIdentifier: "CellActivityResumeTableViewCell", for: indexPath) as! CellActivityResumeTableViewCell
-        cell.labelActivityName.text = listActivitiesName[indexPath.row]
+        cell.labelActivityName.text = activityHourList[indexPath.section].activity[indexPath.row].name
+        let duration = activityHourList[indexPath.section].activity[indexPath.row].duration
+        
+        if duration == 1{
+            cell.labelActivityHours.text = "\(duration) hora"
+            
+        }else{
+            cell.labelActivityHours.text = "\(duration) horas"
+        }
         
         return cell
     }
 }
+
 
