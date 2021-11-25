@@ -11,7 +11,8 @@ import UIKit
 
 class ClientsViewController: GenericViewController, HeaderProtocol {
     
-    @IBOutlet weak var tableProjects: UITableView!
+
+    @IBOutlet weak var tableClients: UITableView!
     @IBOutlet weak var headerView: ContentHeaders!
     
     var clientsList:[Client] = []
@@ -20,10 +21,10 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
         super.viewDidLoad()
         headerView.delegateGoBack = self
         headerView.delegateSesion = self
-        tableProjects.register(UINib(nibName: "ProjectsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProjectsTableViewCell")
-        tableProjects.dataSource = self
-        tableProjects.delegate = self
-        tableProjects.separatorStyle = .none
+        tableClients.register(UINib(nibName: "ProjectsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProjectsTableViewCell")
+        tableClients.dataSource = self
+        tableClients.delegate = self
+        tableClients.separatorStyle = .none
     }
     
     func getAllClients(){
@@ -39,24 +40,23 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
                         print(decodedData)
                         clientsList.append(item)
                     }
-                    self.tableProjects.reloadData()
+                    self.tableClients.reloadData()
                 }
             case .failure(let err):
                     print("Error en la petición: ", err)
                 DispatchQueue.main.async {
                         clientsList.removeAll()
-                        tableProjects.reloadData()
+                        tableClients.reloadData()
                 }
             }
         })
     }
     
-    func goToProjectsList(projectId:String, projectName:String){
+    func goToProjectsList(clientId:String, clientName:String){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let projectsViewController = storyboard.instantiateViewController(withIdentifier: "porjectsViewController") as! ProjectsViewController
-        projectsViewController.idProject = projectId
-        projectsViewController.nameProject = projectName
-        
+        projectsViewController.idClient = clientId
+        projectsViewController.nameClient = clientName
         self.navigationController?.pushViewController(projectsViewController, animated: true)
     }
 }
@@ -64,8 +64,8 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
 extension ClientsViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let idClient = clientsList[indexPath.row].id
-        let nameProject = clientsList[indexPath.row].name
-        goToProjectsList(projectId: idClient, projectName: nameProject)
+        let nameClient = clientsList[indexPath.row].name
+        goToProjectsList(clientId: idClient, clientName: nameClient )
     }  
 }
 
@@ -74,7 +74,7 @@ extension ClientsViewController:UITableViewDataSource{
         return clientsList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableProjects.dequeueReusableCell(withIdentifier: "ProjectsTableViewCell", for: indexPath) as! ProjectsTableViewCell
+        let cell = tableClients.dequeueReusableCell(withIdentifier: "ProjectsTableViewCell", for: indexPath) as! ProjectsTableViewCell
         let thisActivity:Client!
         thisActivity = clientsList[indexPath.row]
         cell.labelNameClient.text = thisActivity.name

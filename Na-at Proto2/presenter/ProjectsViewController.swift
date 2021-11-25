@@ -14,8 +14,8 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
     
     var projects:Projects?
     var projectsList:[Projects] = []
-    var idProject = ""
-    var nameProject = ""
+    var idClient = ""
+    var nameClient = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
     }
     
     func getAllProjects(){
-        Service.shared.getProjectsById(id: idProject, completion: { [self]
+        Service.shared.getProjectsById(id: idClient, completion: { [self]
             res in
             switch res {
             case .success(let decodedData):
@@ -61,19 +61,23 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         
     }
     
-    func goToActivityList(activityId:String, nameActivity:String){
+    func goToActivityList(projectId:String, nameProject:String){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let activityHourViewController = storyboard.instantiateViewController(withIdentifier: "activityHourViewController") as! ActivityHourViewController
-        activityHourViewController.idActivity = activityId
-        activityHourViewController.activityName = nameActivity
+        activityHourViewController.idProject = projectId
+        activityHourViewController.projectName = nameProject
+        activityHourViewController.idClient = idClient
+        activityHourViewController.nameClient = nameClient
+        
         self.navigationController?.pushViewController(activityHourViewController, animated: true)
     }
 }
 extension ProjectsViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let idActivity = projectsList[indexPath.row].id
-        let activityName = projectsList[indexPath.row].name
-        goToActivityList(activityId: idActivity, nameActivity: activityName)
+        let idproject = projectsList[indexPath.row].id
+        let projectName = projectsList[indexPath.row].name
+        
+        goToActivityList(projectId: idproject, nameProject: projectName)
     }
     
 }

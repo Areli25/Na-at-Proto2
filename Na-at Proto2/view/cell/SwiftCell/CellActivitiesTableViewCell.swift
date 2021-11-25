@@ -68,24 +68,31 @@ class CellActivitiesTableViewCell: UITableViewCell {
     }
     
     @IBAction func addHours(_ sender: Any) {
+        print(count)
+        let activityName = labelNameActivity.text ?? ""
+        
         if updateStatusButton(operation:true){
-        delegateHours?.addHours()
-        count += 1
+            count += 1
+            let durationActivity = count
+            delegateHours?.addHours(nameActivity: activityName, duration: durationActivity)
         labelHours.text = "\(count) hrs"
         }
         _ = updateStatusButton(operation: true)
     }
 
     @IBAction func lessHours(_ sender: Any) {
+        let activityName = labelNameActivity.text ?? ""
+        let durationActivity = count
+        
         if updateStatusButton(operation:false){
-        delegateHours?.lessHours()
-        count -= 1
+            count -= 1
+            delegateHours?.lessHours(nameActivity: activityName, duration: durationActivity)
         labelHours.text = "\(count) hrs"
         }
         _ = updateStatusButton(operation: false)
     }
 }
 protocol ActivityHourProtocol {
-    func addHours()
-    func lessHours()
+    func addHours(nameActivity:String, duration:Int)
+    func lessHours(nameActivity:String, duration:Int)
 }

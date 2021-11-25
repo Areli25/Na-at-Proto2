@@ -6,9 +6,6 @@
 //
 
 import UIKit
-struct projectsName {
-    var name:String
-}
 
 class ResumeActivityViewController: GenericViewController, HeaderProtocol {
     
@@ -16,6 +13,8 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
     @IBOutlet weak var tableResumeActivity: UITableView!
     @IBOutlet weak var btnAddMoreHours: UIButton!
     @IBOutlet weak var btnRegisterHours: UIButton!
+    var globalParemeters:GlobalParameters!
+    var activityRecord:ActivityHourShow!
     let buttonAttributes: [NSAttributedString.Key: Any] = [
          .font: UIFont.systemFont(ofSize: 15),
          .foregroundColor: UIColor.white,
@@ -33,11 +32,6 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol {
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
         headerView.delegateGoBack = self
         setupButtonn()
-       /* let attributeString = NSMutableAttributedString(
-                string: "Agregar mas horas en otro proyecto ",
-                attributes: buttonAttributes
-             )
-             btnAddMoreHours.setAttributedTitle(attributeString, for: .normal)*/
         tableResumeActivity.delegate = self
         tableResumeActivity.dataSource = self
     }

@@ -45,7 +45,7 @@ struct ActivityHour:Decodable{
 
 struct ActivityHourShow{
 var client: ClientShow
-var project: Proyecto
+var project: ProjectShow
 var activity: [Activity]
 }
 
@@ -54,13 +54,12 @@ var id: String
 var name: String
 }
 
-struct Proyecto{
+struct ProjectShow{
 var id: String
 var name: String
 }
 
 struct Activity{
-var id: String
 var name: String
 var duration: Int
 }
