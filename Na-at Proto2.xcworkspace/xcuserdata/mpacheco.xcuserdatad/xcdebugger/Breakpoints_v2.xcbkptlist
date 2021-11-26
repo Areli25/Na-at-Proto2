@@ -14,8 +14,8 @@
             filePath = "Na-at Proto2/presenter/ViewControllerRoot.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "getAllNews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -180,7 +180,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "30EEDCD6-B559-4BBE-87F2-BD89BAC378DF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Na-at Proto2/view/cell/SwiftCell/CellActivitiesTableViewCell.swift"
@@ -202,8 +202,8 @@
             filePath = "Na-at Proto2/presenter/ActivityHourViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -244,7 +244,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D90F2C15-6189-44E7-8BFD-BBAD463E5779"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Na-at Proto2/view/cell/SwiftCell/CellActivitiesTableViewCell.swift"
@@ -253,6 +253,22 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "addHours(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEAA0626-9EC2-4FD2-B4E8-712926162DD0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Na-at Proto2/presenter/ResumeActivityViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "showModal(section:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -89,6 +89,8 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         
         //agregamos los datos recabados a lista que usaremos para pintar la pnatalla de resumen
         GlobalParameters.shared.listProjects.append(activityRecord)
+        activityResumeViewController.totalHoursProject = totalHours
+        print("El total de horas al llegar a resumen de actividad es:\(totalHours)")
         //print(GlobalParameters.shared.listProjects)
         
         self.navigationController?.pushViewController(activityResumeViewController, animated: true)
@@ -144,7 +146,7 @@ extension ActivityHourViewController:UITableViewDataSource{
                 }
                 index += 1
             }
-            print("actualizarbduracion")
+            print("actualizar duracion")
         }
         tableActivityHour.reloadData()
     }

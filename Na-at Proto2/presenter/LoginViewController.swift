@@ -22,6 +22,13 @@ class LoginViewController: GenericViewController {
         btnLogin.layer.cornerRadius = 20;
         btnLogin.layer.masksToBounds = true;
         gidConfigure = GIDConfiguration.init(clientID: "172083403533-bq0mfp199apgm4s70m8t3hdrsp32jr8e.apps.googleusercontent.com")
+        
+        for family in UIFont.familyNames{
+                    print(family)
+                    for name in UIFont.fontNames(forFamilyName: family){
+                        print(name)
+                    }
+            }
     }
     
     func setupButton(){

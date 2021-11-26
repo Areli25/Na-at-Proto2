@@ -60,7 +60,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLf-tp-0bL">
-                        <rect key="frame" x="258" y="8.5" width="3" height="14"/>
+                        <rect key="frame" x="258" y="5.5" width="3" height="16.5"/>
                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
                         <color key="textColor" name="Salmon"/>
                         <nil key="highlightedColor"/>

@@ -30,6 +30,9 @@ class ViewControllerRoot: GenericViewController, CustomCell{
         tableNews.delegate = self
         tableNews.dataSource = self
         tableNews.separatorStyle = .none
+        searchBarNews.placeholder = "Buscar noticia"
+        self.searchBarNews.backgroundImage = UIImage()
+        
         getAllNews()
     }
     

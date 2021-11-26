@@ -28,6 +28,15 @@ class CustomTableViewCell: UITableViewCell {
         tableCell.layer.borderColor = UIColor.init(red: 198/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
         tableCell.layer.shadowColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.08).cgColor
         tableCell.layer.borderWidth = 1
+        
+        tableCell.layer.shadowColor = UIColor.black.cgColor
+        tableCell.layer.shadowOpacity = 0.3
+        tableCell.layer.shadowOffset = .zero
+        tableCell.layer.shadowRadius = 3
+        tableCell.layer.cornerRadius = 4
+        
+        tableCell.layer.shouldRasterize = true
+        tableCell.layer.rasterizationScale = UIScreen.main.scale
     }
     @IBAction func goNewsDetail(_ sender: Any) {
         delegate?.goNewsDetail(id: idNews)
@@ -35,24 +44,24 @@ class CustomTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    
+        
     }
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-            URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-        }
-        
-        func downloadImage(from url: URL) {
-            print("Download Started")
-            getData(from: url) { data, response, error in
-                guard let data = data, error == nil else { return }
-                print(response?.suggestedFilename ?? url.lastPathComponent)
-                print("Download Finished")
-                // always update the UI from the main thread
-                DispatchQueue.main.async() { [weak self] in
-                    self?.ivImageNews.image = UIImage(data: data)
-                }
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            // always update the UI from the main thread
+            DispatchQueue.main.async() { [weak self] in
+                self?.ivImageNews.image = UIImage(data: data)
             }
         }
+    }
 }
 
 extension UIImageView {
@@ -64,7 +73,7 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                else { return }
+            else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
             }
@@ -79,6 +88,7 @@ extension UIImageView {
 protocol CustomCell {
     func goNewsDetail(id:String)
 }
+
 
 
 

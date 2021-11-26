@@ -14,24 +14,23 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     @IBOutlet weak var btnAddMoreHours: UIButton!
     @IBOutlet weak var btnRegisterHours: UIButton!
     var activityHourList:[ActivityHourShow] = []
+    var totalHoursProject = 0
     let buttonAttributes: [NSAttributedString.Key: Any] = [
-         .font: UIFont.systemFont(ofSize: 15),
-         .foregroundColor: UIColor.white,
+        .foregroundColor: UIColor(red: 255.0/255.0, green: 101.0/255.0, blue: 108.0/255.0, alpha: 1.0),
          .underlineStyle: NSUnderlineStyle.single.rawValue
      ]
     var projectName = ""
-    
     var heigOfHeader: CGFloat = 44
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityHourList = GlobalParameters.shared.listProjects
-        print(activityHourList)
         headerView.delegateSesion = self
         headerView.delegateGoBack = self
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
         headerView.delegateGoBack = self
         setupButtonn()
+        underlineButton()
         tableResumeActivity.delegate = self
         tableResumeActivity.dataSource = self
     }
@@ -40,7 +39,13 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
         btnRegisterHours.applyGradient(colours: [first_gradient,end_gradient])
         btnRegisterHours.layer.cornerRadius = 20;
         btnRegisterHours.layer.masksToBounds = true;
-        
+    }
+    func underlineButton(){
+        let attributeString = NSMutableAttributedString(
+                string: "Agregar mas horas en otro proyecto",
+                attributes: buttonAttributes
+             )
+      btnAddMoreHours.setAttributedTitle(attributeString, for: .normal)
     }
     
     func goBack() {
@@ -48,21 +53,92 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     }
     
     func modifyActivityRecord() {
+        //verificar el indexde la celda que oprimo
+        //verificar la informacion de la celda seleccionada
+        //hacer un pop y asignar los valores de la lista a las celdas correspondientes en los label
+        //verificar siempre las horas totales
+        
+        var indexCell = 0
         super.goToBack()
-        print("modify")
+        for index in activityHourList{
+            
+        }
+         print(totalHours)
+        
     }
     
     func deleteActivityRecord() {
-        // create the alert
-        let alert = UIAlertController(title: "", message: "¿Estas seguro de eliminar las horas del proyecto? Proyecto \(projectName)", preferredStyle: UIAlertController.Style.alert)
-
-                // add the actions (buttons)
-                alert.addAction(UIAlertAction(title: "Si eliminar", style: UIAlertAction.Style.default, handler: nil))
-                
-
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
-        print("delete")
+        showModal(section: 0)
+    }
+    
+    func showModal(section:Int){
+        
+        let baner = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        baner.backgroundColor = UIColor(white: 0, alpha: 0.4)
+        
+        let card = UIView(frame: CGRect(x: 0, y: 0, width: 286, height: 237))
+        card.layer.cornerRadius = 10
+        
+        let imClose = UIImage(named: "cerrar")
+        let button = ButtonDeleteProject(frame: CGRect(x: 255, y: 10, width: 20, height: 20))
+        button.setImage(imClose, for: .normal)
+        button.backgroundColor = .none
+        button.addTarget(self, action: #selector(closeDialog(_:)), for: .touchUpInside)
+        
+        let buttonDelete = ButtonDeleteProject(frame: CGRect(x: 24, y: 162, width: 237, height: 45))
+        //buttonDelete.backgroundColor = .gray
+        buttonDelete.index = section
+        buttonDelete.addTarget(self, action: #selector(self.deleteProject(_:)), for: .touchUpInside)
+        buttonDelete.setTitle("Si, eliminar", for: .normal)
+        buttonDelete.setTitle("aaaa", for: .selected)
+        buttonDelete.setTitleColor(.white, for: .normal)
+        buttonDelete.applyGradient(colours: [first_gradient, end_gradient])
+        buttonDelete.layer.cornerRadius = 20;
+        buttonDelete.layer.masksToBounds = true;
+        
+        let lbtitle = UILabel(frame: CGRect(x: 22, y: 35, width: 236, height: 40))
+        lbtitle.text = "¿Estas seguro de eliminar las horas del proyecto?"
+        lbtitle.font = UIFont.init(name: "Europa-Bold", size: 15)
+        lbtitle.numberOfLines = 0
+        
+        let lbContent = UILabel(frame: CGRect(x: 25, y: 83, width: 236, height: 80))
+        lbContent.lineBreakMode = .byWordWrapping
+        lbContent.textAlignment = .left
+        lbContent.numberOfLines = 2
+        lbContent.text = " Proyecto: \n \(projectName) "
+        lbContent.font = UIFont.init(name: "Nunito-SemiBold", size: 15)
+        
+        //card content
+        card.addSubview(lbContent)
+        card.addSubview(lbtitle)
+        card.addSubview(button)
+        card.addSubview(buttonDelete)
+        
+        card.translatesAutoresizingMaskIntoConstraints = false
+        card.backgroundColor = .white
+        
+        baner.tag = 100
+        baner.addSubview(card)
+        view.addSubview(baner)
+        
+        card.center = baner.convert(baner.center, from:baner.superview)
+    }
+    
+    @objc func closeDialog(_ sender: Any){
+        deleteDialog()
+    }
+    
+    @objc func deleteProject(_ sender: Any){
+        let index = (sender as! ButtonDeleteProject).index
+        print(index)
+        deleteDialog()
+    }
+    
+    func deleteDialog(){
+        if let myView = self.view.viewWithTag(100){
+            myView.willMove(toWindow: nil)
+            myView.removeFromSuperview()
+        }
     }
 }
 extension ResumeActivityViewController:UITableViewDelegate{
@@ -81,7 +157,7 @@ extension ResumeActivityViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = Bundle.main.loadNibNamed("HeaderTableViewCell", owner: self, options: nil)?.first as! HeaderTableViewCell
-         //asignacion de datos
+        //asignacion de datos
         headerCell.delegateButtons = self
         headerCell.index = section
         //asignacion de nombre del proyecto
@@ -108,6 +184,9 @@ extension ResumeActivityViewController:UITableViewDataSource{
         
         return cell
     }
+}
+class ButtonDeleteProject:UIButton{
+    var index:Int = 0
 }
 
 

@@ -524,7 +524,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿En qué proyecto trabajaste?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKX-Qt-cyr">
-                                <rect key="frame" x="16" y="249" width="224" height="21"/>
+                                <rect key="frame" x="16" y="249" width="228.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="jJV-iz-MIs"/>
                                 </constraints>

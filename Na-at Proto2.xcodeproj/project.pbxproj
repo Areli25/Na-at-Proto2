@@ -12,6 +12,8 @@
 		642989092750164F00871D0A /* NotificationsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642989072750164F00871D0A /* NotificationsCellTableViewCell.xib */; };
 		642BDC37273C983800464BA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 642BDC36273C983800464BA6 /* GoogleService-Info.plist */; };
 		647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647AC6CD2744751000EA81DB /* GenericViewController.swift */; };
+		647F6F592750C2DA002292C2 /* CustomAlertDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F6F572750C2DA002292C2 /* CustomAlertDelete.swift */; };
+		647F6F5A2750C2DA002292C2 /* CustomAlertDelete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647F6F582750C2DA002292C2 /* CustomAlertDelete.xib */; };
 		648368B0273EBBFD00C9F570 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368AF273EBBFD00C9F570 /* ClientsViewController.swift */; };
 		648368B3273ECB7700C9F570 /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */; };
 		648368B4273ECB7700C9F570 /* ProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648368B2273ECB7700C9F570 /* ProjectsTableViewCell.xib */; };
@@ -87,6 +89,8 @@
 		642989072750164F00871D0A /* NotificationsCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsCellTableViewCell.xib; sourceTree = "<group>"; };
 		642BDC36273C983800464BA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		647AC6CD2744751000EA81DB /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		647F6F572750C2DA002292C2 /* CustomAlertDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertDelete.swift; sourceTree = "<group>"; };
+		647F6F582750C2DA002292C2 /* CustomAlertDelete.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertDelete.xib; sourceTree = "<group>"; };
 		648368AF273EBBFD00C9F570 /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
 		648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
 		648368B2273ECB7700C9F570 /* ProjectsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectsTableViewCell.xib; sourceTree = "<group>"; };
@@ -306,8 +310,9 @@
 				64A591E62745794500A4513D /* HeaderTableViewCell.xib */,
 				648B9173274DA12700CD65C4 /* SecondHeaderView.xib */,
 				64A3B3552746CA8A001B8990 /* CellActivityResumeTableViewCell.xib */,
-				642989062750164F00871D0A /* NotificationsCellTableViewCell.swift */,
 				642989072750164F00871D0A /* NotificationsCellTableViewCell.xib */,
+				647F6F572750C2DA002292C2 /* CustomAlertDelete.swift */,
+				647F6F582750C2DA002292C2 /* CustomAlertDelete.xib */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				64A3B3542746CA8A001B8990 /* CellActivityResumeTableViewCell.swift */,
 				648B9172274DA12700CD65C4 /* SecondHeaderView.swift */,
 				648B9176274DB5BA00CD65C4 /* HeaderDateView.swift */,
+				642989062750164F00871D0A /* NotificationsCellTableViewCell.swift */,
 			);
 			path = SwiftCell;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				642989092750164F00871D0A /* NotificationsCellTableViewCell.xib in Resources */,
 				648B9175274DA12700CD65C4 /* SecondHeaderView.xib in Resources */,
 				6487059E273AC9FE00670137 /* Assets.xcassets in Resources */,
+				647F6F5A2750C2DA002292C2 /* CustomAlertDelete.xib in Resources */,
 				64A2A131273DE58E00002EE1 /* Europa_Bold.ttf in Resources */,
 				6487059C273AC9FD00670137 /* Main.storyboard in Resources */,
 				64A2A132273DE58E00002EE1 /* NunitoRegular.ttf in Resources */,
@@ -630,6 +637,7 @@
 				647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */,
 				648B9174274DA12700CD65C4 /* SecondHeaderView.swift in Sources */,
 				64AAE669273C3B3D00619D19 /* ActyvityViewController.swift in Sources */,
+				647F6F592750C2DA002292C2 /* CustomAlertDelete.swift in Sources */,
 				648368B0273EBBFD00C9F570 /* ClientsViewController.swift in Sources */,
 				648368B3273ECB7700C9F570 /* ProjectsTableViewCell.swift in Sources */,
 				64A591EA2745841D00A4513D /* ResumeActivityViewController.swift in Sources */,

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoRegular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="NunitoSemibold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomAlertDelete" customModule="Na_at_Proto2" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCancel" destination="TUK-Yh-bwI" id="Ml6-AF-DST"/>
+                <outlet property="btnDeleteProject" destination="OhW-n7-YUm" id="ty4-3C-Od0"/>
+                <outlet property="contentView" destination="XiN-uV-l5z" id="bWh-Bc-76p"/>
+                <outlet property="labelNameProject" destination="bcL-wF-y6A" id="qrU-li-zBw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="CustomAlertDelete" customModule="Na_at_Proto2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="237"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiN-uV-l5z">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="237"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Estas seguro de eliminar las horas del proyecto?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnX-Ub-3gA">
+                            <rect key="frame" x="22" y="34" width="242" height="51"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="Nu5-02-BZV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                            <color key="textColor" name="black_333333"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUK-Yh-bwI">
+                            <rect key="frame" x="257" y="7" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="iEH-xy-WOM"/>
+                                <constraint firstAttribute="width" constant="22" id="lWU-cN-N9c"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="cancel"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proyecto:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDH-Ex-k1m">
+                            <rect key="frame" x="19" y="93" width="248" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="bDS-Oo-s7K"/>
+                                <constraint firstAttribute="width" constant="248" id="tYv-0d-fTx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="15"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American Express" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcL-wF-y6A">
+                            <rect key="frame" x="19" y="114" width="242" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="242" id="FII-Eo-Yt9"/>
+                                <constraint firstAttribute="height" constant="21" id="LGQ-ru-pEX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="15"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="gDH-Ex-k1m" firstAttribute="top" secondItem="DnX-Ub-3gA" secondAttribute="bottom" constant="8" symbolic="YES" id="8hb-7t-okz"/>
+                        <constraint firstItem="TUK-Yh-bwI" firstAttribute="top" secondItem="XiN-uV-l5z" secondAttribute="top" constant="7" id="9ip-xu-hJf"/>
+                        <constraint firstAttribute="trailing" secondItem="bcL-wF-y6A" secondAttribute="trailing" constant="25" id="E6N-lH-wTe"/>
+                        <constraint firstAttribute="trailing" secondItem="gDH-Ex-k1m" secondAttribute="trailing" constant="19" id="RZn-6h-DuT"/>
+                        <constraint firstItem="DnX-Ub-3gA" firstAttribute="top" secondItem="TUK-Yh-bwI" secondAttribute="bottom" constant="5" id="RsM-3v-jls"/>
+                        <constraint firstItem="gDH-Ex-k1m" firstAttribute="leading" secondItem="XiN-uV-l5z" secondAttribute="leading" constant="19" id="aId-kp-40B"/>
+                        <constraint firstAttribute="trailing" secondItem="TUK-Yh-bwI" secondAttribute="trailing" constant="7" id="avB-oj-JLR"/>
+                        <constraint firstItem="bcL-wF-y6A" firstAttribute="leading" secondItem="XiN-uV-l5z" secondAttribute="leading" constant="19" id="oFk-v5-KgU"/>
+                        <constraint firstAttribute="trailing" secondItem="DnX-Ub-3gA" secondAttribute="trailing" constant="22" id="qt9-og-NLw"/>
+                        <constraint firstItem="DnX-Ub-3gA" firstAttribute="leading" secondItem="XiN-uV-l5z" secondAttribute="leading" constant="22" id="yYg-ZW-gIL"/>
+                        <constraint firstItem="bcL-wF-y6A" firstAttribute="top" secondItem="gDH-Ex-k1m" secondAttribute="bottom" constant="-1" id="zuR-O8-qMM"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhW-n7-YUm">
+                    <rect key="frame" x="22" y="168" width="237" height="39"/>
+                    <color key="backgroundColor" red="1" green="0.39607843139999999" blue="0.44181172470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="237" id="pw7-UW-Ihx"/>
+                        <constraint firstAttribute="height" constant="39" id="z7k-pY-7gI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="17"/>
+                    <state key="normal" title="Si eliminar">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="XiN-uV-l5z" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Ib6-Py-lsd"/>
+                <constraint firstItem="DnX-Ub-3gA" firstAttribute="leading" secondItem="OhW-n7-YUm" secondAttribute="leading" id="Jv9-dJ-vCD"/>
+                <constraint firstItem="XiN-uV-l5z" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="VDT-4i-nwY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OhW-n7-YUm" secondAttribute="bottom" constant="30" id="bOw-V6-CfG"/>
+                <constraint firstItem="XiN-uV-l5z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rP5-s9-ZTy"/>
+                <constraint firstItem="XiN-uV-l5z" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="1.22798" id="ywV-vM-kx3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="280.24553571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancel" width="22" height="22"/>
+        <namedColor name="black_333333">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
