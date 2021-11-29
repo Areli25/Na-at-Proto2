@@ -10,7 +10,7 @@ import Foundation
 class GlobalParameters: NSObject {
     
     static let shared = GlobalParameters()
-    var listProjects = [ActivityHourShow]()
+    var listProjects: ActivityHourShow?
     //GlobalPArameters.shared.variable
 }
 
