@@ -83,10 +83,10 @@ class CellActivitiesTableViewCell: UITableViewCell {
 
     @IBAction func lessHours(_ sender: Any) {
         let activityName = labelNameActivity.text ?? ""
-        let durationActivity = count
-        
         if updateStatusButton(operation:false){
             count -= 1
+            let durationActivity = count
+
             delegateHours?.lessHours(nameActivity: activityName, duration: durationActivity, indexRow:index)
         labelHours.text = "\(count) hrs"
         }

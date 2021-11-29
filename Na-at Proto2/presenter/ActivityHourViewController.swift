@@ -260,7 +260,6 @@ extension ActivityHourViewController:UITableViewDataSource{
             tableActivityHour.reloadData()
         }
       }
-    
 }
 
 
