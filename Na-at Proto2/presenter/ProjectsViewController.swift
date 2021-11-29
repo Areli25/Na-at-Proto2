@@ -66,6 +66,12 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         let activityHourViewController = storyboard.instantiateViewController(withIdentifier: "activityHourViewController") as! ActivityHourViewController
         activityHourViewController.idProject = projectId
         activityHourViewController.projectName = nameProject
+        
+        GlobalParameters.shared.listProjects = ActivityHourShow(client: ClientShow(id: idClient, name: nameClient, project: [ProjectShow(id: projectId, name: nameProject, activity: [Activity]())]))
+            
+            
+        
+        
         activityHourViewController.idClient = idClient
         activityHourViewController.nameClient = nameClient
         
