@@ -17,6 +17,7 @@ class CellActivitiesTableViewCell: UITableViewCell {
     var delegateHours:ActivityHourProtocol!
     var totalHours = 0
     var count = 0
+    var index = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,7 +75,7 @@ class CellActivitiesTableViewCell: UITableViewCell {
         if updateStatusButton(operation:true){
             count += 1
             let durationActivity = count
-            delegateHours?.addHours(nameActivity: activityName, duration: durationActivity)
+            delegateHours?.addHours(nameActivity: activityName, duration: durationActivity, indexRow:index)
         labelHours.text = "\(count) hrs"
         }
         _ = updateStatusButton(operation: true)
@@ -86,13 +87,13 @@ class CellActivitiesTableViewCell: UITableViewCell {
         
         if updateStatusButton(operation:false){
             count -= 1
-            delegateHours?.lessHours(nameActivity: activityName, duration: durationActivity)
+            delegateHours?.lessHours(nameActivity: activityName, duration: durationActivity, indexRow:index)
         labelHours.text = "\(count) hrs"
         }
         _ = updateStatusButton(operation: false)
     }
 }
 protocol ActivityHourProtocol {
-    func addHours(nameActivity:String, duration:Int)
-    func lessHours(nameActivity:String, duration:Int)
+    func addHours(nameActivity:String, duration:Int, indexRow: Int)
+    func lessHours(nameActivity:String, duration:Int, indexRow: Int)
 }

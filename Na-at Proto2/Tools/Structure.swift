@@ -40,6 +40,7 @@ struct Projects:Decodable{
 struct ActivityHour:Decodable{
     var id: String
     var name:String
+    var duration:Int? = 0
 }
 struct NotificationStructure{
     var title:String

@@ -71,8 +71,8 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     }
     
     func deleteActivityRecord() {
-        
-        showModal(section: 0)
+        //let index = activityHourList[index]
+        showModal(section:0)
     }
     
     func showModal(section:Int){
