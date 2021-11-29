@@ -22,13 +22,13 @@ class HeaderTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @IBAction func modyfyActivityRecord(_ sender: Any) {
-        delegateButtons?.modifyActivityRecord()
+        delegateButtons?.modifyActivityRecord(index: index)
     }
     @IBAction func deleteActivityRecord(_ sender: Any) {
         delegateButtons?.deleteActivityRecord()
     }
 }
 protocol DelegateButtonAction {
-    func modifyActivityRecord()
+    func modifyActivityRecord(index:Int)
     func deleteActivityRecord()
 }

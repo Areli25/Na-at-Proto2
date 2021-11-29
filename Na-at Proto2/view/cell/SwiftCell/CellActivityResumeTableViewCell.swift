@@ -10,6 +10,7 @@ import UIKit
 class CellActivityResumeTableViewCell: UITableViewCell {
     @IBOutlet weak var labelActivityName: UILabel!
     @IBOutlet weak var labelActivityHours: UILabel!
+    var cellIndex:Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +20,6 @@ class CellActivityResumeTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }

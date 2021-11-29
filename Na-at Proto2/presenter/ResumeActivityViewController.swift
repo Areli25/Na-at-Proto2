@@ -21,6 +21,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
      ]
     var projectName = ""
     var heigOfHeader: CGFloat = 44
+    var vcActivityModify: ActivityHourViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,22 +53,25 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
         super.goToBack()
     }
     
-    func modifyActivityRecord() {
+    func modifyActivityRecord(index:Int) {
         //verificar el indexde la celda que oprimo
         //verificar la informacion de la celda seleccionada
         //hacer un pop y asignar los valores de la lista a las celdas correspondientes en los label
         //verificar siempre las horas totales
         
-        var indexCell = 0
+        print(activityHourList[index].activity)
+        
+        vcActivityModify?.setupActivityRecordList(activityHourList[index].activity)
+        vcActivityModify?.tableActivityHour.reloadData()
         super.goToBack()
-        for index in activityHourList{
-            
-        }
-         print(totalHours)
+       // vcActivityHour.setupActivityRecordList(activityHourList[index].activity)
+       // self.navigationController?.popViewController(animated: true)
+        print(activityHourList[index].project.name)
         
     }
     
     func deleteActivityRecord() {
+        
         showModal(section: 0)
     }
     
@@ -174,7 +178,7 @@ extension ResumeActivityViewController:UITableViewDataSource{
         let cell = self.tableResumeActivity.dequeueReusableCell(withIdentifier: "CellActivityResumeTableViewCell", for: indexPath) as! CellActivityResumeTableViewCell
         cell.labelActivityName.text = activityHourList[indexPath.section].activity[indexPath.row].name
         let duration = activityHourList[indexPath.section].activity[indexPath.row].duration
-        
+        cell.cellIndex = indexPath.row
         if duration == 1{
             cell.labelActivityHours.text = "\(duration) hora"
             

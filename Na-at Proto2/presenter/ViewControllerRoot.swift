@@ -25,6 +25,8 @@ class ViewControllerRoot: GenericViewController, CustomCell{
         
         self.viewHeader.goBack.isHidden = true
         tableNews.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        print("\(urlProfile)😂😂😂😂😂😂😂😂😂😂")
+        print("\(userName)😂😂😂😂😂😂😂😂😂😂")
         
         searchBarNews.delegate = self
         tableNews.delegate = self

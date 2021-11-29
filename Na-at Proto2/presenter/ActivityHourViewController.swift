@@ -29,9 +29,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         super.viewDidLoad()
         
         //inicializacion de la lista
-        recordClient = ClientShow(id: idClient, name: nameClient)
-        recordProject = ProjectShow(id: idProject, name: projectName)
-        activityRecord = ActivityHourShow(client: recordClient, project: recordProject, activity: [Activity]())
+        setupActivityRecordList()
         headerView.delegateGoBack = self
         headerView.delegateSesion = self
         tableActivityHour.register(UINib(nibName: "CellActivitiesTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivitiesTableViewCell")
@@ -41,6 +39,13 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         setupButton()
         getAllActivities()
     }
+
+    func setupActivityRecordList(_ activityList: [Activity]? = [Activity]()){
+        recordClient = ClientShow(id: idClient, name: nameClient)
+        recordProject = ProjectShow(id: idProject, name: projectName)
+        activityRecord = ActivityHourShow(client: recordClient, project: recordProject, activity: activityList!)
+    }
+    
     func showButton(){
         if totalHours == 0{
             btnRegister.isHidden = true
@@ -48,6 +53,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
             btnRegister.isHidden = false
         }
     }
+    
     func setupButton(){
         btnRegister.applyGradient(colours: [first_gradient,end_gradient])
         btnRegister.layer.cornerRadius = 20;
@@ -57,6 +63,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     @IBAction func goToResumeScreen(_ sender: Any) {
         goToResumeScreen()
     }
+    
     func getAllActivities(){
         Service.shared.getActivitiesList(completion: { [self]
             res in
@@ -87,6 +94,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         let activityResumeViewController = storyboard.instantiateViewController(withIdentifier: "resumeActivityViewController") as! ResumeActivityViewController
         activityResumeViewController.projectName = projectName
         
+        activityResumeViewController.vcActivityModify = self
         //agregamos los datos recabados a lista que usaremos para pintar la pnatalla de resumen
         GlobalParameters.shared.listProjects.append(activityRecord)
         activityResumeViewController.totalHoursProject = totalHours
@@ -113,6 +121,18 @@ extension ActivityHourViewController:UITableViewDataSource{
         cell.labelNameActivity.text = activity.name
         cell.delegateHours = self
         cell.totalHours = self.totalHours
+        
+        if activityRecord.activity.count != 0 {
+            for _activity in activityRecord.activity {
+                if _activity.name == activity.name{
+                    cell.labelHours.text =  "\(_activity.duration) hrs"
+                    cell.count = _activity.duration
+                }else{
+                    
+                }
+            }
+        }
+        
         _ = cell.updateStatusButton(operation: false)
         
         if self.totalHours == 8{
@@ -133,6 +153,7 @@ extension ActivityHourViewController:UITableViewDataSource{
         labelTotalHours.text = "\(totalHours) hrs"
 
         print(duration)
+        
         if duration == 1{
             recordActivity = Activity(name: nameActivity, duration: 1)
             activityRecord.activity.append(recordActivity)
