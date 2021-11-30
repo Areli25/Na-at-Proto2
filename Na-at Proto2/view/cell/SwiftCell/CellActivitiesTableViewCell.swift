@@ -31,23 +31,47 @@ class CellActivitiesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     func updateStatusButton(operation:Bool) -> Bool{
+        let totalHoursProject = GlobalParameters.shared.totalHoursProjects + totalHours
         
-        if GlobalParameters.shared.totalHoursProjects == 0{
-            btnLess.isEnabled = false
-            btnLess.tintColor = UIColor.gray
-            return operation ? true : false
-        }
-        if GlobalParameters.shared.totalHoursProjects == 8{
-            btnAdd.isEnabled = false
-            btnAdd.tintColor = UIColor.gray
-            return operation ? false: true
-        }
-        if GlobalParameters.shared.totalHoursProjects > 0 && GlobalParameters.shared.totalHoursProjects < 8{
-            btnLess.isEnabled = true
-            btnLess.tintColor = salmon
-            btnAdd.isEnabled = true
-            btnAdd.tintColor = salmon
-            return operation ? true : true
+        if totalHoursProject != 0 {
+            if  count == 0{
+                btnLess.isEnabled = false
+                btnLess.tintColor = UIColor.gray
+                return operation ? true : false
+            }
+            if totalHoursProject == 8 || count == 8{
+                btnAdd.isEnabled = false
+                btnAdd.tintColor = UIColor.gray
+                return operation ? false: true
+            }
+            if (totalHoursProject > 0 && totalHoursProject < 8) &&  (count > 0 && count < 8) {
+                btnLess.isEnabled = true
+                btnLess.tintColor = salmon
+                btnAdd.isEnabled = true
+                btnAdd.tintColor = salmon
+                return operation ? true : true
+            }
+            
+        }else{
+            
+            if count == 0{
+                btnLess.isEnabled = false
+                btnLess.tintColor = UIColor.gray
+                return operation ? true : false
+            }
+            if count == 8{
+                btnAdd.isEnabled = false
+                btnAdd.tintColor = UIColor.gray
+                return operation ? false: true
+            }
+            if count > 0 && count < 8{
+                btnLess.isEnabled = true
+                btnLess.tintColor = salmon
+                btnAdd.isEnabled = true
+                btnAdd.tintColor = salmon
+                
+                return operation ? true : true
+            }
         }
         return false
     }

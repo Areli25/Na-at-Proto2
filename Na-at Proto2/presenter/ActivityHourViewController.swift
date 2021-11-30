@@ -198,10 +198,12 @@ extension ActivityHourViewController:UITableViewDataSource{
 
         _ = cell.updateStatusButton(operation: false)
         
-        if GlobalParameters.shared.totalHoursProjects == 8{
+        let totalHoursProjects = GlobalParameters.shared.totalHoursProjects + totalHours
+        
+        if totalHoursProjects == 8{
             cell.disabledAddButton()
             showButton()
-        }else if GlobalParameters.shared.totalHoursProjects < 8{
+        }else if totalHoursProjects < 8{
             cell.enabledAddButton()
             showButton()
         }
