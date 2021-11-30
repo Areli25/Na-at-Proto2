@@ -111,7 +111,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
         lbContent.lineBreakMode = .byWordWrapping
         lbContent.textAlignment = .left
         lbContent.numberOfLines = 2
-        lbContent.text = " Proyecto: \n \(projectName) "
+        lbContent.text = " Proyecto: \n \(activityHourList!.client.project[section].name) "
         lbContent.font = UIFont.init(name: "Nunito-SemiBold", size: 15)
         
         //card content
@@ -136,7 +136,9 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     
     @objc func deleteProject(_ sender: Any){
         let index = (sender as! ButtonDeleteProject).index
-        //activityHourList?.client.project[index]
+        activityHourList?.client.project.remove(at: index)
+        GlobalParameters.shared.listProjects?.client.project.remove(at: index)
+        tableResumeActivity.reloadData()
         deleteDialog()
     }
     
