@@ -13,13 +13,14 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     @IBOutlet weak var tableResumeActivity: UITableView!
     @IBOutlet weak var btnAddMoreHours: UIButton!
     @IBOutlet weak var btnRegisterHours: UIButton!
-    var activityHourList:[ActivityHourShow] = []
+    var activityHourList: ActivityHourShow?
     var totalHoursProject = 0
     let buttonAttributes: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor(red: 255.0/255.0, green: 101.0/255.0, blue: 108.0/255.0, alpha: 1.0),
          .underlineStyle: NSUnderlineStyle.single.rawValue
      ]
     var projectName = ""
+    var idProject = ""
     var heigOfHeader: CGFloat = 44
     var vcActivityModify: ActivityHourViewController?
     
@@ -54,25 +55,17 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     }
     
     func modifyActivityRecord(index:Int) {
-        //verificar el indexde la celda que oprimo
-        //verificar la informacion de la celda seleccionada
-        //hacer un pop y asignar los valores de la lista a las celdas correspondientes en los label
-        //verificar siempre las horas totales
+        print(activityHourList?.client.project[getProject(idProject)].activity)
         
-        print(activityHourList[index].activity)
-        
-        vcActivityModify?.setupActivityRecordList(activityHourList[index].activity)
+        vcActivityModify?.setupActivityRecordList(activityHourList?.client.project[getProject(idProject)].activity)
         vcActivityModify?.tableActivityHour.reloadData()
         super.goToBack()
-       // vcActivityHour.setupActivityRecordList(activityHourList[index].activity)
-       // self.navigationController?.popViewController(animated: true)
-        print(activityHourList[index].project.name)
         
     }
     
     func deleteActivityRecord() {
-        //let index = activityHourList[index]
-        showModal(section:0)
+        
+        showModal(section: 0)
     }
     
     func showModal(section:Int){
@@ -152,8 +145,9 @@ extension ResumeActivityViewController:UITableViewDelegate{
 extension ResumeActivityViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return activityHourList.count
+        return activityHourList!.client.project.count
     }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return heigOfHeader
@@ -165,19 +159,22 @@ extension ResumeActivityViewController:UITableViewDataSource{
         headerCell.delegateButtons = self
         headerCell.index = section
         //asignacion de nombre del proyecto
-        headerCell.projectName.text = activityHourList[section].project.name
+        headerCell.projectName.text = activityHourList?.client.project[getProject(idProject)].name
         
         return headerCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activityHourList[section].activity.count
+        return activityHourList!.client.project[getProject(idProject)].activity.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableResumeActivity.dequeueReusableCell(withIdentifier: "CellActivityResumeTableViewCell", for: indexPath) as! CellActivityResumeTableViewCell
-        cell.labelActivityName.text = activityHourList[indexPath.section].activity[indexPath.row].name
-        let duration = activityHourList[indexPath.section].activity[indexPath.row].duration
+        
+        let activity = activityHourList?.client.project[getProject(idProject)].activity[indexPath.row]
+        
+        cell.labelActivityName.text = activity?.name
+        let duration = activity!.duration
         cell.cellIndex = indexPath.row
         if duration == 1{
             cell.labelActivityHours.text = "\(duration) hora"

@@ -220,7 +220,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "goToResumeScreen(_:)"
+            landmarkName = "setupButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -250,25 +250,9 @@
             filePath = "Na-at Proto2/presenter/ResumeActivityViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "showModal(section:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "904D3AE0-D782-4D21-9ACF-7C1CAE8E0E76"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Na-at Proto2/presenter/ResumeActivityViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "modifyActivityRecord(index:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -282,8 +266,8 @@
             filePath = "Na-at Proto2/presenter/ResumeActivityViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "modifyActivityRecord(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -316,8 +300,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "getAllActivities()"
-            landmarkType = "7">
+            landmarkName = "ActivityHourViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "D036728A-D89E-43A0-9045-93B75E9DD32C - e6b70a0bb0d85905"
@@ -411,7 +395,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "setupActivityRecordList(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -427,7 +411,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "viewDidDisappear(_:)"
+            landmarkName = "setupScreenModify(item:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -443,7 +427,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
             endingLineNumber = "238"
-            landmarkName = "lessHours(nameActivity:duration:indexRow:)"
+            landmarkName = "addHours(nameActivity:duration:indexRow:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -459,8 +443,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "253"
             endingLineNumber = "253"
-            landmarkName = "lessHours(nameActivity:duration:indexRow:)"
-            landmarkType = "7">
+            landmarkName = "ActivityHourViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

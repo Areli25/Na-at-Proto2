@@ -41,38 +41,44 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     }
 
     func setupActivityRecordList(_ activityList: [Activity]? = [Activity]()){
-        recordClient = ClientShow(id: idClient, name: nameClient)
-        recordProject = ProjectShow(id: idProject, name: projectName)
-        activityRecord = ActivityHourShow(client: recordClient, project: recordProject, activity: activityList!)
+        //recordClient =  ClientShow(id: idClient, name: nameClient)
+        //recordProject = ProjectShow(id: idProject, name: projectName)
+        
+        activityRecord = GlobalParameters.shared.listProjects
+        activityRecord.client.project[getProject(idProject)].activity = activityList!
+        
+        //activityRecord = ActivityHourShow(client: recordClient, project: recordProject, activity: activityList!)
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
-        //super.viewWillAppear(true)
-            getAllActivities()
-            print("ESTOY DE REGRESO")
-
-        }
+        super.viewWillAppear(animated)
+        getAllActivities()
+        print("ESTOY DE REGRESO")
         
-        func setupScreenModify(item: ActivityHour) -> ActivityHour {
-            for project in GlobalParameters.shared.listProjects {
-                if project.project.name == self.projectName {
-                    for activity in project.activity {
-                        if activity.name == item.name {
-                            return ActivityHour(id: item.id, name: item.name, duration: activity.duration)
-                        }
-                    }
+        
+    }
+    
+    func setupScreenModify(item: ActivityHour) -> ActivityHour {
+        for lista in GlobalParameters.shared.listProjects!.client.project {
+            
+            for activity in lista.activity {
+                if activity.name == item.name {
+                    return ActivityHour(id: item.id, name: item.name, duration: activity.duration)
                 }
             }
-            return ActivityHour(id: item.id, name: item.name, duration: 0)
         }
-        
-        override func viewDidDisappear(_ animated: Bool) {
-            //super.viewWillAppear(true)
-            activityHourList.removeAll()
-            activityRecord.activity.removeAll()
-            tableActivityHour.reloadData()
-            print("ADIOS")
-        }
+        return ActivityHour(id: item.id, name: item.name, duration: 0)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        activityHourList.removeAll()
+        activityRecord.client.project[getProject(idProject)].activity.removeAll()
+        tableActivityHour.reloadData()
+        print("ADIOS")
+    }
     
     func showButton(){
         if totalHours == 0{
@@ -101,9 +107,12 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
                 
                 DispatchQueue.main.async {
                     for item in decodedData {
+                        
+                        print(decodedData)
+                        
                         var newItem = ActivityHour(id: item.id, name: item.name, duration: 0)
                         newItem = self.setupScreenModify(item: newItem)
-                        print(decodedData)
+                        
                         
                         activityHourList.append(newItem)
                     }
@@ -119,49 +128,54 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
             }
         })
     }
-        func goToResumeScreen(){
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let activityResumeViewController = storyboard.instantiateViewController(withIdentifier: "resumeActivityViewController") as! ResumeActivityViewController
-                activityResumeViewController.projectName = projectName
-                
-                activityResumeViewController.vcActivityModify = self
-                //agregamos los datos recabados a lista que usaremos para pintar la pnatalla de resumen
-                
-                var newList = [Activity]()
-                
-                for item in activityHourList {
-                    let newItem = Activity(name: item.name, duration: item.duration ?? 0)
+    func goToResumeScreen(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let activityResumeViewController = storyboard.instantiateViewController(withIdentifier: "resumeActivityViewController") as! ResumeActivityViewController
+        activityResumeViewController.projectName = projectName
+        activityResumeViewController.idProject = idProject
+        activityResumeViewController.vcActivityModify = self
+        //agregamos los datos recabados a lista que usaremos para pintar la pnatalla de resumen
+        
+        var newList = [Activity]()
+        
+        for item in activityHourList {
+            let newItem = Activity(name: item.name, duration: item.duration ?? 0)
+            
+            if newItem.duration > 0 {
+                newList.append(newItem)
+            }
+        }
+        
+        var flagExiste = false
+        var index = 0
+        for project in GlobalParameters.shared.listProjects!.client.project {
+            
+            if project.name == activityRecord.client.project[index].name {
                     
-                    if newItem.duration > 0 {
-                        newList.append(newItem)
-                    }
+                    flagExiste = true
+                    break
                 }
+                index += 1
+            
+            
+        }
+        
+        if flagExiste {
+            activityRecord.client.project[getProject(idProject)].activity = newList
+            //GlobalParameters.shared.listProjects?.client.project[getProject(idProject)].activity.remove(at: index)
+            GlobalParameters.shared.listProjects?.client.project[index].activity = newList
                 
-                var flagExiste = false
-                var index = 0
-                for listProject in GlobalParameters.shared.listProjects {
-                    if listProject.project.name == activityRecord.project.name {
-                        
-                        flagExiste = true
-                        break
-                    }
-                    index += 1
-                }
-                
-                if flagExiste {
-                    activityRecord.activity = newList
-                    GlobalParameters.shared.listProjects.remove(at: index)
-                    GlobalParameters.shared.listProjects.append(activityRecord)
-                }
-                else {
-                    GlobalParameters.shared.listProjects.append(activityRecord)
-                }
-                
-                activityResumeViewController.totalHoursProject = totalHours
-                print("El total de horas al llegar a resumen de actividad es:\(totalHours)")
-                //print(GlobalParameters.shared.listProjects)
-                
-                self.navigationController?.pushViewController(activityResumeViewController, animated: true)
+                //.append(activityRecord.client.project[getProject()].activity)
+        }
+        else {
+            GlobalParameters.shared.listProjects?.client.project[getProject(idProject)].activity = newList
+        }
+        
+        activityResumeViewController.totalHoursProject = totalHours
+        print("El total de horas al llegar a resumen de actividad es:\(totalHours)")
+        //print(GlobalParameters.shared.listProjects)
+        
+        self.navigationController?.pushViewController(activityResumeViewController, animated: true)
     }
     
 }
@@ -181,13 +195,20 @@ extension ActivityHourViewController:UITableViewDataSource{
         cell.labelNameActivity.text = activity.name
         cell.delegateHours = self
         cell.totalHours = self.totalHours
-        
         cell.index = indexPath.row
         cell.labelHours.text = "\(activity.duration!) hrs"
         cell.count = activity.duration!
         
-        
-        
+        /*if activityRecord.activity.count != 0 {
+            for _activity in activityRecord.activity {
+                if _activity.name == activity.name{
+                    cell.labelHours.text =  "\(_activity.duration) hrs"
+                    cell.count = _activity.duration
+                }else{
+                    
+                }
+            }
+        }*/
         
         _ = cell.updateStatusButton(operation: false)
         
@@ -204,62 +225,62 @@ extension ActivityHourViewController:UITableViewDataSource{
     func goBack() {
         super.goToBack()
     }
-    
     func addHours(nameActivity:String, duration:Int, indexRow: Int) {
-            totalHours = totalHours + 1
-            labelTotalHours.text = "\(totalHours) hrs"
+        totalHours = totalHours + 1
+        labelTotalHours.text = "\(totalHours) hrs"
 
-            print(duration)
-            
-            if duration == 1{
-                recordActivity = Activity(name: nameActivity, duration: 1)
-                activityRecord.activity.append(recordActivity)
-                activityHourList[indexRow].duration = duration
-            }else{
-                //actualizar duracion
-                var index = 0
-                for activityName in activityRecord.activity{
-                    if activityName.name == nameActivity{
-                        activityRecord.activity[index].duration = duration
-                        print(duration)
-                        activityHourList[indexRow].duration = duration
-                    }
-                    index += 1
+        print(duration)
+        
+        if duration == 1{
+            recordActivity = Activity(name: nameActivity, duration: 1)
+            activityRecord.client.project[getProject(idProject)].activity.append(recordActivity)
+            activityHourList[indexRow].duration = duration
+        }else{
+            //actualizar duracion
+            var index = 0
+            for activityName in activityRecord.client.project[getProject(idProject)].activity{
+                if activityName.name == nameActivity{
+                    activityRecord.client.project[getProject(idProject)].activity[index].duration = duration
+                    print(duration)
+                    activityHourList[indexRow].duration = duration
                 }
-                print("actualizar duracion")
+                index += 1
             }
-            tableActivityHour.reloadData()
+            print("actualizar duracion")
         }
+        tableActivityHour.reloadData()
+    }
+    
     
     func lessHours(nameActivity:String, duration:Int, indexRow: Int) {
-            totalHours = totalHours - 1
-            labelTotalHours.text = "\(totalHours) hrs"
-            
-            if duration == 0{
-                //remover actividad
-                var index = 0
-                for activityName in activityRecord.activity{
-                    if activityName.name == nameActivity{
-                        activityRecord.activity.remove(at: index)
-                        activityHourList[indexRow].duration = duration
-                    }
-                    index += 1
+        totalHours = totalHours - 1
+        labelTotalHours.text = "\(totalHours) hrs"
+        
+        if duration == 0{
+            //remover actividad
+            var index = 0
+            for activityName in activityRecord.client.project[getProject(idProject)].activity{
+                if activityName.name == nameActivity{
+                    activityRecord.client.project[getProject(idProject)].activity.remove(at: index)
+                    activityHourList[indexRow].duration = duration
                 }
-                print("Remove")
-            } else {
-                //Si la duracion no es cero, actualizar la duración
-                var index = 0
-                for activityName in activityRecord.activity{
-                    if activityName.name == nameActivity{
-                        activityRecord.activity[index].duration = duration
-                        print(duration)
-                        activityHourList[indexRow].duration = duration
-                    }
-                    index += 1
+                index += 1
             }
-            tableActivityHour.reloadData()
+            print("Remove")
+        } else {
+            //Si la duracion no es cero, actualizar la duración
+            var index = 0
+            for activityName in activityRecord.client.project[getProject(idProject)].activity{
+                if activityName.name == nameActivity{
+                    activityRecord.client.project[getProject(idProject)].activity[index].duration = duration
+                    print(duration)
+                    activityHourList[indexRow].duration = duration
+                }
+                index += 1
+            }
         }
-      }
+        tableActivityHour.reloadData()
+    }
 }
 
 

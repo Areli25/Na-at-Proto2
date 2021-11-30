@@ -19,9 +19,18 @@ class GenericViewController: UIViewController, SignOutProtocol {
     let first_gradient = UIColor(red: 255.0/255.0, green: 131.0/255.0, blue: 85.0/255.0, alpha: 1.0)
     let green_notifications = UIColor(red: 40.0/255.0, green: 177.0/255.0, blue: 155.0/255.0, alpha: 1.0)
     let notifications_color = UIColor(red: 255.0/255.0, green: 131.0/255.0, blue: 85.0/255.0, alpha: 1.0)
-
- 
-
+    
+    func getProject(_ idProject: String) -> Int {
+            var index = 0
+        for project in GlobalParameters.shared.listProjects!.client.project {
+                if project.id == idProject {
+                    break
+                }
+                index += 1
+            }
+            return index
+        }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
