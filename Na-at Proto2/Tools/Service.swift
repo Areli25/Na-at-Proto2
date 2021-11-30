@@ -211,6 +211,54 @@ class Service: NSObject {
         
         urlSession.resume()
     }
+    
+    func createActivityRecord (clientId:String, activity:[Activity], date:String, completion: @escaping(Result<[ResponseRecord],Error>) -> ()) {
+        guard let url = URL(string: "http://3.238.21.227:8080/activities") else {
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        
+        let newRecord = Record(idClient: clientId, activity: activity, date: date)
+        guard let newActivityJson = try? JSONEncoder().encode(newRecord) else {
+            return
+        }
+        
+        print(String(data: newActivityJson, encoding: .utf8) ?? "")
+        
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        urlRequest.httpBody = newActivityJson
+        
+        URLSession.shared.dataTask(with: urlRequest, completionHandler: {
+            data, res, err in
+            
+            if let err = err {
+                completion(.failure(err))
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            print(String(data: data, encoding: .utf8)!)
+            
+            
+            DispatchQueue.main.async {
+                do {
+                    
+                    let decodedData = try JSONDecoder().decode([ResponseRecord].self, from: data)
+                    completion(.success(decodedData))
+                }
+                catch {
+                    //Muestro mensaje de error en caso de un error de decodificacion
+                    print("Error en la descarga. ", error)
+                    completion(.failure(error))
+                }
+            }
+        }).resume()
+    }
 }
 
 

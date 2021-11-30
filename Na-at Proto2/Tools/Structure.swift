@@ -53,8 +53,6 @@ struct NotificationStructure{
 
 struct ActivityHourShow{
 var client: ClientShow
-//var project: [ProjectShow]
-//var activity: [Activity]
 }
 
 struct ClientShow{
@@ -69,9 +67,17 @@ var name: String
 var activity: [Activity]
 }
 
-struct Activity{
+struct Activity:Encodable{
 var name: String
 var duration: Int
 }
 
 
+struct Record:Encodable {
+    var idClient:String
+    var activity: [Activity]
+    var date:String
+}
+struct ResponseRecord:Decodable {
+    var id:String
+}

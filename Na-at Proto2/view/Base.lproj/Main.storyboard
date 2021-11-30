@@ -490,6 +490,7 @@
                             <constraint firstItem="dHK-UR-bfH" firstAttribute="trailing" secondItem="LT1-DV-m2Y" secondAttribute="trailing" constant="17" id="Yii-mu-reC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HmH-Qs-3TK"/>
                     <connections>
                         <outlet property="headerView" destination="DO5-y3-tcy" id="Ngp-ES-A8p"/>
                         <outlet property="tableClients" destination="Wbr-Pg-YAU" id="lSM-oZ-3CQ"/>
@@ -524,7 +525,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿En qué proyecto trabajaste?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKX-Qt-cyr">
-                                <rect key="frame" x="16" y="249" width="228.5" height="21"/>
+                                <rect key="frame" x="16" y="249" width="224" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="jJV-iz-MIs"/>
                                 </constraints>
@@ -553,6 +554,7 @@
                             <constraint firstItem="yy0-Ir-VIX" firstAttribute="leading" secondItem="NFa-mH-ZCV" secondAttribute="leading" constant="16" id="o5I-QL-keg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Td8-EQ-SjO"/>
                     <connections>
                         <outlet property="headerView" destination="Qo6-aD-aVa" id="Z4B-zi-KKR"/>
                         <outlet property="tableProjectsById" destination="yy0-Ir-VIX" id="0ss-qp-poQ"/>
@@ -560,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHJ-M5-8vz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5392.753623188406" y="-632.14285714285711"/>
+            <point key="canvasLocation" x="5336" y="-632"/>
         </scene>
         <!--Activity Hour View Controller-->
         <scene sceneID="cCf-e3-KvH">
@@ -701,6 +703,9 @@
                                 <state key="normal" title="Agregar mas horas en otro proyecto">
                                     <color key="titleColor" name="Salmon"/>
                                 </state>
+                                <connections>
+                                    <action selector="addHoursInProject:" destination="EmE-py-scY" eventType="touchUpInside" id="Ck0-AH-3qm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-iV-aZG">
                                 <rect key="frame" x="16" y="763" width="382" height="45"/>
@@ -772,12 +777,13 @@
                         <outlet property="btnAddMoreHours" destination="GwR-ZX-Rxd" id="HZR-Fg-fwg"/>
                         <outlet property="btnRegisterHours" destination="jnO-iV-aZG" id="Un2-8v-iOi"/>
                         <outlet property="headerView" destination="cBQ-5y-4vZ" id="chz-zL-FfI"/>
+                        <outlet property="labelHours" destination="PF3-MV-FnO" id="CqA-Dw-Jm2"/>
                         <outlet property="tableResumeActivity" destination="3ua-xa-vyW" id="Djh-v3-5fL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZl-3T-kWH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7005.7971014492759" y="-632.14285714285711"/>
+            <point key="canvasLocation" x="7019" y="-632"/>
         </scene>
         <!--Home-->
         <scene sceneID="XMC-ag-KiE">
@@ -824,7 +830,7 @@
         <image name="google" width="22" height="22"/>
         <image name="home" width="22" height="22"/>
         <image name="login" width="328" height="313"/>
-        <image name="naat" width="131" height="16"/>
+        <image name="naat" width="224" height="27"/>
         <image name="notificaciones" width="22" height="22"/>
         <namedColor name="Salmon">
             <color red="1" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

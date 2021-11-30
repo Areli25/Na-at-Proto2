@@ -13,6 +13,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     @IBOutlet weak var tableResumeActivity: UITableView!
     @IBOutlet weak var btnAddMoreHours: UIButton!
     @IBOutlet weak var btnRegisterHours: UIButton!
+    @IBOutlet weak var labelHours: UILabel!
     var activityHourList: ActivityHourShow?
     var totalHoursProject = 0
     let buttonAttributes: [NSAttributedString.Key: Any] = [
@@ -32,6 +33,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
         headerView.delegateGoBack = self
         setupButtonn()
+        labelHours.text = "\(totalHoursProject) hrs"
         underlineButton()
         tableResumeActivity.delegate = self
         tableResumeActivity.dataSource = self
@@ -53,19 +55,26 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     func goBack() {
         super.goToBack()
     }
+    @IBAction func addHoursInProject(_ sender: Any) {
+        for vc in self.navigationController!.viewControllers {
+            if vc.isKind(of: ProjectsViewController.self) {
+                GlobalParameters.shared.isFirstTime = false
+                self.navigationController?.popToViewController(vc, animated: true)
+            }
+        }
+    }
     
     func modifyActivityRecord(index:Int) {
-        print(activityHourList?.client.project[getProject(idProject)].activity)
-        
+        //print(activityHourList?.client.project[getProject(idProject)].activity)
         vcActivityModify?.setupActivityRecordList(activityHourList?.client.project[getProject(idProject)].activity)
         vcActivityModify?.tableActivityHour.reloadData()
         super.goToBack()
         
     }
     
-    func deleteActivityRecord() {
-        
-        showModal(section: 0)
+    func deleteActivityRecord(index:Int) {
+        showModal(section: index)
+        print(totalHoursProject)
     }
     
     func showModal(section:Int){
@@ -127,7 +136,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     
     @objc func deleteProject(_ sender: Any){
         let index = (sender as! ButtonDeleteProject).index
-        print(index)
+        //activityHourList?.client.project[index]
         deleteDialog()
     }
     
@@ -159,19 +168,19 @@ extension ResumeActivityViewController:UITableViewDataSource{
         headerCell.delegateButtons = self
         headerCell.index = section
         //asignacion de nombre del proyecto
-        headerCell.projectName.text = activityHourList?.client.project[getProject(idProject)].name
+        headerCell.projectName.text = activityHourList?.client.project[section].name
         
         return headerCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activityHourList!.client.project[getProject(idProject)].activity.count
+        return activityHourList!.client.project[section].activity.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableResumeActivity.dequeueReusableCell(withIdentifier: "CellActivityResumeTableViewCell", for: indexPath) as! CellActivityResumeTableViewCell
         
-        let activity = activityHourList?.client.project[getProject(idProject)].activity[indexPath.row]
+        let activity = activityHourList?.client.project[indexPath.section].activity[indexPath.row]
         
         cell.labelActivityName.text = activity?.name
         let duration = activity!.duration

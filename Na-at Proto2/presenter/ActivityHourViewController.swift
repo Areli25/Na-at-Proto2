@@ -61,13 +61,16 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     }
     
     func setupScreenModify(item: ActivityHour) -> ActivityHour {
-        for lista in GlobalParameters.shared.listProjects!.client.project {
+        for project in GlobalParameters.shared.listProjects!.client.project {
             
-            for activity in lista.activity {
-                if activity.name == item.name {
-                    return ActivityHour(id: item.id, name: item.name, duration: activity.duration)
+            if project.name == projectName{
+                for activity in project.activity {
+                    if activity.name == item.name {
+                        return ActivityHour(id: item.id, name: item.name, duration: activity.duration)
+                    }
                 }
             }
+
         }
         return ActivityHour(id: item.id, name: item.name, duration: 0)
     }
@@ -150,22 +153,17 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         var index = 0
         for project in GlobalParameters.shared.listProjects!.client.project {
             
-            if project.name == activityRecord.client.project[index].name {
-                    
+            if project.id == idProject {
                     flagExiste = true
                     break
                 }
                 index += 1
-            
-            
         }
         
         if flagExiste {
             activityRecord.client.project[getProject(idProject)].activity = newList
             //GlobalParameters.shared.listProjects?.client.project[getProject(idProject)].activity.remove(at: index)
             GlobalParameters.shared.listProjects?.client.project[index].activity = newList
-                
-                //.append(activityRecord.client.project[getProject()].activity)
         }
         else {
             GlobalParameters.shared.listProjects?.client.project[getProject(idProject)].activity = newList
@@ -198,18 +196,7 @@ extension ActivityHourViewController:UITableViewDataSource{
         cell.index = indexPath.row
         cell.labelHours.text = "\(activity.duration!) hrs"
         cell.count = activity.duration!
-        
-        /*if activityRecord.activity.count != 0 {
-            for _activity in activityRecord.activity {
-                if _activity.name == activity.name{
-                    cell.labelHours.text =  "\(_activity.duration) hrs"
-                    cell.count = _activity.duration
-                }else{
-                    
-                }
-            }
-        }*/
-        
+
         _ = cell.updateStatusButton(operation: false)
         
         if self.totalHours == 8{

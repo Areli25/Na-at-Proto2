@@ -32,6 +32,9 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
     func goBack() {
         super.goToBack()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     func getAllProjects(){
         Service.shared.getProjectsById(id: idClient, completion: { [self]
@@ -60,18 +63,27 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         })
         
     }
-    
     func goToActivityList(projectId:String, nameProject:String){
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let activityHourViewController = storyboard.instantiateViewController(withIdentifier: "activityHourViewController") as! ActivityHourViewController
         activityHourViewController.idProject = projectId
         activityHourViewController.projectName = nameProject
         
-        GlobalParameters.shared.listProjects = ActivityHourShow(client: ClientShow(id: idClient, name: nameClient, project: [ProjectShow(id: projectId, name: nameProject, activity: [Activity]())]))
-            
-            
+        var projectShow = [ProjectShow(id: projectId, name: nameProject, activity: [Activity]())]
+        var activityHourShow = ActivityHourShow(client: ClientShow(id: idClient, name: nameClient, project: projectShow))
         
-        
+        if GlobalParameters.shared.isFirstTime {
+            
+            GlobalParameters.shared.listProjects = activityHourShow
+        }else{
+            activityHourShow = GlobalParameters.shared.listProjects!
+            projectShow = GlobalParameters.shared.listProjects!.client.project
+            projectShow.append(ProjectShow(id: projectId, name: nameProject, activity: [Activity]()))
+            activityHourShow.client.project = projectShow
+            GlobalParameters.shared.listProjects = activityHourShow
+        }
+
         activityHourViewController.idClient = idClient
         activityHourViewController.nameClient = nameClient
         

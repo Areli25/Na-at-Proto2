@@ -8,6 +8,7 @@
 import Foundation
 
 class GlobalParameters: NSObject {
+    var isFirstTime = true
     
     static let shared = GlobalParameters()
     var listProjects: ActivityHourShow?

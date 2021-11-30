@@ -25,10 +25,10 @@ class HeaderTableViewCell: UITableViewCell {
         delegateButtons?.modifyActivityRecord(index: index)
     }
     @IBAction func deleteActivityRecord(_ sender: Any) {
-        delegateButtons?.deleteActivityRecord()
+        delegateButtons?.deleteActivityRecord(index: index)
     }
 }
 protocol DelegateButtonAction {
     func modifyActivityRecord(index:Int)
-    func deleteActivityRecord()
+    func deleteActivityRecord(index:Int)
 }
