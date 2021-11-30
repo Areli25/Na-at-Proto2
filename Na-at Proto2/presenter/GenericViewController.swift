@@ -9,7 +9,7 @@ import UIKit
 
 class GenericViewController: UIViewController, SignOutProtocol {
     
-    var totalHours = 0
+    
     var count  = 0
     var userName = ""
     var urlProfile:URL!

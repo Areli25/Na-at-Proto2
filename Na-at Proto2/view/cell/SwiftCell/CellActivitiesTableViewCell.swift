@@ -31,17 +31,18 @@ class CellActivitiesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     func updateStatusButton(operation:Bool) -> Bool{
-        if count == 0{
+        
+        if GlobalParameters.shared.totalHoursProjects == 0{
             btnLess.isEnabled = false
             btnLess.tintColor = UIColor.gray
             return operation ? true : false
         }
-        if count == 8{
+        if GlobalParameters.shared.totalHoursProjects == 8{
             btnAdd.isEnabled = false
             btnAdd.tintColor = UIColor.gray
             return operation ? false: true
         }
-        if count > 0 && count < 8{
+        if GlobalParameters.shared.totalHoursProjects > 0 && GlobalParameters.shared.totalHoursProjects < 8{
             btnLess.isEnabled = true
             btnLess.tintColor = salmon
             btnAdd.isEnabled = true

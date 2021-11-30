@@ -20,6 +20,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     var nameClient = ""
     var idProject = ""
     var projectName = ""
+    var totalHours = 0
     var recordClient:ClientShow!
     var recordActivity:Activity!
     var recordProject:ProjectShow!
@@ -168,11 +169,9 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         else {
             GlobalParameters.shared.listProjects?.client.project[getProject(idProject)].activity = newList
         }
-        
-        activityResumeViewController.totalHoursProject = totalHours
-        print("El total de horas al llegar a resumen de actividad es:\(totalHours)")
-        //print(GlobalParameters.shared.listProjects)
-        
+        GlobalParameters.shared.totalHoursProjects += totalHours
+        activityResumeViewController.totalHoursProject = GlobalParameters.shared.totalHoursProjects
+        print("El total de horas al llegar a resumen de actividad es:\(GlobalParameters.shared.totalHoursProjects)")
         self.navigationController?.pushViewController(activityResumeViewController, animated: true)
     }
     
@@ -199,10 +198,10 @@ extension ActivityHourViewController:UITableViewDataSource{
 
         _ = cell.updateStatusButton(operation: false)
         
-        if self.totalHours == 8{
+        if GlobalParameters.shared.totalHoursProjects == 8{
             cell.disabledAddButton()
             showButton()
-        }else if self.totalHours < 8{
+        }else if GlobalParameters.shared.totalHoursProjects < 8{
             cell.enabledAddButton()
             showButton()
         }

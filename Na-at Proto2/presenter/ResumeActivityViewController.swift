@@ -28,6 +28,11 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     override func viewDidLoad() {
         super.viewDidLoad()
         activityHourList = GlobalParameters.shared.listProjects
+        if GlobalParameters.shared.totalHoursProjects == 8{
+            btnAddMoreHours.isHidden = true
+        }else{
+            btnAddMoreHours .isHidden = false
+        }
         headerView.delegateSesion = self
         headerView.delegateGoBack = self
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
@@ -38,6 +43,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
         tableResumeActivity.delegate = self
         tableResumeActivity.dataSource = self
     }
+    
     
     func setupButtonn(){
         btnRegisterHours.applyGradient(colours: [first_gradient,end_gradient])
