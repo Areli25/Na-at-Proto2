@@ -31,7 +31,8 @@ class CellActivitiesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     func updateStatusButton(operation:Bool) -> Bool{
-        let totalHoursProject = GlobalParameters.shared.totalHoursProjects + totalHours
+        let gbTotalHours = GlobalParameters.shared.totalHoursProjects
+        let totalHoursProject = gbTotalHours + (gbTotalHours == 8 ? 0 : totalHours)
         
         if totalHoursProject != 0 {
             if  count == 0{
@@ -42,6 +43,8 @@ class CellActivitiesTableViewCell: UITableViewCell {
             if totalHoursProject == 8 || count == 8{
                 btnAdd.isEnabled = false
                 btnAdd.tintColor = UIColor.gray
+                btnLess.isEnabled = true
+                btnLess.tintColor = salmon
                 return operation ? false: true
             }
             if (totalHoursProject > 0 && totalHoursProject < 8) &&  (count > 0 && count < 8) {

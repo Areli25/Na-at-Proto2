@@ -72,10 +72,19 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     
     func modifyActivityRecord(index:Int) {
         //print(activityHourList?.client.project[getProject(idProject)].activity)
-        vcActivityModify?.setupActivityRecordList(activityHourList?.client.project[getProject(idProject)].activity)
+        var duration = 0
+        for activity in GlobalParameters.shared.listProjects!.client.project[index].activity {
+            duration += activity.duration
+        }
+    
+        GlobalParameters.shared.totalHoursProjects -= duration
+        vcActivityModify?.projectName = activityHourList!.client.project[index].name
+        vcActivityModify?.totalHours = duration
+        vcActivityModify?.idProject = activityHourList!.client.project[index].id
+        vcActivityModify?.setupActivityRecordList(activityHourList?.client.project[index].activity)
         vcActivityModify?.tableActivityHour.reloadData()
         super.goToBack()
-        
+  
     }
     
     func deleteActivityRecord(index:Int) {

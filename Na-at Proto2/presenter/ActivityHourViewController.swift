@@ -38,27 +38,17 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         tableActivityHour.dataSource = self
         btnRegister.isHidden = true
         setupButton()
-        //getAllActivities()
     }
 
     func setupActivityRecordList(_ activityList: [Activity]? = [Activity]()){
-        //recordClient =  ClientShow(id: idClient, name: nameClient)
-        //recordProject = ProjectShow(id: idProject, name: projectName)
-        
         activityRecord = GlobalParameters.shared.listProjects
         activityRecord.client.project[getProject(idProject)].activity = activityList!
-        
-        //activityRecord = ActivityHourShow(client: recordClient, project: recordProject, activity: activityList!)
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllActivities()
         print("ESTOY DE REGRESO")
-        
-        
     }
     
     func setupScreenModify(item: ActivityHour) -> ActivityHour {
@@ -117,7 +107,6 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
                         var newItem = ActivityHour(id: item.id, name: item.name, duration: 0)
                         newItem = self.setupScreenModify(item: newItem)
                         
-                        
                         activityHourList.append(newItem)
                     }
                     self.tableActivityHour.reloadData()
@@ -138,8 +127,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         activityResumeViewController.projectName = projectName
         activityResumeViewController.idProject = idProject
         activityResumeViewController.vcActivityModify = self
-        //agregamos los datos recabados a lista que usaremos para pintar la pnatalla de resumen
-        
+
         var newList = [Activity]()
         
         for item in activityHourList {
@@ -163,7 +151,6 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         
         if flagExiste {
             activityRecord.client.project[getProject(idProject)].activity = newList
-            //GlobalParameters.shared.listProjects?.client.project[getProject(idProject)].activity.remove(at: index)
             GlobalParameters.shared.listProjects?.client.project[index].activity = newList
         }
         else {
@@ -171,7 +158,6 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         }
         GlobalParameters.shared.totalHoursProjects += totalHours
         activityResumeViewController.totalHoursProject = GlobalParameters.shared.totalHoursProjects
-        print("El total de horas al llegar a resumen de actividad es:\(GlobalParameters.shared.totalHoursProjects)")
         self.navigationController?.pushViewController(activityResumeViewController, animated: true)
     }
     
@@ -214,8 +200,9 @@ extension ActivityHourViewController:UITableViewDataSource{
         super.goToBack()
     }
     func addHours(nameActivity:String, duration:Int, indexRow: Int) {
+        let gbTotalHours = GlobalParameters.shared.totalHoursProjects + totalHours + 1
         totalHours = totalHours + 1
-        labelTotalHours.text = "\(totalHours) hrs"
+        labelTotalHours.text = "\(gbTotalHours) hrs"
 
         print(duration)
         
@@ -241,8 +228,9 @@ extension ActivityHourViewController:UITableViewDataSource{
     
     
     func lessHours(nameActivity:String, duration:Int, indexRow: Int) {
+        let gbTotalHours = GlobalParameters.shared.totalHoursProjects + totalHours - 1
         totalHours = totalHours - 1
-        labelTotalHours.text = "\(totalHours) hrs"
+        labelTotalHours.text = "\(gbTotalHours) hrs"
         
         if duration == 0{
             //remover actividad
