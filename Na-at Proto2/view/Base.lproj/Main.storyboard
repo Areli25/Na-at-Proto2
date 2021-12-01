@@ -69,7 +69,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Al continuar aceptas nuestros" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuq-gI-7xa">
-                                <rect key="frame" x="42.5" y="726" width="185.5" height="23"/>
+                                <rect key="frame" x="39.5" y="726" width="186.5" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Xn8-kc-pkj"/>
                                 </constraints>
@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Terminos y condiciones" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V0-LZ-dbQ">
-                                <rect key="frame" x="228" y="726" width="145.5" height="23"/>
+                                <rect key="frame" x="226" y="726" width="147.5" height="23"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="S4j-SU-3w8"/>
@@ -525,7 +525,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿En qué proyecto trabajaste?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKX-Qt-cyr">
-                                <rect key="frame" x="16" y="249" width="228.5" height="21"/>
+                                <rect key="frame" x="16" y="249" width="224" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="jJV-iz-MIs"/>
                                 </constraints>
@@ -621,7 +621,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué actividades realizaste?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3t-vt-5nA">
-                                <rect key="frame" x="16" y="250" width="223.5" height="21"/>
+                                <rect key="frame" x="16" y="250" width="218" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="anE-up-oSX"/>
                                 </constraints>

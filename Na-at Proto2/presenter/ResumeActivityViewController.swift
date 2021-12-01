@@ -28,11 +28,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     override func viewDidLoad() {
         super.viewDidLoad()
         activityHourList = GlobalParameters.shared.listProjects
-        if GlobalParameters.shared.totalHoursProjects == 8{
-            btnAddMoreHours.isHidden = true
-        }else{
-            btnAddMoreHours .isHidden = false
-        }
+        showButtonAddMoreHours()
         headerView.delegateSesion = self
         headerView.delegateGoBack = self
         tableResumeActivity.register(UINib(nibName: "CellActivityResumeTableViewCell", bundle: nil), forCellReuseIdentifier: "CellActivityResumeTableViewCell")
@@ -49,6 +45,13 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
         btnRegisterHours.applyGradient(colours: [first_gradient,end_gradient])
         btnRegisterHours.layer.cornerRadius = 20;
         btnRegisterHours.layer.masksToBounds = true;
+    }
+    func showButtonAddMoreHours(){
+        if GlobalParameters.shared.totalHoursProjects == 8{
+            btnAddMoreHours.isHidden = true
+        }else{
+            btnAddMoreHours .isHidden = false
+        }
     }
     func underlineButton(){
         let attributeString = NSMutableAttributedString(
@@ -71,7 +74,6 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     }
     
     func modifyActivityRecord(index:Int) {
-        //print(activityHourList?.client.project[getProject(idProject)].activity)
         var duration = 0
         for activity in GlobalParameters.shared.listProjects!.client.project[index].activity {
             duration += activity.duration
@@ -89,7 +91,6 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     
     func deleteActivityRecord(index:Int) {
         showModal(section: index)
-        print(totalHoursProject)
     }
     
     func showModal(section:Int){
@@ -151,8 +152,18 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     
     @objc func deleteProject(_ sender: Any){
         let index = (sender as! ButtonDeleteProject).index
+        var hoursInProject = 0
+        
+        for activity  in GlobalParameters.shared.listProjects!.client.project[index].activity {
+            hoursInProject += activity.duration
+        }
+        
         activityHourList?.client.project.remove(at: index)
         GlobalParameters.shared.listProjects?.client.project.remove(at: index)
+        GlobalParameters.shared.totalHoursProjects -= hoursInProject
+        totalHoursProject -= hoursInProject
+        labelHours.text = "\(totalHoursProject) hrs"
+        showButtonAddMoreHours()
         tableResumeActivity.reloadData()
         deleteDialog()
     }
