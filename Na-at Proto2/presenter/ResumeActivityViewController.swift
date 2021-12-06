@@ -16,6 +16,9 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     @IBOutlet weak var labelHours: UILabel!
     var activityHourList: ActivityHourShow?
     var totalHoursProject = 0
+    var requestCreateRecord:Record?
+    var responseRecordList:[ResponseRecord] = []
+    var listSuccess:[Bool] = []
     let buttonAttributes: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor(red: 255.0/255.0, green: 101.0/255.0, blue: 108.0/255.0, alpha: 1.0),
          .underlineStyle: NSUnderlineStyle.single.rawValue
@@ -24,6 +27,9 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     var idProject = ""
     var heigOfHeader: CGFloat = 44
     var vcActivityModify: ActivityHourViewController?
+    var vcFinalScreen: ActivityViewController?
+    var responseCrateActivity:[ResponseRecord] = []
+    var contador = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,12 +70,75 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     func goBack() {
         super.goToBack()
     }
+    
     @IBAction func addHoursInProject(_ sender: Any) {
         for vc in self.navigationController!.viewControllers {
             if vc.isKind(of: ProjectsViewController.self) {
                 GlobalParameters.shared.isFirstTime = false
                 self.navigationController?.popToViewController(vc, animated: true)
             }
+        }
+    }
+    
+    func registerRecordActivity(index:Int, isSuccess:Bool){
+        var idProject = GlobalParameters.shared.listProjects!.client.project[index].id
+        var listActivity:[ActivitiesRecord] = []
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateInFormat = dateFormatter.string(from: NSDate() as Date)
+        
+        for activity in GlobalParameters.shared.listProjects!.client.project[index].activity {
+            listActivity.append(ActivitiesRecord(id: activity.id!, duration: activity.duration))
+        }
+        
+        Service.shared.createActivityRecord(projectId: idProject, activity: listActivity, date: dateInFormat, completion: { [self]
+            res in
+            switch res {
+            case .success(let encodedData):
+                contador += 1
+                
+                DispatchQueue.main.async {
+                    listSuccess[index] = true
+                    responseRegister()
+        
+                    for item in encodedData {
+                        
+                        var newItem = ResponseRecord(project: item.project, activityRecords: item.activityRecords)
+                        responseRecordList.append(newItem)
+                    }
+                }
+                
+            case .failure(let err):
+                print("Error en la petición: ", err)
+                contador += 1
+                
+                DispatchQueue.main.async {
+                    listSuccess[index] = false
+                    responseRegister()
+                }
+            }
+        })
+    }
+    func responseRegister(){
+        if contador == GlobalParameters.shared.listProjects?.client.project.count{
+            for vc in self.navigationController!.viewControllers {
+                if vc.isKind(of: ActivityViewController.self)  {
+                    (vc as! ActivityViewController).responseRecordList = responseRecordList
+                    listSuccess = []
+                    (vc as! ActivityViewController).tableRecordActivity.reloadData()
+                    self.navigationController?.popToViewController(vc, animated: true)
+                }
+            }
+        }
+    }
+   
+    @IBAction func registerHours(_ sender: Any) {
+        for (index, element) in GlobalParameters.shared.listProjects!.client.project.enumerated() {
+            listSuccess.append(false)
+        }
+        
+        for (index, element) in GlobalParameters.shared.listProjects!.client.project.enumerated() {
+            registerRecordActivity(index: index, isSuccess: listSuccess[index])
         }
     }
     
@@ -108,7 +177,6 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
         button.addTarget(self, action: #selector(closeDialog(_:)), for: .touchUpInside)
         
         let buttonDelete = ButtonDeleteProject(frame: CGRect(x: 24, y: 162, width: 237, height: 45))
-        //buttonDelete.backgroundColor = .gray
         buttonDelete.index = section
         buttonDelete.addTarget(self, action: #selector(self.deleteProject(_:)), for: .touchUpInside)
         buttonDelete.setTitle("Si, eliminar", for: .normal)

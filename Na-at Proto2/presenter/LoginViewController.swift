@@ -20,6 +20,11 @@ class LoginViewController: GenericViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if NetworkMonitor.shared.isConnected{
+            print("success")
+        }else{
+            print("Error")
+        }
         setupButton()
         btnLogin.layer.cornerRadius = 20;
         btnLogin.layer.masksToBounds = true;
@@ -45,13 +50,14 @@ class LoginViewController: GenericViewController {
             let email = user.profile?.email
             if email!.contains("@na-at.com.mx"){
                 self.performSegue(withIdentifier: "goNews", sender: nil)
+                GlobalParameters.shared.nameUser = user.profile?.name ?? "No name"
+                GlobalParameters.shared.urlProfile = user.profile!.imageURL(withDimension: 40)!
+                print(GlobalParameters.shared.nameUser)
                 self.userName = user.profile?.name ?? "No name"
                 self.urlProfile = user.profile!.imageURL(withDimension: 40)!
-                //print("success ************")
+               
             }else{
                 self.showModal()
-                print("Email: ", user.profile?.imageURL(withDimension: 40) ?? "No email")
-                print("Email: ", user.profile?.email ?? "No email")
             }
         })
     }

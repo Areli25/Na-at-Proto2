@@ -94,7 +94,7 @@ class Service: NSObject {
     
     func getClients(completion: @escaping(Result<[Client], Error>) -> ()) {
         
-        guard let url = URL(string: "http://3.238.21.227:8080/clients/") else {
+        guard let url = URL(string: "http://3.238.21.227:8080/clients/?page=1") else {
             return
         }
         
@@ -212,15 +212,15 @@ class Service: NSObject {
         urlSession.resume()
     }
     
-    func createActivityRecord (clientId:String, activity:[Activity], date:String, completion: @escaping(Result<[ResponseRecord],Error>) -> ()) {
-        guard let url = URL(string: "http://3.238.21.227:8080/activities") else {
+    func createActivityRecord (projectId:String, activity:[ActivitiesRecord], date:String, completion: @escaping(Result<[ResponseRecord],Error>) -> ()) {
+        guard let url = URL(string: "http://3.238.21.227:8080/activity-records") else {
             return
         }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         
-        let newRecord = Record(idClient: clientId, activity: activity, date: date)
+        let newRecord = Record(idProject: projectId, activities: activity, date: date)
         guard let newActivityJson = try? JSONEncoder().encode(newRecord) else {
             return
         }
@@ -228,6 +228,7 @@ class Service: NSObject {
         print(String(data: newActivityJson, encoding: .utf8) ?? "")
         
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         
         urlRequest.httpBody = newActivityJson
         

@@ -16,10 +16,11 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
     var projectsList:[Projects] = []
     var idClient = ""
     var nameClient = ""
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         headerView.delegateGoBack = self
         headerView.delegateSesion = self
         tableProjectsById.register(UINib(nibName: "ProjectsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProjectsTableViewCell")

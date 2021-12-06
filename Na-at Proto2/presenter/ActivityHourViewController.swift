@@ -131,7 +131,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         var newList = [Activity]()
         
         for item in activityHourList {
-            let newItem = Activity(name: item.name, duration: item.duration ?? 0)
+            let newItem = Activity(id: item.id, name: item.name, duration: item.duration ?? 0)
             
             if newItem.duration > 0 {
                 newList.append(newItem)

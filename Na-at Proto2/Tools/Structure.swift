@@ -48,36 +48,56 @@ struct NotificationStructure{
     var body:String
     var priority:Int
 }
-
 //Struct ActivityHour
 
 struct ActivityHourShow{
-var client: ClientShow
+    var client: ClientShow
 }
 
 struct ClientShow{
-var id: String
-var name: String
-var project: [ProjectShow]
+    var id: String
+    var name: String
+    var project: [ProjectShow]
 }
 
 struct ProjectShow{
-var id: String
-var name: String
-var activity: [Activity]
+    var id: String
+    var name: String
+    var activity: [Activity]
 }
 
 struct Activity:Encodable{
-var name: String
-var duration: Int
+    var id:String?
+    var name: String
+    var duration: Int
+}
+struct ActivitiesRecord:Encodable{
+    var id:String
+    var duration:Int
 }
 
-
 struct Record:Encodable {
-    var idClient:String
-    var activity: [Activity]
+    var idProject:String
+    var activities: [ActivitiesRecord]
     var date:String
 }
 struct ResponseRecord:Decodable {
+    var project:Project
+    var activityRecords:[ResponseActivity]
+}
+struct Project:Decodable{
+    var name:String
+    var client:Clients
+}
+struct Clients:Decodable {
+    var name:String
+}
+struct NameActivity:Decodable {
+    var name:String
+}
+struct ResponseActivity:Decodable {
+    var activity:NameActivity
+    var duration:Int
+    var date:String
     var id:String
 }

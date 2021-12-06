@@ -18,6 +18,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="x67-Ac-UQQ"/>
                 <outlet property="goBack" destination="PoD-ni-jcF" id="FEZ-NV-8SQ"/>
                 <outlet property="ivPerfil" destination="Bhs-ty-ukh" id="C4X-yB-z1k"/>
+                <outlet property="labelUserName" destination="1sM-iH-Z1R" id="oJ2-H9-3dw"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

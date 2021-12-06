@@ -12,6 +12,7 @@ class ContentHeaders: UIView {
     @IBOutlet weak var ivPerfil: UIImageView!
     @IBOutlet weak var goBack: UIButton!
     @IBOutlet weak var btnCerrarSesion: UIButton!
+    @IBOutlet weak var labelUserName: UILabel!
     var delegateGoBack:HeaderProtocol!
     var delegateSesion:SignOutProtocol!
     
@@ -34,9 +35,18 @@ class ContentHeaders: UIView {
         setupImageView()
     }
     
-   private func setupImageView(imageName: String = "mujer") {
-        ivPerfil.image = UIImage(named: imageName)
+    
+   private func setupImageView() {
+    if GlobalParameters.shared.urlProfile == nil{
+        ivPerfil.image = UIImage(named: "mujer")
         ivPerfil.layer.cornerRadius = ivPerfil.bounds.height / 2
+    }else{
+        ivPerfil.downloaded(from: GlobalParameters.shared.urlProfile)
+        ivPerfil.layer.cornerRadius = ivPerfil.bounds.height / 2
+    }
+    
+        
+        
     }
     @IBAction func goBack(_ sender: Any) {
         delegateGoBack?.goBack()
@@ -71,7 +81,6 @@ class ContentHeaders: UIView {
 
         layer.layer.mask = rectShape
         
-        
         self.contentView.addSubview(layer)
         self.contentView.sendSubviewToBack(layer)
         
@@ -80,6 +89,24 @@ class ContentHeaders: UIView {
                 attributes: labelAttributes
              )
              btnCerrarSesion.setAttributedTitle(attributeString, for: .normal)
+        
+        labelUserName.text = GlobalParameters.shared.nameUser
+    }
+   func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            // always update the UI from the main thread
+            DispatchQueue.main.async() { [weak self] in
+                self?.ivPerfil.image = UIImage(data: data)
+            }
+        }
     }
 }
 protocol HeaderProtocol {
@@ -88,3 +115,6 @@ protocol HeaderProtocol {
 protocol SignOutProtocol {
     func signOut()
 }
+
+
+
