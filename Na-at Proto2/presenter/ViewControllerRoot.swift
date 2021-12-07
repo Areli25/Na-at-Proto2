@@ -22,6 +22,7 @@ class ViewControllerRoot: GenericViewController, CustomCell{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //name.constant = 190
         
         self.viewHeader.goBack.isHidden = true
         tableNews.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")

@@ -25,10 +25,6 @@ class ActivityViewController: GenericViewController {
         tableRecordActivity.dataSource = self
     }
     
-    func loadResponseRecordList(){
-        
-    }
-    
     func setupButtonRegisterHours(){
         btnRegisterHours.layer.cornerRadius = 4
         btnRegisterHours.layer.borderColor = UIColor.init(red: 255/255, green: 101/255, blue: 108/255, alpha: 1).cgColor
@@ -50,7 +46,6 @@ extension ActivityViewController:UITableViewDataSource{
         return responseRecordList?.count ?? 0
     }
     
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return heigOfHeader
     }
@@ -68,10 +63,10 @@ extension ActivityViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("no code")
         
         let cell = self.tableRecordActivity.dequeueReusableCell(withIdentifier: "ActivityRecordViewCell", for: indexPath) as! ActivityRecordViewCell
+        
+        cell.recordActivityList = responseRecordList!
         return cell
     }
 }
-//Thread 1: Fatal error: Index out of range

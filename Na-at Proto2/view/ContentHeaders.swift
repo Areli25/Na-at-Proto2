@@ -37,16 +37,15 @@ class ContentHeaders: UIView {
     
     
    private func setupImageView() {
-    if GlobalParameters.shared.urlProfile == nil{
-        ivPerfil.image = UIImage(named: "mujer")
-        ivPerfil.layer.cornerRadius = ivPerfil.bounds.height / 2
-    }else{
-        ivPerfil.downloaded(from: GlobalParameters.shared.urlProfile)
-        ivPerfil.layer.cornerRadius = ivPerfil.bounds.height / 2
-    }
     
-        
-        
+        if let imageProfile = UserDefaults.standard.url(forKey: GlobalParameters.shared.keyUserProfile){
+            ivPerfil.downloaded(from: imageProfile)
+            ivPerfil.layer.cornerRadius = ivPerfil.bounds.height / 2
+        }else{
+            ivPerfil.image = UIImage(named: "mujer")
+            ivPerfil.layer.cornerRadius = ivPerfil.bounds.height / 2
+        }
+    
     }
     @IBAction func goBack(_ sender: Any) {
         delegateGoBack?.goBack()
@@ -90,7 +89,10 @@ class ContentHeaders: UIView {
              )
              btnCerrarSesion.setAttributedTitle(attributeString, for: .normal)
         
-        labelUserName.text = GlobalParameters.shared.nameUser
+        if let userName = UserDefaults.standard.string(forKey: GlobalParameters.shared.keyUserName){
+            labelUserName.font = UIFont(name: "Europa-Bold", size: 18.0)
+            labelUserName.text = " Hola, \(userName)"
+        }
     }
    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()

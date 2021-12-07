@@ -13,6 +13,10 @@ class GlobalParameters: NSObject {
     var totalHoursProjects = 0
     var nameUser = ""
     var urlProfile:URL!
+     
+    let keyUserName = "USERNEME_KEY"
+    let keyUserProfile = "USERPROFILE_KEY"
+    
    
     static let shared = GlobalParameters()
     var listProjects: ActivityHourShow?

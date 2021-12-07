@@ -13,6 +13,6 @@ func showErrorView(_ type:String, viewController:UIViewController){
     var dialog:ErrorsViewController!
     dialog = ErrorsViewController(nibName: "ErrorsViewController", bundle: nil)
     dialog.delegate = viewController.self as? ErrorsViewController
-    
+   // NetworkErrors
 }
 

@@ -24,10 +24,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gxe-ag-m5W">
-                        <rect key="frame" x="0.0" y="4" width="320" height="36.5"/>
+                        <rect key="frame" x="0.0" y="4" width="320" height="43"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXL-7L-dAK">
-                                <rect key="frame" x="19.5" y="9.5" width="281" height="17.5"/>
+                                <rect key="frame" x="19.5" y="11" width="281" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="281" id="Wik-Go-XLT"/>
                                     <constraint firstAttribute="height" constant="21" id="zaG-9I-dMm"/>

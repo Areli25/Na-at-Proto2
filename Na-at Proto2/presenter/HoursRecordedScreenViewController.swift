@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HoursRecordedScreenViewController: UIViewController {
+class NetworkErrors: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

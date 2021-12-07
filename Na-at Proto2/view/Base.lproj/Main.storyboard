@@ -69,7 +69,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Al continuar aceptas nuestros" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuq-gI-7xa">
-                                <rect key="frame" x="42.5" y="726" width="185.5" height="23"/>
+                                <rect key="frame" x="39.5" y="726" width="186.5" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Xn8-kc-pkj"/>
                                 </constraints>
@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Terminos y condiciones" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V0-LZ-dbQ">
-                                <rect key="frame" x="228" y="726" width="145.5" height="23"/>
+                                <rect key="frame" x="226" y="726" width="147.5" height="23"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="S4j-SU-3w8"/>
@@ -142,6 +142,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QH-e0-KJ0" customClass="ContentHeaders" customModule="Na_at_Proto2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                 <color key="backgroundColor" red="0.96954406762705081" green="0.45966198979591838" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Vaw-61-6F6"/>
+                                </constraints>
                             </view>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-ac-lrV">
                                 <rect key="frame" x="0.0" y="155" width="414" height="44"/>
@@ -643,7 +646,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué actividades realizaste?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3t-vt-5nA">
-                                <rect key="frame" x="16" y="250" width="223.5" height="21"/>
+                                <rect key="frame" x="16" y="250" width="218" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="anE-up-oSX"/>
                                 </constraints>
@@ -810,27 +813,20 @@
             </objects>
             <point key="canvasLocation" x="7019" y="-632"/>
         </scene>
-        <!--Hours Recorded Screen View Controller-->
+        <!--Network Errors-->
         <scene sceneID="QhJ-bo-Ylq">
             <objects>
-                <viewController storyboardIdentifier="hoursRecordedScreen" id="aTn-7s-91S" customClass="HoursRecordedScreenViewController" customModule="Na_at_Proto2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hoursRecordedScreen" id="aTn-7s-91S" customClass="NetworkErrors" customModule="Na_at_Proto2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7km-Ec-1Gb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pc4-hx-rSA" customClass="ContentHeaders" customModule="Na_at_Proto2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.9695440676" green="0.4596619898" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2h9-BS-YtJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzZ-cV-6MJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7855" y="-639"/>
+            <point key="canvasLocation" x="7991" y="502"/>
         </scene>
         <!--Home-->
         <scene sceneID="XMC-ag-KiE">

@@ -16,6 +16,8 @@
 		642989092750164F00871D0A /* NotificationsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642989072750164F00871D0A /* NotificationsCellTableViewCell.xib */; };
 		642BDC37273C983800464BA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 642BDC36273C983800464BA6 /* GoogleService-Info.plist */; };
 		6469772A2757CEF90006EF01 /* HoursRecordedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646977292757CEF90006EF01 /* HoursRecordedScreenViewController.swift */; };
+		646A57E4275E53B200001491 /* HeaderInternalCelllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646A57E2275E53B200001491 /* HeaderInternalCelllTableViewCell.swift */; };
+		646A57E5275E53B200001491 /* HeaderInternalCelllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646A57E3275E53B200001491 /* HeaderInternalCelllTableViewCell.xib */; };
 		647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647AC6CD2744751000EA81DB /* GenericViewController.swift */; };
 		648368B0273EBBFD00C9F570 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368AF273EBBFD00C9F570 /* ClientsViewController.swift */; };
 		648368B3273ECB7700C9F570 /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */; };
@@ -99,6 +101,8 @@
 		642989072750164F00871D0A /* NotificationsCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsCellTableViewCell.xib; sourceTree = "<group>"; };
 		642BDC36273C983800464BA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		646977292757CEF90006EF01 /* HoursRecordedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursRecordedScreenViewController.swift; sourceTree = "<group>"; };
+		646A57E2275E53B200001491 /* HeaderInternalCelllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInternalCelllTableViewCell.swift; sourceTree = "<group>"; };
+		646A57E3275E53B200001491 /* HeaderInternalCelllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderInternalCelllTableViewCell.xib; sourceTree = "<group>"; };
 		647AC6CD2744751000EA81DB /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
 		648368AF273EBBFD00C9F570 /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
 		648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 				640DBD3E275934FB00DCA3C6 /* ActivityRecordViewCell.xib */,
 				64F1A15B275A5FDA0078D1F4 /* ErrorsViewController.swift */,
 				6419F7A7275AD11100A938BF /* HeaderActivityRecordViewCell.swift */,
+				646A57E2275E53B200001491 /* HeaderInternalCelllTableViewCell.swift */,
+				646A57E3275E53B200001491 /* HeaderInternalCelllTableViewCell.xib */,
 			);
 			path = SwiftCell;
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 			files = (
 				6419F7AA275AD11100A938BF /* HeaderActivityRecordViewCell.xib in Resources */,
 				64A2A133273DE58E00002EE1 /* ProximaNova_Regular.ttf in Resources */,
+				646A57E5275E53B200001491 /* HeaderInternalCelllTableViewCell.xib in Resources */,
 				642BDC37273C983800464BA6 /* GoogleService-Info.plist in Resources */,
 				64A2A135273DE58E00002EE1 /* NunitoSemibold.ttf in Resources */,
 				64A591E82745794500A4513D /* HeaderTableViewCell.xib in Resources */,
@@ -660,6 +667,7 @@
 				64F1A15D275A5FDA0078D1F4 /* ErrorsViewController.swift in Sources */,
 				647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */,
 				648B9174274DA12700CD65C4 /* SecondHeaderView.swift in Sources */,
+				646A57E4275E53B200001491 /* HeaderInternalCelllTableViewCell.swift in Sources */,
 				64AAE669273C3B3D00619D19 /* ActyvityViewController.swift in Sources */,
 				648368B0273EBBFD00C9F570 /* ClientsViewController.swift in Sources */,
 				648368B3273ECB7700C9F570 /* ProjectsTableViewCell.swift in Sources */,
