@@ -25,7 +25,6 @@ class ContentHeaders: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        //setupImageView()
     }
        
     
@@ -69,8 +68,8 @@ class ContentHeaders: UIView {
           UIColor(red:1, green:0.27, blue:0.52, alpha:1).cgColor
         ]
         gradient.locations = [0, 1]
-        gradient.startPoint = CGPoint(x: 0, y: -0.11)
-        gradient.endPoint = CGPoint(x: 0.99, y: 1.11)
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 1, y: 0)
         layer.layer.addSublayer(gradient)
         
         let rectShape = CAShapeLayer()

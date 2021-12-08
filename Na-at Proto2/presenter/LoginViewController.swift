@@ -21,12 +21,6 @@ class LoginViewController: GenericViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIFont.familyNames.sorted().forEach { fontFamily in
-        print("Family: \(fontFamily)")
-            UIFont.fontNames(forFamilyName: fontFamily).forEach { fontName in
-        print("name: \(fontName)")
-            }
-          }
         if NetworkMonitor.shared.isConnected{
             if GIDSignIn.sharedInstance.hasPreviousSignIn() {
                 self.performSegue(withIdentifier: "goNews", sender: nil)
@@ -60,11 +54,6 @@ class LoginViewController: GenericViewController {
             
             if email!.contains("@na-at.com.mx"){
                 self.performSegue(withIdentifier: "goNews", sender: nil)
-              /*  GlobalParameters.shared.nameUser = user.profile?.name ?? "No name"
-                GlobalParameters.shared.urlProfile = user.profile!.imageURL(withDimension: 40)!
-                print(GlobalParameters.shared.nameUser)
-                self.userName = user.profile?.name ?? "No name"
-                self.urlProfile = user.profile!.imageURL(withDimension: 40)!*/
                 UserDefaults.standard.setValue("\(user.profile!.name)", forKey: GlobalParameters.shared.keyUserName)
                 UserDefaults.standard.set(user.profile!.imageURL(withDimension: 40)!, forKey: GlobalParameters.shared.keyUserProfile)
                 print( UserDefaults.standard.setValue("\(user.profile!.name)", forKey: GlobalParameters.shared.keyUserName))
@@ -105,7 +94,7 @@ class LoginViewController: GenericViewController {
         lbContent.numberOfLines = 4
         lbContent.text = "El acceso a la aplicación solo esta disponible para talento NAAT Ingresa con tu correo @na-at.com.mx"
         lbContent.font = UIFont.init(name: "Nunito-SemiBold", size: 15)
-        
+         
         //card content
         card.addSubview(imgViewLogo)
         card.addSubview(lbContent)

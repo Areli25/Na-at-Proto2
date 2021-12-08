@@ -136,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ho-mW-PUI">
-                                <rect key="frame" x="16" y="218" width="382" height="595"/>
+                                <rect key="frame" x="16" y="247" width="382" height="566"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QH-e0-KJ0" customClass="ContentHeaders" customModule="Na_at_Proto2" customModuleProvider="target">
@@ -146,19 +146,31 @@
                                     <constraint firstAttribute="height" constant="140" id="Vaw-61-6F6"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-ac-lrV">
-                                <rect key="frame" x="0.0" y="155" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eiu-yh-VO1" customClass="HeaderLastDayRecordView" customModule="Na_at_Proto2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="125" width="414" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="gtL-Qk-leN"/>
+                                    <constraint firstAttribute="width" constant="414" id="swa-3L-IKK"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-ac-lrV">
+                                <rect key="frame" x="0.0" y="193" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MjT-hg-aa6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Eiu-yh-VO1" firstAttribute="leading" secondItem="ElY-ac-lrV" secondAttribute="leading" id="K9c-Yb-vim"/>
                             <constraint firstItem="MjT-hg-aa6" firstAttribute="trailing" secondItem="5ho-mW-PUI" secondAttribute="trailing" constant="16" id="Nv8-ZT-tLz"/>
+                            <constraint firstItem="Eiu-yh-VO1" firstAttribute="trailing" secondItem="ElY-ac-lrV" secondAttribute="trailing" id="QpY-t7-WBm"/>
                             <constraint firstItem="6QH-e0-KJ0" firstAttribute="top" secondItem="skg-cF-Ern" secondAttribute="top" id="RlZ-KM-58P"/>
-                            <constraint firstItem="5ho-mW-PUI" firstAttribute="top" secondItem="6QH-e0-KJ0" secondAttribute="bottom" constant="78" id="agT-OF-Vtv"/>
+                            <constraint firstItem="ElY-ac-lrV" firstAttribute="top" secondItem="Eiu-yh-VO1" secondAttribute="bottom" constant="12" id="VwO-5p-bId"/>
+                            <constraint firstItem="5ho-mW-PUI" firstAttribute="top" secondItem="ElY-ac-lrV" secondAttribute="bottom" constant="3" id="bUD-EE-eiF"/>
                             <constraint firstAttribute="bottom" secondItem="6QH-e0-KJ0" secondAttribute="bottom" constant="756" id="baw-Oe-fIc"/>
+                            <constraint firstItem="Eiu-yh-VO1" firstAttribute="top" secondItem="6QH-e0-KJ0" secondAttribute="bottom" constant="-15" id="fBT-ZZ-oqP"/>
+                            <constraint firstItem="Eiu-yh-VO1" firstAttribute="leading" secondItem="6QH-e0-KJ0" secondAttribute="leading" id="g52-19-8As"/>
                             <constraint firstItem="6QH-e0-KJ0" firstAttribute="leading" secondItem="MjT-hg-aa6" secondAttribute="leading" id="iHO-eH-FMC"/>
                             <constraint firstItem="5ho-mW-PUI" firstAttribute="bottom" secondItem="MjT-hg-aa6" secondAttribute="bottom" id="oUB-j7-V9k"/>
                             <constraint firstItem="5ho-mW-PUI" firstAttribute="leading" secondItem="MjT-hg-aa6" secondAttribute="leading" constant="16" id="uJW-yg-rZM"/>
@@ -170,6 +182,7 @@
                     <connections>
                         <outlet property="searchBarNews" destination="ElY-ac-lrV" id="Ori-vQ-LDv"/>
                         <outlet property="tableNews" destination="5ho-mW-PUI" id="Rl3-GW-JoN"/>
+                        <outlet property="viewDaysRecord" destination="Eiu-yh-VO1" id="W7g-Ca-3M9"/>
                         <outlet property="viewHeader" destination="6QH-e0-KJ0" id="scj-Zm-qKS"/>
                         <segue destination="q29-7H-rq1" kind="show" identifier="showDetail" id="MAK-TM-pii"/>
                     </connections>
@@ -873,7 +886,7 @@
         <image name="google" width="22" height="22"/>
         <image name="home" width="22" height="22"/>
         <image name="login" width="328" height="313"/>
-        <image name="naat" width="131" height="16"/>
+        <image name="naat" width="224" height="27"/>
         <image name="notificaciones" width="22" height="22"/>
         <namedColor name="Salmon">
             <color red="1" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -901,6 +914,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

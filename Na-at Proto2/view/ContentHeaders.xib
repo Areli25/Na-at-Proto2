@@ -36,13 +36,6 @@
                         <constraint firstAttribute="height" constant="21" id="t6z-6Y-edJ"/>
                     </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mujer" translatesAutoresizingMaskIntoConstraints="NO" id="Bhs-ty-ukh">
-                    <rect key="frame" x="326" y="56" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="Cw1-sS-26E"/>
-                        <constraint firstAttribute="height" constant="50" id="zxI-dv-7uL"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola ! Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sM-iH-Z1R">
                     <rect key="frame" x="16" y="60" width="310" height="26.5"/>
                     <constraints>
@@ -79,24 +72,29 @@
                         <action selector="signOut:" destination="-1" eventType="touchUpInside" id="zRs-6v-A8h"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mujer" translatesAutoresizingMaskIntoConstraints="NO" id="Bhs-ty-ukh">
+                    <rect key="frame" x="352" y="60" width="46" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="9BA-rH-tnT"/>
+                        <constraint firstAttribute="height" constant="46" id="Ili-wT-Wd3"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
                 <constraint firstItem="1sM-iH-Z1R" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="ApV-Gp-Rzd"/>
                 <constraint firstItem="aZR-zY-OuW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="42" id="Ax5-u4-eyV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Bhs-ty-ukh" secondAttribute="trailing" constant="16" id="HOd-9a-4XK"/>
                 <constraint firstItem="fTK-KG-i2I" firstAttribute="top" secondItem="1sM-iH-Z1R" secondAttribute="bottom" constant="6.5" id="J2C-Xh-txZ"/>
                 <constraint firstItem="PoD-ni-jcF" firstAttribute="top" secondItem="fTK-KG-i2I" secondAttribute="bottom" constant="5" id="LlC-y3-X3X"/>
                 <constraint firstItem="PoD-ni-jcF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Qjs-cN-sx6"/>
-                <constraint firstItem="Bhs-ty-ukh" firstAttribute="leading" secondItem="1sM-iH-Z1R" secondAttribute="trailing" id="TTW-rm-dNT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Bhs-ty-ukh" secondAttribute="trailing" constant="38" id="aWr-OT-nMI"/>
-                <constraint firstItem="Bhs-ty-ukh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="326" id="eMQ-VE-euQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Bhs-ty-ukh" secondAttribute="bottom" constant="34" id="UrR-sl-zaL"/>
                 <constraint firstItem="aZR-zY-OuW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ndq-dA-xeX"/>
                 <constraint firstItem="1sM-iH-Z1R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="qtC-RW-pxX"/>
                 <constraint firstItem="fTK-KG-i2I" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="s6z-kg-TRP"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Bhs-ty-ukh" secondAttribute="bottom" constant="34" id="wL4-Qx-l2S"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-75" y="260"/>
+            <point key="canvasLocation" x="-75.362318840579718" y="259.82142857142856"/>
         </view>
     </objects>
     <resources>

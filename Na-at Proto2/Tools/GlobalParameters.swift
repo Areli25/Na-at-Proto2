@@ -20,7 +20,6 @@ class GlobalParameters: NSObject {
    
     static let shared = GlobalParameters()
     var listProjects: ActivityHourShow?
-    //GlobalPArameters.shared.variable
 }
 
 final class NetworkMonitor{

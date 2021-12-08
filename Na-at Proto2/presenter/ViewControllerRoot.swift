@@ -12,6 +12,7 @@ import UIKit
 class ViewControllerRoot: GenericViewController, CustomCell{
     
     @IBOutlet weak var viewHeader: ContentHeaders!
+    @IBOutlet weak var viewDaysRecord: HeaderLastDayRecordView!
     @IBOutlet weak var tableNews: UITableView!
     @IBOutlet weak var searchBarNews: UISearchBar!
     private var newsData: NewsData?
@@ -23,7 +24,6 @@ class ViewControllerRoot: GenericViewController, CustomCell{
     override func viewDidLoad() {
         super.viewDidLoad()
         //name.constant = 190
-        
         self.viewHeader.goBack.isHidden = true
         tableNews.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
         

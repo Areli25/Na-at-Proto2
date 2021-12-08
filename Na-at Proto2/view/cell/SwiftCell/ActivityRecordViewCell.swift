@@ -43,8 +43,6 @@ extension ActivityRecordViewCell:UITableViewDataSource{
         return headerCell
     }
     
-    //cell
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordActivityList.count
     }

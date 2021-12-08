@@ -67,6 +67,7 @@ extension ActivityViewController:UITableViewDataSource{
         let cell = self.tableRecordActivity.dequeueReusableCell(withIdentifier: "ActivityRecordViewCell", for: indexPath) as! ActivityRecordViewCell
         
         cell.recordActivityList = responseRecordList!
+        
         return cell
     }
 }

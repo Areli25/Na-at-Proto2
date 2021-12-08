@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoRegular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="NunitoSemibold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderLastDayRecordView" customModule="Na_at_Proto2" customModuleProvider="target">
+            <connections>
+                <outlet property="btnRecorHours" destination="XFT-C2-3fS" id="e7p-XK-MB4"/>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="sj4-VZ-VLs"/>
+                <outlet property="labelDaysSinceLastRecord" destination="HOH-g7-85X" id="dbk-e3-yjt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="advertencia" translatesAutoresizingMaskIntoConstraints="NO" id="BCQ-gN-qub">
+                    <rect key="frame" x="16" y="27" width="22" height="22"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tienes 3 días sin reportar tus actividades" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOH-g7-85X">
+                    <rect key="frame" x="44" y="18" width="202" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="202" id="HFm-kd-9x7"/>
+                        <constraint firstAttribute="height" constant="40" id="St7-3O-Sfd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFT-C2-3fS">
+                    <rect key="frame" x="280" y="18" width="119" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="119" id="Gkr-R1-W80"/>
+                        <constraint firstAttribute="height" constant="40" id="rLm-9P-wNe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="14"/>
+                    <state key="normal" title="+ Registrar horas">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="HOH-g7-85X" firstAttribute="centerY" secondItem="BCQ-gN-qub" secondAttribute="centerY" id="4XZ-CA-Rqu"/>
+                <constraint firstItem="HOH-g7-85X" firstAttribute="leading" secondItem="BCQ-gN-qub" secondAttribute="trailing" constant="6" id="DW8-sE-dxW"/>
+                <constraint firstItem="XFT-C2-3fS" firstAttribute="centerY" secondItem="HOH-g7-85X" secondAttribute="centerY" id="E1e-ar-Bdb"/>
+                <constraint firstAttribute="trailing" secondItem="XFT-C2-3fS" secondAttribute="trailing" constant="15" id="K9x-10-oEb"/>
+                <constraint firstItem="BCQ-gN-qub" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="O9D-iy-05w"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XFT-C2-3fS" secondAttribute="bottom" constant="13" id="a7S-Xb-Rmy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="374.66517857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="advertencia" width="22" height="22"/>
+    </resources>
+</document>
