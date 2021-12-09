@@ -19,6 +19,7 @@ class GenericViewController: UIViewController, SignOutProtocol {
     let first_gradient = UIColor(red: 255.0/255.0, green: 131.0/255.0, blue: 85.0/255.0, alpha: 1.0)
     let green_notifications = UIColor(red: 40.0/255.0, green: 177.0/255.0, blue: 155.0/255.0, alpha: 1.0)
     let notifications_color = UIColor(red: 255.0/255.0, green: 131.0/255.0, blue: 85.0/255.0, alpha: 1.0)
+    let child = SpinnerViewController()
     
     func getProject(_ idProject: String) -> Int {
             var index = 0
@@ -49,6 +50,22 @@ class GenericViewController: UIViewController, SignOutProtocol {
             if vc.isKind(of: ViewController.self) {
                 self.navigationController?.popToViewController(vc, animated: true)
             }
+        }
+    }
+    func createSpinnerView() {
+        // add the spinner view controller
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+
+    }
+    
+    func hideActivity() {
+        DispatchQueue.main.async {
+            self.child.willMove(toParent: nil)
+            self.child.view.removeFromSuperview()
+            self.child.removeFromParent()
         }
     }
     

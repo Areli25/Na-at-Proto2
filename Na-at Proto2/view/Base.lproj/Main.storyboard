@@ -374,18 +374,18 @@
             <objects>
                 <viewController id="ihk-dI-2Ic" customClass="ActivityViewController" customModule="Na_at_Proto2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sFa-eB-CKO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYL-pA-Rs6" customClass="ContentHeaders" customModule="Na_at_Proto2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
                                 <color key="backgroundColor" red="0.9695440676" green="0.4596619898" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="kTJ-7E-ASE"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5E-Xc-3CC">
-                                <rect key="frame" x="20" y="187" width="374" height="45"/>
+                                <rect key="frame" x="20" y="182" width="374" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="3iO-xO-1sm"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="iE6-kX-8OH"/>
@@ -399,7 +399,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p01-UD-XUb">
-                                <rect key="frame" x="16" y="248" width="382" height="539"/>
+                                <rect key="frame" x="16" y="243" width="382" height="539"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="539" id="8M9-Il-Yxv"/>
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elF-sl-jHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3689.8550724637685" y="-632.14285714285711"/>
+            <point key="canvasLocation" x="3820" y="-632"/>
         </scene>
         <!--Main Tab View Controller-->
         <scene sceneID="yhL-kZ-G3T">
@@ -713,7 +713,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xV-Od-qcB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6192.753623188406" y="-632.14285714285711"/>
+            <point key="canvasLocation" x="6070" y="-632"/>
         </scene>
         <!--Resume Activity View Controller-->
         <scene sceneID="AD4-ja-9CB">
@@ -760,6 +760,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerHours:" destination="EmE-py-scY" eventType="touchUpInside" id="Xkd-GW-NL7"/>
+                                    <segue destination="ihk-dI-2Ic" kind="show" identifier="doRegister" id="ce1-js-FlM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     Horas trabajadas en el dia: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shu-1k-UNq">
@@ -827,7 +828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZl-3T-kWH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7019" y="-632"/>
+            <point key="canvasLocation" x="6774" y="-650"/>
         </scene>
         <!--Network Errors-->
         <scene sceneID="QhJ-bo-Ylq">
@@ -842,7 +843,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzZ-cV-6MJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7991" y="502"/>
+            <point key="canvasLocation" x="5780" y="443"/>
         </scene>
         <!--Home-->
         <scene sceneID="XMC-ag-KiE">
@@ -883,6 +884,9 @@
             <point key="canvasLocation" x="2779.7101449275365" y="-632.14285714285711"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ce1-js-FlM"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="actividad" width="22" height="22"/>
         <image name="buscar" width="22" height="22"/>

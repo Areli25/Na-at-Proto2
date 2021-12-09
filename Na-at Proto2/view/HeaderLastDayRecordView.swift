@@ -12,17 +12,17 @@ class HeaderLastDayRecordView: UIView {
     @IBOutlet weak var labelDaysSinceLastRecord: UILabel!
     @IBOutlet weak var btnRecorHours: UIButton!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
-       
     }
+    
     func setupButtonRegister(){
         btnRecorHours.layer.borderWidth = 1.0
         btnRecorHours.layer.borderColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
@@ -40,8 +40,8 @@ class HeaderLastDayRecordView: UIView {
         let gradient = CAGradientLayer()
         gradient.frame = contentView.frame
         gradient.colors = [
-          UIColor(red:1, green:0.51, blue:0.33, alpha:1).cgColor,
-          UIColor(red:1, green:0.27, blue:0.52, alpha:1).cgColor
+            UIColor(red:1, green:0.51, blue:0.33, alpha:1).cgColor,
+            UIColor(red:1, green:0.27, blue:0.52, alpha:1).cgColor
         ]
         gradient.locations = [0, 1]
         gradient.startPoint = CGPoint(x: 0, y: 0)
@@ -52,7 +52,7 @@ class HeaderLastDayRecordView: UIView {
         rectShape.bounds = contentView.frame
         rectShape.position = contentView.center
         rectShape.path = UIBezierPath(roundedRect: contentView.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 15, height: 15)).cgPath
-
+        
         layer.layer.mask = rectShape
         
         self.contentView.addSubview(layer)

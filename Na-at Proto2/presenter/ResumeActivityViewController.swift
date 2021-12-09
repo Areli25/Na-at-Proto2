@@ -133,11 +133,10 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     }
    
     @IBAction func registerHours(_ sender: Any) {
-        for (index, element) in GlobalParameters.shared.listProjects!.client.project.enumerated() {
+        GlobalParameters.shared.listProjects?.client.project.forEach{ it in
             listSuccess.append(false)
         }
-        
-        for (index, element) in GlobalParameters.shared.listProjects!.client.project.enumerated() {
+        for (index, _) in GlobalParameters.shared.listProjects!.client.project.enumerated() {
             registerRecordActivity(index: index, isSuccess: listSuccess[index])
         }
     }

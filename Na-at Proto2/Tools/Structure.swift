@@ -71,6 +71,9 @@ struct Activity:Encodable{
     var name: String
     var duration: Int
 }
+
+//response
+
 struct ActivitiesRecord:Encodable{
     var id:String
     var duration:Int

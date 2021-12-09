@@ -36,8 +36,12 @@ class ViewControllerRoot: GenericViewController, CustomCell{
         
         getAllNews()
     }
+    func setupHederDays(){
+        
+    }
     
     func getAllNews(){
+        self.createSpinnerView()
         Service.shared.getListNews(completion: { [self]
             res in
             switch res {
@@ -51,12 +55,34 @@ class ViewControllerRoot: GenericViewController, CustomCell{
                     }
                     self.filterNewsList = newsList
                     self.tableNews.reloadData()
+                    self.hideActivity()
                 }
                 
             case .failure(let err):
-                    print("Error en la petición: ", err)
-                        newsList.removeAll()
-                        tableNews.reloadData()
+                print("Error en la petición: ", err)
+                newsList.removeAll()
+                tableNews.reloadData()
+            }
+        })
+    }
+    
+    func getDaysSinceLastRecord(){
+        Service.shared.getDaysSinceLastRecord(completion: {[self]
+            
+            res in
+            switch res {
+            case .success(let decodedData):
+                print(decodedData)
+                
+                DispatchQueue.main.async {
+                    setupHederDays()
+                    self.hideActivity()
+                }
+                
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.hideActivity()
+                }
             }
         })
     }
@@ -70,7 +96,7 @@ extension ViewControllerRoot:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableNews.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
-               
+        
         let thisActivity:ObjetData!
         
         thisActivity = filterNewsList[indexPath.row]
@@ -86,7 +112,7 @@ extension ViewControllerRoot:UITableViewDataSource{
     
     func goNewsDetail(id: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let newsViewController = storyboard.instantiateViewController(withIdentifier: "NewsDetailViewController") as! NewsDetailViewController
+        let newsViewController = storyboard.instantiateViewController(withIdentifier: "NewsDetailViewController") as! NewsDetailViewController
         newsViewController.idNewsDetail = id
         newsViewController.getNewsDetail()
         self.navigationController?.pushViewController(newsViewController, animated: true)
@@ -96,7 +122,7 @@ extension ViewControllerRoot:UITableViewDataSource{
 extension ViewControllerRoot:UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-     filterNewsList = []
+        filterNewsList = []
         
         if searchText == "" {
             filterNewsList = newsList

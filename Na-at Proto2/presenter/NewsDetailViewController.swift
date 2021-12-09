@@ -24,6 +24,7 @@ class NewsDetailViewController: GenericViewController,HeaderProtocol{
         headerView.delegateSesion = self
     }
     func getNewsDetail(){
+        self.createSpinnerView()
         Service.shared.getDetailNews(id: idNewsDetail, completion: {[self]
             res in
             switch res {
@@ -37,8 +38,10 @@ class NewsDetailViewController: GenericViewController,HeaderProtocol{
                     labeBodyNews.text = newsDetail?.body
                     ivImageNews.downloaded(from: newsDetail?.image ?? "")
                 }
+                self.hideActivity()
                 
             case .failure(let err):
+                self.hideActivity()
                     print("Error en la petición: ", err)
             }
         })
