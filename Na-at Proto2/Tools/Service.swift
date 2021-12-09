@@ -225,11 +225,7 @@ class Service: NSObject {
             return
         }
         
-        print(String(data: newActivityJson, encoding: .utf8) ?? "")
-        
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        
         urlRequest.httpBody = newActivityJson
         
         URLSession.shared.dataTask(with: urlRequest, completionHandler: {
@@ -243,8 +239,6 @@ class Service: NSObject {
             guard let data = data else {
                 return
             }
-            print(String(data: data, encoding: .utf8)!)
-            
             
             DispatchQueue.main.async {
                 do {
@@ -259,6 +253,54 @@ class Service: NSObject {
                 }
             }
         }).resume()
+    }
+    
+    func getDaysSinceLastRecord(completion: @escaping(Result<[ResponseRecord], Error>) -> ()) {
+        
+        guard let url = URL(string: "http://3.238.21.227:8080/activity-records") else {
+            return
+        }
+        
+        let urlSession = URLSession.shared.dataTask(with: url, completionHandler:{
+            data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                
+                if let days = httpResponse.allHeaderFields["days-since-last-record"]{
+                    if let daysString = days as? String, let daysRecord = Int(daysString){
+                        GlobalParameters.shared.daysSinceLastRecord = daysRecord
+                        print(daysRecord)
+                    }
+                }
+            }
+            
+            //Nos aseguramos que no exista algún error de lo contrario retornar.
+            if let error = error {
+                print("Error: ", error)
+                return
+            }
+            
+            //Si se pudo almacenar la informacion la guardamos, en caso contrario retornar
+            guard let data = data else {
+                return
+            }
+            
+            print(String(data: data, encoding: .utf8) ?? "")
+            
+            //Ahora decodificar los Datos, sabemos que vienen en un formato Json así que podemos usar el decodificador  JSONDecoder
+            
+            do {
+                let decodedData = try JSONDecoder().decode([ResponseRecord].self, from: data)
+                completion(.success(decodedData))
+            }
+            catch {
+                //Muestro mensaje de error en caso de un error de decodificacion
+                print("Error en la descarga. ", error)
+                completion(.failure(error))
+            }
+        })
+        
+        urlSession.resume()
     }
 }
 

@@ -17,7 +17,8 @@ class GlobalParameters: NSObject {
     let keyUserName = "USERNEME_KEY"
     let keyUserProfile = "USERPROFILE_KEY"
     
-   
+    var daysSinceLastRecord = 0
+    
     static let shared = GlobalParameters()
     var listProjects: ActivityHourShow?
 }
