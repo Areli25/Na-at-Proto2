@@ -75,6 +75,7 @@ struct Activity:Encodable{
 //response
 
 struct ActivitiesRecord:Encodable{
+    var idProject:String
     var id:String
     var duration:Int
 }

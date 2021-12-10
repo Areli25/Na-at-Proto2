@@ -423,7 +423,7 @@
                     <connections>
                         <outlet property="btnRegisterHours" destination="G5E-Xc-3CC" id="RpR-Uy-k1Y"/>
                         <outlet property="headerView" destination="LYL-pA-Rs6" id="uE8-MT-e7F"/>
-                        <outlet property="tableRecordActivity" destination="p01-UD-XUb" id="LmB-vM-Fjb"/>
+                        <outlet property="tableRecordActivity" destination="p01-UD-XUb" id="QgX-bm-fc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elF-sl-jHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -893,7 +893,7 @@
         <image name="google" width="22" height="22"/>
         <image name="home" width="22" height="22"/>
         <image name="login" width="328" height="313"/>
-        <image name="naat" width="224" height="27"/>
+        <image name="naat" width="131" height="16"/>
         <image name="notificaciones" width="22" height="22"/>
         <namedColor name="Salmon">
             <color red="1" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

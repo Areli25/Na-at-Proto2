@@ -30,6 +30,7 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     var vcFinalScreen: ActivityViewController?
     var responseCrateActivity:[ResponseRecord] = []
     var contador = 0
+    var isRegisterSuccess:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,65 +81,35 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
         }
     }
     
-    func registerRecordActivity(index:Int, isSuccess:Bool){
-        var idProject = GlobalParameters.shared.listProjects!.client.project[index].id
-        var listActivity:[ActivitiesRecord] = []
+    func registerRecordActivity(){
+        
+        let listActivity:[ActivitiesRecord] = []
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateInFormat = dateFormatter.string(from: NSDate() as Date)
         
-        for activity in GlobalParameters.shared.listProjects!.client.project[index].activity {
-            listActivity.append(ActivitiesRecord(id: activity.id!, duration: activity.duration))
-        }
-        
-        Service.shared.createActivityRecord(projectId: idProject, activity: listActivity, date: dateInFormat, completion: { [self]
-            res in
-            switch res {
-            case .success(let encodedData):
-                contador += 1
+        for project in GlobalParameters.shared.listProjects!.client.project {
+            for _ in project.activity {
+               // listActivity.append(ActivitiesRecord(idProject: project.id, id: activity.id!, duration: activity.duration))
                 
-                DispatchQueue.main.async {
-                    listSuccess[index] = true
-                    responseRegister()
-        
-                    for item in encodedData {
+                Service.shared.createActivityRecord(projectId: project.id, activity: listActivity, date: dateInFormat, completion: { [self]
+                    res in
+                    switch res {
+                    case .success(let encodedData):
+                        print(encodedData)
                         
-                        var newItem = ResponseRecord(project: item.project, activityRecords: item.activityRecords)
-                        responseRecordList.append(newItem)
+                    case .failure(let err):
+                        isRegisterSuccess = false
+                        print(err)
                     }
-                }
-                
-            case .failure(let err):
-                print("Error en la petición: ", err)
-                contador += 1
-                
-                DispatchQueue.main.async {
-                    listSuccess[index] = false
-                    responseRegister()
-                }
-            }
-        })
-    }
-    func responseRegister(){
-        if contador == GlobalParameters.shared.listProjects?.client.project.count{
-            for vc in self.navigationController!.viewControllers {
-                if vc.isKind(of: ActivityViewController.self)  {
-                    (vc as! ActivityViewController).responseRecordList = responseRecordList
-                    listSuccess = []
-                    (vc as! ActivityViewController).tableRecordActivity.reloadData()
-                    self.navigationController?.popToViewController(vc, animated: true)
-                }
+                })
             }
         }
     }
-   
+    
     @IBAction func registerHours(_ sender: Any) {
-        GlobalParameters.shared.listProjects?.client.project.forEach{ it in
-            listSuccess.append(false)
-        }
-        for (index, _) in GlobalParameters.shared.listProjects!.client.project.enumerated() {
-            registerRecordActivity(index: index, isSuccess: listSuccess[index])
-        }
+        registerRecordActivity()
+        performSegue(withIdentifier: "doRegister", sender: nil)
     }
     
     func modifyActivityRecord(index:Int) {

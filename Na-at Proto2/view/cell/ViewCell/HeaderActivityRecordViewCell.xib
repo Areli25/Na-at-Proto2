@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,40 +23,50 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFX-M1-MSW">
-                        <rect key="frame" x="220" y="12" width="84" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVK-Xl-bCE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ko-1w-ay5">
+                                <rect key="frame" x="220" y="11" width="84" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="GDg-g4-cZw"/>
+                                    <constraint firstAttribute="width" constant="84" id="bFH-HC-nMO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                <color key="textColor" name="gray_A6A6A6"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LW-PL-ha4">
+                                <rect key="frame" x="16" y="11" width="188" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="hk5-Vq-Ioa"/>
+                                    <constraint firstAttribute="height" constant="21" id="qod-1Q-S4m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                                <color key="textColor" name="gray_A6A6A6"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="84" id="Ayc-Ph-QQj"/>
-                            <constraint firstAttribute="height" constant="21" id="rXc-Qt-P2F"/>
+                            <constraint firstItem="9ko-1w-ay5" firstAttribute="top" secondItem="PVK-Xl-bCE" secondAttribute="top" constant="11" id="ATc-st-ibG"/>
+                            <constraint firstItem="5LW-PL-ha4" firstAttribute="leading" secondItem="PVK-Xl-bCE" secondAttribute="leading" constant="16" id="Ccs-CF-NNl"/>
+                            <constraint firstItem="9ko-1w-ay5" firstAttribute="leading" secondItem="5LW-PL-ha4" secondAttribute="trailing" constant="16" id="FkQ-e5-DmZ"/>
+                            <constraint firstAttribute="trailing" secondItem="9ko-1w-ay5" secondAttribute="trailing" constant="16" id="RSv-kl-ILG"/>
+                            <constraint firstItem="5LW-PL-ha4" firstAttribute="top" secondItem="PVK-Xl-bCE" secondAttribute="top" constant="11" id="Yfm-Ar-yMd"/>
+                            <constraint firstAttribute="bottom" secondItem="9ko-1w-ay5" secondAttribute="bottom" constant="12" id="htR-hO-7yD"/>
+                            <constraint firstAttribute="bottom" secondItem="5LW-PL-ha4" secondAttribute="bottom" constant="12" id="nn0-Em-gr9"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
-                        <color key="textColor" name="gray_A6A6A6"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1J-QX-xaU">
-                        <rect key="frame" x="16" y="12" width="188" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="1qC-uS-JrX"/>
-                            <constraint firstAttribute="width" constant="188" id="XqJ-zg-tiS"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
-                        <color key="textColor" name="gray_A6A6A6"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="CFX-M1-MSW" secondAttribute="trailing" constant="16" id="5RK-qJ-WAR"/>
-                    <constraint firstItem="o1J-QX-xaU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="WF6-2a-mnE"/>
-                    <constraint firstItem="CFX-M1-MSW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="h9M-M0-Eeo"/>
-                    <constraint firstItem="CFX-M1-MSW" firstAttribute="leading" secondItem="o1J-QX-xaU" secondAttribute="trailing" constant="16" id="hxq-1i-99o"/>
-                    <constraint firstItem="o1J-QX-xaU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="oOh-SC-wbM"/>
+                    <constraint firstItem="PVK-Xl-bCE" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="Soh-xj-glG"/>
+                    <constraint firstItem="PVK-Xl-bCE" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="bV2-5D-G9F"/>
+                    <constraint firstItem="PVK-Xl-bCE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="jyE-pX-Nls"/>
+                    <constraint firstItem="PVK-Xl-bCE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tIb-D8-4f7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="labelDate" destination="o1J-QX-xaU" id="DgU-QU-Xff"/>
-                <outlet property="labeltotalHours" destination="CFX-M1-MSW" id="0W4-vP-Cea"/>
-            </connections>
             <point key="canvasLocation" x="63.768115942028992" y="89.732142857142847"/>
         </tableViewCell>
     </objects>
@@ -63,5 +74,8 @@
         <namedColor name="gray_A6A6A6">
             <color red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
