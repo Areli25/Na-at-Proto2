@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,65 +16,54 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HeaderActivityRecordViewCell" customModule="Na_at_Proto2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVK-Xl-bCE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ko-1w-ay5">
-                                <rect key="frame" x="220" y="11" width="84" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="GDg-g4-cZw"/>
-                                    <constraint firstAttribute="width" constant="84" id="bFH-HC-nMO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
-                                <color key="textColor" name="gray_A6A6A6"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LW-PL-ha4">
-                                <rect key="frame" x="16" y="11" width="188" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="hk5-Vq-Ioa"/>
-                                    <constraint firstAttribute="height" constant="21" id="qod-1Q-S4m"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
-                                <color key="textColor" name="gray_A6A6A6"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LW-PL-ha4">
+                        <rect key="frame" x="16" y="2" width="185" height="20"/>
                         <constraints>
-                            <constraint firstItem="9ko-1w-ay5" firstAttribute="top" secondItem="PVK-Xl-bCE" secondAttribute="top" constant="11" id="ATc-st-ibG"/>
-                            <constraint firstItem="5LW-PL-ha4" firstAttribute="leading" secondItem="PVK-Xl-bCE" secondAttribute="leading" constant="16" id="Ccs-CF-NNl"/>
-                            <constraint firstItem="9ko-1w-ay5" firstAttribute="leading" secondItem="5LW-PL-ha4" secondAttribute="trailing" constant="16" id="FkQ-e5-DmZ"/>
-                            <constraint firstAttribute="trailing" secondItem="9ko-1w-ay5" secondAttribute="trailing" constant="16" id="RSv-kl-ILG"/>
-                            <constraint firstItem="5LW-PL-ha4" firstAttribute="top" secondItem="PVK-Xl-bCE" secondAttribute="top" constant="11" id="Yfm-Ar-yMd"/>
-                            <constraint firstAttribute="bottom" secondItem="9ko-1w-ay5" secondAttribute="bottom" constant="12" id="htR-hO-7yD"/>
-                            <constraint firstAttribute="bottom" secondItem="5LW-PL-ha4" secondAttribute="bottom" constant="12" id="nn0-Em-gr9"/>
+                            <constraint firstAttribute="width" constant="185" id="IeV-EU-eeI"/>
+                            <constraint firstAttribute="height" constant="20" id="Zi5-CZ-Pbk"/>
                         </constraints>
-                    </view>
+                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                        <color key="textColor" name="gray_A6A6A6"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ko-1w-ay5">
+                        <rect key="frame" x="220" y="2" width="84" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Jtb-8J-mAB"/>
+                            <constraint firstAttribute="width" constant="84" id="wsn-lo-ZIc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                        <color key="textColor" name="gray_A6A6A6"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="PVK-Xl-bCE" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="Soh-xj-glG"/>
-                    <constraint firstItem="PVK-Xl-bCE" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="bV2-5D-G9F"/>
-                    <constraint firstItem="PVK-Xl-bCE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="jyE-pX-Nls"/>
-                    <constraint firstItem="PVK-Xl-bCE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tIb-D8-4f7"/>
+                    <constraint firstItem="9ko-1w-ay5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="10L-Is-Ms3"/>
+                    <constraint firstItem="9ko-1w-ay5" firstAttribute="leading" secondItem="5LW-PL-ha4" secondAttribute="trailing" constant="19" id="MmZ-Ki-0I5"/>
+                    <constraint firstItem="5LW-PL-ha4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RZo-XF-c4p"/>
+                    <constraint firstAttribute="bottom" secondItem="5LW-PL-ha4" secondAttribute="bottom" constant="2" id="UYb-Nv-fkn"/>
+                    <constraint firstAttribute="bottom" secondItem="9ko-1w-ay5" secondAttribute="bottom" constant="42" id="kli-H9-6wc"/>
+                    <constraint firstAttribute="trailing" secondItem="9ko-1w-ay5" secondAttribute="trailing" constant="16" id="vBx-BU-eiv"/>
+                    <constraint firstItem="5LW-PL-ha4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="zfz-6Y-afb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="63.768115942028992" y="89.732142857142847"/>
+            <connections>
+                <outlet property="labelDate" destination="5LW-PL-ha4" id="cRk-ST-JOX"/>
+                <outlet property="labeltotalHours" destination="9ko-1w-ay5" id="x87-aT-CVH"/>
+            </connections>
+            <point key="canvasLocation" x="63.768115942028992" y="89.397321428571431"/>
         </tableViewCell>
     </objects>
     <resources>
         <namedColor name="gray_A6A6A6">
             <color red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

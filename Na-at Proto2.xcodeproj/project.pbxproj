@@ -18,6 +18,10 @@
 		6469772A2757CEF90006EF01 /* HoursRecordedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646977292757CEF90006EF01 /* HoursRecordedScreenViewController.swift */; };
 		646F019627610CEC00C54D78 /* HeaderLastDayRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646F019427610CEC00C54D78 /* HeaderLastDayRecordView.swift */; };
 		646F019727610CEC00C54D78 /* HeaderLastDayRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646F019527610CEC00C54D78 /* HeaderLastDayRecordView.xib */; };
+		646FE8502762FF2D00F53E4D /* ResumeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FE84E2762FF2D00F53E4D /* ResumeCellTableViewCell.swift */; };
+		646FE8512762FF2D00F53E4D /* ResumeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646FE84F2762FF2D00F53E4D /* ResumeCellTableViewCell.xib */; };
+		646FE854276317D900F53E4D /* HeaderResumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FE852276317D900F53E4D /* HeaderResumeTableViewCell.swift */; };
+		646FE855276317D900F53E4D /* HeaderResumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646FE853276317D900F53E4D /* HeaderResumeTableViewCell.xib */; };
 		647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647AC6CD2744751000EA81DB /* GenericViewController.swift */; };
 		648368B0273EBBFD00C9F570 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368AF273EBBFD00C9F570 /* ClientsViewController.swift */; };
 		648368B3273ECB7700C9F570 /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */; };
@@ -103,6 +107,10 @@
 		646977292757CEF90006EF01 /* HoursRecordedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursRecordedScreenViewController.swift; sourceTree = "<group>"; };
 		646F019427610CEC00C54D78 /* HeaderLastDayRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLastDayRecordView.swift; sourceTree = "<group>"; };
 		646F019527610CEC00C54D78 /* HeaderLastDayRecordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderLastDayRecordView.xib; sourceTree = "<group>"; };
+		646FE84E2762FF2D00F53E4D /* ResumeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCellTableViewCell.swift; sourceTree = "<group>"; };
+		646FE84F2762FF2D00F53E4D /* ResumeCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResumeCellTableViewCell.xib; sourceTree = "<group>"; };
+		646FE852276317D900F53E4D /* HeaderResumeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderResumeTableViewCell.swift; sourceTree = "<group>"; };
+		646FE853276317D900F53E4D /* HeaderResumeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderResumeTableViewCell.xib; sourceTree = "<group>"; };
 		647AC6CD2744751000EA81DB /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
 		648368AF273EBBFD00C9F570 /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
 		648368B1273ECB7700C9F570 /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
@@ -323,6 +331,7 @@
 		648B81362748098E00690F97 /* ViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				640DBD3E275934FB00DCA3C6 /* ActivityRecordViewCell.xib */,
 				64F1A15C275A5FDA0078D1F4 /* ErrorsViewController.xib */,
 				6419F7A8275AD11100A938BF /* HeaderActivityRecordViewCell.xib */,
 				648B9177274DB5BA00CD65C4 /* HeaderDateView.xib */,
@@ -333,6 +342,9 @@
 				648B9173274DA12700CD65C4 /* SecondHeaderView.xib */,
 				64A3B3552746CA8A001B8990 /* CellActivityResumeTableViewCell.xib */,
 				642989072750164F00871D0A /* NotificationsCellTableViewCell.xib */,
+				646FE84F2762FF2D00F53E4D /* ResumeCellTableViewCell.xib */,
+				646FE852276317D900F53E4D /* HeaderResumeTableViewCell.swift */,
+				646FE853276317D900F53E4D /* HeaderResumeTableViewCell.xib */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -349,8 +361,8 @@
 				648B9176274DB5BA00CD65C4 /* HeaderDateView.swift */,
 				642989062750164F00871D0A /* NotificationsCellTableViewCell.swift */,
 				640DBD3D275934FB00DCA3C6 /* ActivityRecordViewCell.swift */,
-				640DBD3E275934FB00DCA3C6 /* ActivityRecordViewCell.xib */,
 				64F1A15B275A5FDA0078D1F4 /* ErrorsViewController.swift */,
+				646FE84E2762FF2D00F53E4D /* ResumeCellTableViewCell.swift */,
 				6419F7A7275AD11100A938BF /* HeaderActivityRecordViewCell.swift */,
 			);
 			path = SwiftCell;
@@ -512,8 +524,10 @@
 				648705CE273AE69A00670137 /* CustomTableViewCell.xib in Resources */,
 				648B9179274DB5BA00CD65C4 /* HeaderDateView.xib in Resources */,
 				640DBD40275934FB00DCA3C6 /* ActivityRecordViewCell.xib in Resources */,
+				646FE855276317D900F53E4D /* HeaderResumeTableViewCell.xib in Resources */,
 				642989092750164F00871D0A /* NotificationsCellTableViewCell.xib in Resources */,
 				648B9175274DA12700CD65C4 /* SecondHeaderView.xib in Resources */,
+				646FE8512762FF2D00F53E4D /* ResumeCellTableViewCell.xib in Resources */,
 				6487059E273AC9FE00670137 /* Assets.xcassets in Resources */,
 				64A2A131273DE58E00002EE1 /* Europa_Bold.ttf in Resources */,
 				64F1A15E275A5FDA0078D1F4 /* ErrorsViewController.xib in Resources */,
@@ -660,10 +674,12 @@
 				640DBD3F275934FB00DCA3C6 /* ActivityRecordViewCell.swift in Sources */,
 				64A3B3592746D62D001B8990 /* GlobalParameters.swift in Sources */,
 				648368BA273EF6CF00C9F570 /* ProjectsViewController.swift in Sources */,
+				646FE8502762FF2D00F53E4D /* ResumeCellTableViewCell.swift in Sources */,
 				648705E0273B0C1D00670137 /* MainTabViewController.swift in Sources */,
 				64870599273AC9FD00670137 /* ViewController.swift in Sources */,
 				64AAE66B273C3C0200619D19 /* NotificationsViewController.swift in Sources */,
 				646F019627610CEC00C54D78 /* HeaderLastDayRecordView.swift in Sources */,
+				646FE854276317D900F53E4D /* HeaderResumeTableViewCell.swift in Sources */,
 				648705D8273AF1A500670137 /* ContentHeaders.swift in Sources */,
 				64F1A15D275A5FDA0078D1F4 /* ErrorsViewController.swift in Sources */,
 				647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */,

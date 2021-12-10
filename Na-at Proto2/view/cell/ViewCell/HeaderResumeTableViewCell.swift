@@ -1,15 +1,14 @@
 //
-//  HeaderActivityRecordViewCell.swift
+//  HeaderResumeTableViewCell.swift
 //  Na-at Proto2
 //
-//  Created by mpacheco on 03/12/21.
+//  Created by mpacheco on 09/12/21.
 //
 
 import UIKit
 
-class HeaderActivityRecordViewCell: UITableViewCell {
-    @IBOutlet weak var labelDate: UILabel!
-    @IBOutlet weak var labeltotalHours: UILabel!
+class HeaderResumeTableViewCell: UITableViewCell {
+    @IBOutlet weak var lebelProjectName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +16,5 @@ class HeaderActivityRecordViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    
 }

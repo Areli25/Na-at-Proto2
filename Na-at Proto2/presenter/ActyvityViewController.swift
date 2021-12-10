@@ -14,14 +14,14 @@ class ActivityViewController: GenericViewController {
     @IBOutlet weak var tableRecordActivity: UITableView!
     var recordActivity:Record?
     var responseRecordList:[ResponseRecord] = []
-    var heigOfHeader: CGFloat = 44
+    var heigOfHeader: CGFloat = 25
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.headerView.goBack.isHidden = true
         setupButtonRegisterHours()
         tableRecordActivity.register(UINib(nibName: "ActivityRecordViewCell", bundle: nil), forCellReuseIdentifier: "ActivityRecordViewCell")
-        tableRecordActivity.register(UINib(nibName: "HeaderActivityRecordViewCell", bundle: nil), forCellReuseIdentifier: "HeaderActivityRecordViewCell")
+        tableRecordActivity.delegate = self
         tableRecordActivity.dataSource = self
         getActivityRecordList()
     }
@@ -59,37 +59,30 @@ class ActivityViewController: GenericViewController {
     }
 }
 
-
-extension ActivityViewController:UITableViewDataSource{
-     func numberOfSections(in tableView: UITableView) -> Int {
+extension ActivityViewController:UITableViewDataSource, UITableViewDelegate{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return responseRecordList.count
     }
     
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(100)
+        return heigOfHeader
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = Bundle.main.loadNibNamed("HeaderTableViewCell", owner: self, options: nil)?.first as! HeaderTableViewCell
-        //asignacion de datos
-        //headerCell.delegateButtons = self
-        headerCell.index = section
+        let headerCell = Bundle.main.loadNibNamed("HeaderActivityRecordViewCell", owner: self, options: nil)?.first as! HeaderActivityRecordViewCell
         //asignacion de nombre del proyecto
-        headerCell.projectName.text = "Asi funciona"
-        
+        headerCell.labelDate.text = responseRecordList[section].activityRecords[0].date
+        headerCell.labeltotalHours.text = "\(responseRecordList[section].activityRecords[0].duration) hrs"
         return headerCell
-
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "😅\(responseRecordList[section].activityRecords[0].date)😅"
-    }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = self.tableRecordActivity.dequeueReusableCell(withIdentifier: "ActivityRecordViewCell", for: indexPath) as! ActivityRecordViewCell
         
         cell.recordActivityList = responseRecordList
