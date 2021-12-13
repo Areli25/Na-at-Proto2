@@ -69,6 +69,27 @@ class GenericViewController: UIViewController, SignOutProtocol {
         }
     }
     
+    func showErrorView(_ errorType:String, _ delegate : TryAgain){
+        //self.tabBarController?.tabBar.isHidden = true
+        let storyboard = UIStoryboard(name: "ErrorsView", bundle: nil)
+        let myAlert = storyboard.instantiateViewController(withIdentifier: "ErrorsView") as! ShowErrorsViewController
+        myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        myAlert.errorType = errorType
+        myAlert.delegateButtonTryAgain = delegate
+        self.present(myAlert, animated: true, completion: nil)
+        
+    }
+    
+    func checkConection(function: @escaping () -> Void){
+        if Reachability.isConnectedToNetwork(){
+            function()
+        
+        }
+        
+    }
+
+    
     public func goToBack() {
         self.navigationController?.popViewController(animated: true)
     }

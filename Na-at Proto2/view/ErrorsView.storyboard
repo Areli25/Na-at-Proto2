@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova_Regular.ttf">
+            <string>ProximaNova-Regular</string>
+        </array>
+        <array key="Proxima_Nova_Sbold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Show Errors View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ErrorsView" id="Y6W-OH-hqX" customClass="ShowErrorsViewController" customModule="Na_at_Proto2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="yfl-ZE-il3">
+                                <rect key="frame" x="-6.5" y="355" width="414" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="CUd-20-pDh"/>
+                                    <constraint firstAttribute="height" constant="128" id="hPU-wP-HNq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intentalo nuevamente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNc-Dc-SZ6">
+                                <rect key="frame" x="128.5" y="516" width="144" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="35w-2p-HGy"/>
+                                    <constraint firstAttribute="width" constant="144" id="5kN-8H-Kng"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Algo salió mal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzT-Qr-OtR">
+                                <rect key="frame" x="133" y="491" width="135" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="MAg-w7-EYY"/>
+                                    <constraint firstAttribute="width" constant="135" id="n3e-6f-0cZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqE-Jh-uuZ">
+                                <rect key="frame" x="146" y="750" width="122" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="GcI-Sj-CwE"/>
+                                    <constraint firstAttribute="width" constant="122" id="Z0S-l0-rgw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                <state key="normal" title="Volver a intentar">
+                                    <color key="titleColor" name="Salmon"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryAgain:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="08w-ug-eZF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZqE-Jh-uuZ" secondAttribute="bottom" constant="79" id="7kZ-Gr-pgb"/>
+                            <constraint firstItem="ZqE-Jh-uuZ" firstAttribute="leading" secondItem="PNc-Dc-SZ6" secondAttribute="trailing" constant="-126.5" id="9e9-zd-sZ1"/>
+                            <constraint firstItem="yzT-Qr-OtR" firstAttribute="centerX" secondItem="PNc-Dc-SZ6" secondAttribute="centerX" id="GVx-4h-Jps"/>
+                            <constraint firstItem="ZqE-Jh-uuZ" firstAttribute="top" secondItem="PNc-Dc-SZ6" secondAttribute="bottom" constant="215" id="Hv0-gt-yMi"/>
+                            <constraint firstItem="PNc-Dc-SZ6" firstAttribute="top" secondItem="yzT-Qr-OtR" secondAttribute="bottom" constant="8" symbolic="YES" id="WkU-Zk-Kxt"/>
+                            <constraint firstItem="ZqE-Jh-uuZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="146" id="b1g-jq-GSw"/>
+                            <constraint firstItem="yzT-Qr-OtR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="133" id="etX-UE-HhR"/>
+                            <constraint firstAttribute="bottom" secondItem="yzT-Qr-OtR" secondAttribute="bottom" constant="388" id="kjt-In-3ym"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZqE-Jh-uuZ" secondAttribute="trailing" constant="146" id="oNR-FO-yma"/>
+                            <constraint firstItem="yzT-Qr-OtR" firstAttribute="centerX" secondItem="yfl-ZE-il3" secondAttribute="centerX" id="sRw-SZ-Xs4"/>
+                            <constraint firstItem="yzT-Qr-OtR" firstAttribute="top" secondItem="yfl-ZE-il3" secondAttribute="bottom" constant="8" symbolic="YES" id="wft-0k-0Z9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnTryAgain" destination="ZqE-Jh-uuZ" id="SOA-Cp-oCi"/>
+                        <outlet property="ivImageError" destination="yfl-ZE-il3" id="lfy-gk-WcC"/>
+                        <outlet property="labelError" destination="yzT-Qr-OtR" id="PIa-sD-zna"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="74"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="error" width="204" height="97"/>
+        <namedColor name="Salmon">
+            <color red="1" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

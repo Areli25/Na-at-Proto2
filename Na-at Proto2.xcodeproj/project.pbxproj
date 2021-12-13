@@ -15,7 +15,8 @@
 		642989082750164F00871D0A /* NotificationsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642989062750164F00871D0A /* NotificationsCellTableViewCell.swift */; };
 		642989092750164F00871D0A /* NotificationsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642989072750164F00871D0A /* NotificationsCellTableViewCell.xib */; };
 		642BDC37273C983800464BA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 642BDC36273C983800464BA6 /* GoogleService-Info.plist */; };
-		6469772A2757CEF90006EF01 /* HoursRecordedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646977292757CEF90006EF01 /* HoursRecordedScreenViewController.swift */; };
+		646ADFC42763EB580094C9CE /* ErrorsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 646ADFC32763EB580094C9CE /* ErrorsView.storyboard */; };
+		646ADFC6276400E90094C9CE /* ShowErrorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646ADFC5276400E90094C9CE /* ShowErrorsViewController.swift */; };
 		646F019627610CEC00C54D78 /* HeaderLastDayRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646F019427610CEC00C54D78 /* HeaderLastDayRecordView.swift */; };
 		646F019727610CEC00C54D78 /* HeaderLastDayRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646F019527610CEC00C54D78 /* HeaderLastDayRecordView.xib */; };
 		646FE8502762FF2D00F53E4D /* ResumeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FE84E2762FF2D00F53E4D /* ResumeCellTableViewCell.swift */; };
@@ -68,8 +69,6 @@
 		64A591EA2745841D00A4513D /* ResumeActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A591E92745841D00A4513D /* ResumeActivityViewController.swift */; };
 		64AAE669273C3B3D00619D19 /* ActyvityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAE668273C3B3D00619D19 /* ActyvityViewController.swift */; };
 		64AAE66B273C3C0200619D19 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAE66A273C3C0200619D19 /* NotificationsViewController.swift */; };
-		64F1A15D275A5FDA0078D1F4 /* ErrorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F1A15B275A5FDA0078D1F4 /* ErrorsViewController.swift */; };
-		64F1A15E275A5FDA0078D1F4 /* ErrorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F1A15C275A5FDA0078D1F4 /* ErrorsViewController.xib */; };
 		64F1A162275A6B150078D1F4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F1A161275A6B150078D1F4 /* Tools.swift */; };
 		AF6DDF7AADD3F24A842BC51B /* Pods_Na_at_Proto2_Na_at_Proto2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39FB0A1B0DC51579181F375 /* Pods_Na_at_Proto2_Na_at_Proto2UITests.framework */; };
 		B4EC3238306B53FE85CDEEBA /* Pods_Na_at_Proto2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6978C9A1EFE695430AE6D976 /* Pods_Na_at_Proto2Tests.framework */; };
@@ -104,7 +103,8 @@
 		642989062750164F00871D0A /* NotificationsCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCellTableViewCell.swift; sourceTree = "<group>"; };
 		642989072750164F00871D0A /* NotificationsCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsCellTableViewCell.xib; sourceTree = "<group>"; };
 		642BDC36273C983800464BA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		646977292757CEF90006EF01 /* HoursRecordedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursRecordedScreenViewController.swift; sourceTree = "<group>"; };
+		646ADFC32763EB580094C9CE /* ErrorsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ErrorsView.storyboard; sourceTree = "<group>"; };
+		646ADFC5276400E90094C9CE /* ShowErrorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorsViewController.swift; sourceTree = "<group>"; };
 		646F019427610CEC00C54D78 /* HeaderLastDayRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLastDayRecordView.swift; sourceTree = "<group>"; };
 		646F019527610CEC00C54D78 /* HeaderLastDayRecordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderLastDayRecordView.xib; sourceTree = "<group>"; };
 		646FE84E2762FF2D00F53E4D /* ResumeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,8 +163,6 @@
 		64A591E92745841D00A4513D /* ResumeActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeActivityViewController.swift; sourceTree = "<group>"; };
 		64AAE668273C3B3D00619D19 /* ActyvityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActyvityViewController.swift; sourceTree = "<group>"; };
 		64AAE66A273C3C0200619D19 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		64F1A15B275A5FDA0078D1F4 /* ErrorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsViewController.swift; sourceTree = "<group>"; };
-		64F1A15C275A5FDA0078D1F4 /* ErrorsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorsViewController.xib; sourceTree = "<group>"; };
 		64F1A161275A6B150078D1F4 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		6978C9A1EFE695430AE6D976 /* Pods_Na_at_Proto2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Na_at_Proto2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A28140AA98EE758DADA9CF0 /* Pods-Na-at Proto2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Na-at Proto2.debug.xcconfig"; path = "Target Support Files/Pods-Na-at Proto2/Pods-Na-at Proto2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +269,7 @@
 				648705D7273AF1A500670137 /* ContentHeaders.swift */,
 				648705D9273AF1B300670137 /* ContentHeaders.xib */,
 				646F019427610CEC00C54D78 /* HeaderLastDayRecordView.swift */,
+				646ADFC32763EB580094C9CE /* ErrorsView.storyboard */,
 				646F019527610CEC00C54D78 /* HeaderLastDayRecordView.xib */,
 			);
 			path = view;
@@ -299,7 +298,7 @@
 				647AC6CD2744751000EA81DB /* GenericViewController.swift */,
 				64A591E92745841D00A4513D /* ResumeActivityViewController.swift */,
 				648705C5273ACA1700670137 /* model */,
-				646977292757CEF90006EF01 /* HoursRecordedScreenViewController.swift */,
+				646ADFC5276400E90094C9CE /* ShowErrorsViewController.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -332,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				640DBD3E275934FB00DCA3C6 /* ActivityRecordViewCell.xib */,
-				64F1A15C275A5FDA0078D1F4 /* ErrorsViewController.xib */,
 				6419F7A8275AD11100A938BF /* HeaderActivityRecordViewCell.xib */,
 				648B9177274DB5BA00CD65C4 /* HeaderDateView.xib */,
 				648368B6273EF5A900C9F570 /* CellActivitiesTableViewCell.xib */,
@@ -361,7 +359,6 @@
 				648B9176274DB5BA00CD65C4 /* HeaderDateView.swift */,
 				642989062750164F00871D0A /* NotificationsCellTableViewCell.swift */,
 				640DBD3D275934FB00DCA3C6 /* ActivityRecordViewCell.swift */,
-				64F1A15B275A5FDA0078D1F4 /* ErrorsViewController.swift */,
 				646FE84E2762FF2D00F53E4D /* ResumeCellTableViewCell.swift */,
 				6419F7A7275AD11100A938BF /* HeaderActivityRecordViewCell.swift */,
 			);
@@ -516,6 +513,7 @@
 				6419F7AA275AD11100A938BF /* HeaderActivityRecordViewCell.xib in Resources */,
 				64A2A133273DE58E00002EE1 /* ProximaNova_Regular.ttf in Resources */,
 				642BDC37273C983800464BA6 /* GoogleService-Info.plist in Resources */,
+				646ADFC42763EB580094C9CE /* ErrorsView.storyboard in Resources */,
 				64A2A135273DE58E00002EE1 /* NunitoSemibold.ttf in Resources */,
 				64A591E82745794500A4513D /* HeaderTableViewCell.xib in Resources */,
 				646F019727610CEC00C54D78 /* HeaderLastDayRecordView.xib in Resources */,
@@ -530,7 +528,6 @@
 				646FE8512762FF2D00F53E4D /* ResumeCellTableViewCell.xib in Resources */,
 				6487059E273AC9FE00670137 /* Assets.xcassets in Resources */,
 				64A2A131273DE58E00002EE1 /* Europa_Bold.ttf in Resources */,
-				64F1A15E275A5FDA0078D1F4 /* ErrorsViewController.xib in Resources */,
 				6487059C273AC9FD00670137 /* Main.storyboard in Resources */,
 				64A2A132273DE58E00002EE1 /* NunitoRegular.ttf in Resources */,
 				64A2A130273DE58E00002EE1 /* Proxima_Nova.ttf in Resources */,
@@ -669,7 +666,6 @@
 				648705DC273AFD1300670137 /* LoginViewController.swift in Sources */,
 				6419F7A9275AD11100A938BF /* HeaderActivityRecordViewCell.swift in Sources */,
 				648B9178274DB5BA00CD65C4 /* HeaderDateView.swift in Sources */,
-				6469772A2757CEF90006EF01 /* HoursRecordedScreenViewController.swift in Sources */,
 				648B8139274833EC00690F97 /* UnderlineText.swift in Sources */,
 				640DBD3F275934FB00DCA3C6 /* ActivityRecordViewCell.swift in Sources */,
 				64A3B3592746D62D001B8990 /* GlobalParameters.swift in Sources */,
@@ -681,7 +677,6 @@
 				646F019627610CEC00C54D78 /* HeaderLastDayRecordView.swift in Sources */,
 				646FE854276317D900F53E4D /* HeaderResumeTableViewCell.swift in Sources */,
 				648705D8273AF1A500670137 /* ContentHeaders.swift in Sources */,
-				64F1A15D275A5FDA0078D1F4 /* ErrorsViewController.swift in Sources */,
 				647AC6CE2744751000EA81DB /* GenericViewController.swift in Sources */,
 				648B9174274DA12700CD65C4 /* SecondHeaderView.swift in Sources */,
 				64AAE669273C3B3D00619D19 /* ActyvityViewController.swift in Sources */,
@@ -696,6 +691,7 @@
 				648705E2273B1E4D00670137 /* Service.swift in Sources */,
 				64870595273AC9FD00670137 /* AppDelegate.swift in Sources */,
 				648705E4273B2E0000670137 /* Structure.swift in Sources */,
+				646ADFC6276400E90094C9CE /* ShowErrorsViewController.swift in Sources */,
 				64F1A162275A6B150078D1F4 /* Tools.swift in Sources */,
 				64A591E72745794500A4513D /* HeaderTableViewCell.swift in Sources */,
 				648705CD273AE69A00670137 /* CustomTableViewCell.swift in Sources */,

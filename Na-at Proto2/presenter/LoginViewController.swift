@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import GoogleSignIn
 
-class LoginViewController: GenericViewController {
+class LoginViewController: GenericViewController, TryAgain {
     
     @IBOutlet weak var labelTeminos: UILabel!
     @IBOutlet weak var labelContinuar: UILabel!
@@ -21,17 +21,23 @@ class LoginViewController: GenericViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if NetworkMonitor.shared.isConnected{
-            if GIDSignIn.sharedInstance.hasPreviousSignIn() {
-                self.performSegue(withIdentifier: "goNews", sender: nil)
-            }
-        }else{
-            print("Error")
-        }
+        checkConnectivity()
         setupButton()
         btnLogin.layer.cornerRadius = 20;
         btnLogin.layer.masksToBounds = true;
         gidConfigure = GIDConfiguration.init(clientID: "172083403533-bq0mfp199apgm4s70m8t3hdrsp32jr8e.apps.googleusercontent.com")
+    }
+    
+    func checkConnectivity(){
+        DispatchQueue.main.async {
+            //if NetworkMonitor.shared.isConnected{
+                if GIDSignIn.sharedInstance.hasPreviousSignIn() {
+                self.performSegue(withIdentifier: "goNews", sender: nil)
+                }
+            //}else{
+               // self.showErrorView("network", self)
+            //}
+        }
     }
     
     func setupButton(){
@@ -58,7 +64,7 @@ class LoginViewController: GenericViewController {
                 UserDefaults.standard.set(user.profile!.imageURL(withDimension: 40)!, forKey: GlobalParameters.shared.keyUserProfile)
                 print( UserDefaults.standard.setValue("\(user.profile!.name)", forKey: GlobalParameters.shared.keyUserName))
                 print(UserDefaults.standard.set(user.profile!.imageURL(withDimension: 40)!, forKey: GlobalParameters.shared.keyUserProfile))
-               
+                
             }else{
                 self.showModal()
             }
@@ -94,7 +100,7 @@ class LoginViewController: GenericViewController {
         lbContent.numberOfLines = 4
         lbContent.text = "El acceso a la aplicación solo esta disponible para talento NAAT Ingresa con tu correo @na-at.com.mx"
         lbContent.font = UIFont.init(name: "Nunito-SemiBold", size: 15)
-         
+        
         //card content
         card.addSubview(imgViewLogo)
         card.addSubview(lbContent)
@@ -126,6 +132,21 @@ class LoginViewController: GenericViewController {
             let viewController = segue.destination as! MainTabViewController
             viewController.loginController = self
         }
+    }
+    
+    func tryAgain() {
+        DispatchQueue.main.async {
+            self.checkConnectivity()
+           /* if NetworkMonitor.shared.isConnected{
+                //self.dismiss(animated: true, completion: nil)
+                if GIDSignIn.sharedInstance.hasPreviousSignIn() {
+                    self.performSegue(withIdentifier: "goNews", sender: nil)
+                }
+            } else{
+                self.showErrorView("network", self)
+            }*/
+        }
+        
     }
 }
 

@@ -9,8 +9,8 @@ import Foundation
 
 import UIKit
 
-class ViewControllerRoot: GenericViewController, CustomCell{
-    
+class ViewControllerRoot: GenericViewController, CustomCell, TryAgain, AssignDaysSinceLastRecord{
+   
     @IBOutlet weak var viewHeader: ContentHeaders!
     @IBOutlet weak var viewDaysRecord: HeaderLastDayRecordView!
     @IBOutlet weak var tableNews: UITableView!
@@ -23,21 +23,26 @@ class ViewControllerRoot: GenericViewController, CustomCell{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //name.constant = 190
+        
+        checkConnectivity()
         self.viewHeader.goBack.isHidden = true
         tableNews.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
-        
         searchBarNews.delegate = self
         tableNews.delegate = self
         tableNews.dataSource = self
         tableNews.separatorStyle = .none
         searchBarNews.placeholder = "Buscar noticia"
         self.searchBarNews.backgroundImage = UIImage()
-        
         getAllNews()
     }
-    func setupHederDays(){
-        
+    func checkConnectivity(){
+        DispatchQueue.main.async {
+           /* if NetworkMonitor.shared.isConnected{
+                self.getAllNews()
+            }else{
+                self.showErrorView("network", self)
+            }*/
+        }
     }
     
     func getAllNews(){
@@ -46,29 +51,33 @@ class ViewControllerRoot: GenericViewController, CustomCell{
             res in
             switch res {
             case .success(let decodedData):
-                print(decodedData)
-                
+
                 DispatchQueue.main.async {
+                    getDaysSinceLastRecord()
                     for item in decodedData {
                         print(decodedData)
                         newsList.append(item)
                     }
                     self.filterNewsList = newsList
                     self.tableNews.reloadData()
-                    self.hideActivity()
                 }
                 
             case .failure(let err):
                 print("Error en la petición: ", err)
                 newsList.removeAll()
                 tableNews.reloadData()
+                self.hideActivity()
             }
         })
+    }
+    func setupHederDays(){
+        let days = GlobalParameters.shared.daysSinceLastRecord
+        print(days)
+        viewDaysRecord.labelDaysSinceLastRecord.text = "Tienes \(days) días sin reportar tus actividades"
     }
     
     func getDaysSinceLastRecord(){
         Service.shared.getDaysSinceLastRecord(completion: {[self]
-            
             res in
             switch res {
             case .success(let decodedData):
@@ -86,6 +95,25 @@ class ViewControllerRoot: GenericViewController, CustomCell{
             }
         })
     }
+    
+    func goRegister() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let clientsViewController = storyboard.instantiateViewController(withIdentifier: "getClientsViewController") as! ClientsViewController
+        clientsViewController.getAllClients()
+        self.navigationController?.pushViewController(clientsViewController, animated: true)
+    }
+    func tryAgain() {
+        DispatchQueue.main.async {
+            self.checkConnectivity()
+            /*if NetworkMonitor.shared.isConnected{
+                self.getAllNews()
+                
+            }else{
+                self.showErrorView("network", self)
+            }*/
+        }
+    }
+    
 }
 extension ViewControllerRoot:UITableViewDelegate{
 }
@@ -104,6 +132,7 @@ extension ViewControllerRoot:UITableViewDataSource{
         cell.labelTitleNews.text = thisActivity.headline
         cell.labelDateNews.text = thisActivity.creationDate
         cell.labelContentNews.text = thisActivity.body
+        cell.ivImageNews.contentMode = .scaleAspectFill
         cell.ivImageNews.downloaded(from: thisActivity.image)
         cell.delegate = self
         cell.idNews = thisActivity.id
@@ -136,4 +165,6 @@ extension ViewControllerRoot:UISearchBarDelegate{
         tableNews.reloadData()
     }
 }
+
+
 

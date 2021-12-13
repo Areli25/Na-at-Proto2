@@ -62,7 +62,7 @@ extension ActivityRecordViewCell:UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = Bundle.main.loadNibNamed("HeaderResumeTableViewCell", owner: self, options: nil)?.first as! HeaderResumeTableViewCell
-        headerCell.lebelProjectName.text = recordActivityList[section].project.client.name
+        headerCell.lebelProjectName.text = recordActivityList[section].project.name
         
         return headerCell
     }

@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ProjectsViewController: GenericViewController, HeaderProtocol {
- 
+class ProjectsViewController: GenericViewController, HeaderProtocol, TryAgain {
+    
     @IBOutlet weak var tableProjectsById: UITableView!
     @IBOutlet weak var headerView: ContentHeaders!
-    
     var projects:Projects?
     var projectsList:[Projects] = []
     var idClient = ""
@@ -20,6 +19,7 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
     
 
     override func viewDidLoad() {
+        checkConnectivity()
         super.viewDidLoad()
         headerView.delegateGoBack = self
         headerView.delegateSesion = self
@@ -28,6 +28,13 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         tableProjectsById.delegate = self
         tableProjectsById.separatorStyle = .none
         getAllProjects()
+    }
+    
+    func checkConnectivity(){
+        /*if NetworkMonitor.shared.isConnected{
+        }else{
+            showErrorView("network", self)
+        }*/
     }
     
     func goBack() {
@@ -89,6 +96,9 @@ class ProjectsViewController: GenericViewController, HeaderProtocol {
         activityHourViewController.nameClient = nameClient
         
         self.navigationController?.pushViewController(activityHourViewController, animated: true)
+    }
+    func tryAgain() {
+        getAllProjects()
     }
 }
 extension ProjectsViewController:UITableViewDelegate{

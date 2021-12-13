@@ -9,8 +9,7 @@ import Foundation
 
 import UIKit
 
-class ClientsViewController: GenericViewController, HeaderProtocol {
-    
+class ClientsViewController: GenericViewController, HeaderProtocol, TryAgain {
 
     @IBOutlet weak var tableClients: UITableView!
     @IBOutlet weak var headerView: ContentHeaders!
@@ -22,6 +21,8 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
     var clientsListFilter:[Client] = []
     
     override func viewDidLoad() {
+        
+        checkConnectivity()
         super.viewDidLoad()
         searchClient.delegate = self
         headerView.delegateGoBack = self
@@ -32,6 +33,13 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
         tableClients.separatorStyle = .none
         searchClient.isHidden = true
         self.searchClient.backgroundImage = UIImage()
+    }
+    
+    func checkConnectivity(){
+       /* if NetworkMonitor.shared.isConnected{
+        }else{
+            showErrorView("network", self)
+        }*/
     }
     
     @IBAction func searchClient(_ sender: Any) {
@@ -63,6 +71,9 @@ class ClientsViewController: GenericViewController, HeaderProtocol {
                 }
             }
         })
+    }
+    func tryAgain() {
+        getAllClients()
     }
     
     func goToProjectsList(clientId:String, clientName:String){

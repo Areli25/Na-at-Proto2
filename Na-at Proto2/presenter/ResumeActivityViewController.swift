@@ -82,7 +82,6 @@ class ResumeActivityViewController: GenericViewController, HeaderProtocol, Deleg
     }
     
     func registerRecordActivity(){
-        
         let listActivity:[ActivitiesRecord] = []
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

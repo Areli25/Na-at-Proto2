@@ -266,7 +266,7 @@ class Service: NSObject {
             
             if let httpResponse = response as? HTTPURLResponse {
                 
-                if let days = httpResponse.allHeaderFields["days-since-last-record"]{
+                if let days = httpResponse.allHeaderFields["Days-Since-Last-Record"]{
                     if let daysString = days as? String, let daysRecord = Int(daysString){
                         GlobalParameters.shared.daysSinceLastRecord = daysRecord
                         print(daysRecord)

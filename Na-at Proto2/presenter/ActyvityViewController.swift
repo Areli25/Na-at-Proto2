@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class ActivityViewController: GenericViewController {
+class ActivityViewController: GenericViewController, TryAgain {
+    
     @IBOutlet weak var btnRegisterHours: UIButton!
     @IBOutlet weak var headerView: ContentHeaders!
     @IBOutlet weak var tableRecordActivity: UITableView!
@@ -18,13 +19,22 @@ class ActivityViewController: GenericViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // checkConnectivity()
         self.headerView.goBack.isHidden = true
         setupButtonRegisterHours()
         tableRecordActivity.register(UINib(nibName: "ActivityRecordViewCell", bundle: nil), forCellReuseIdentifier: "ActivityRecordViewCell")
         tableRecordActivity.delegate = self
         tableRecordActivity.dataSource = self
-        getActivityRecordList()
+        
     }
+    /*func checkConnectivity(){
+        if NetworkMonitor.shared.isConnected{
+            getActivityRecordList()
+        }else{
+            showErrorView("network", self)
+        }
+    }*/
     
     func setupButtonRegisterHours(){
         btnRegisterHours.layer.cornerRadius = 4
@@ -57,6 +67,10 @@ class ActivityViewController: GenericViewController {
         clientsViewController.getAllClients()
         self.navigationController?.pushViewController(clientsViewController, animated: true)
     }
+    
+    func tryAgain() {
+        getActivityRecordList()
+    }
 }
 
 extension ActivityViewController:UITableViewDataSource, UITableViewDelegate{
@@ -73,6 +87,7 @@ extension ActivityViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = Bundle.main.loadNibNamed("HeaderActivityRecordViewCell", owner: self, options: nil)?.first as! HeaderActivityRecordViewCell
         //asignacion de nombre del proyecto
+        
         headerCell.labelDate.text = responseRecordList[section].activityRecords[0].date
         headerCell.labeltotalHours.text = "\(responseRecordList[section].activityRecords[0].duration) hrs"
         return headerCell

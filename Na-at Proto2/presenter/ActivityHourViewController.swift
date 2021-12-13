@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ActivityHourViewController: GenericViewController, HeaderProtocol, ActivityHourProtocol{
-
+class ActivityHourViewController: GenericViewController, HeaderProtocol, ActivityHourProtocol, TryAgain{
+    
     @IBOutlet weak var labelTotalHours: UILabel!
     @IBOutlet weak var tableActivityHour: UITableView!
     @IBOutlet weak var headerView: ContentHeaders!
@@ -29,6 +29,7 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkConnectivity()
         //inicializacion de la lista
         setupActivityRecordList()
         headerView.delegateGoBack = self
@@ -38,6 +39,13 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         tableActivityHour.dataSource = self
         btnRegister.isHidden = true
         setupButton()
+    }
+    
+    func checkConnectivity(){
+        /*if NetworkMonitor.shared.isConnected{
+        }else{
+            showErrorView("network", self)
+        }*/
     }
 
     func setupActivityRecordList(_ activityList: [Activity]? = [Activity]()){
@@ -86,6 +94,9 @@ class ActivityHourViewController: GenericViewController, HeaderProtocol, Activit
         btnRegister.applyGradient(colours: [first_gradient,end_gradient])
         btnRegister.layer.cornerRadius = 20;
         btnRegister.layer.masksToBounds = true
+    }
+    func tryAgain() {
+        getAllActivities()
     }
     
     @IBAction func goToResumeScreen(_ sender: Any) {

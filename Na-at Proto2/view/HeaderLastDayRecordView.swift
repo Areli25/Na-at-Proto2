@@ -11,11 +11,13 @@ class HeaderLastDayRecordView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var labelDaysSinceLastRecord: UILabel!
     @IBOutlet weak var btnRecorHours: UIButton!
+    var delagateUpadteHeder: AssignDaysSinceLastRecord?
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +29,8 @@ class HeaderLastDayRecordView: UIView {
         btnRecorHours.layer.borderWidth = 1.0
         btnRecorHours.layer.borderColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
         btnRecorHours.layer.cornerRadius = 5.0
+        //labelDaysSinceLastRecord.text = "Tienes \(GlobalParameters.shared.daysSinceLastRecord)  días sin reportar tus actividades"
+        
     }
     
     func commonInit (){
@@ -59,6 +63,11 @@ class HeaderLastDayRecordView: UIView {
         self.contentView.sendSubviewToBack(layer)
         
         setupButtonRegister()
-        
     }
+    @IBAction func btnRegisterHours(_ sender: Any) {
+        delagateUpadteHeder?.goRegister()
+    }
+}
+protocol AssignDaysSinceLastRecord {
+    func goRegister()
 }

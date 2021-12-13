@@ -7,8 +7,8 @@
 
 import UIKit
 
-class NewsDetailViewController: GenericViewController,HeaderProtocol{
-
+class NewsDetailViewController: GenericViewController,HeaderProtocol, TryAgain{
+    
     @IBOutlet weak var ivImageNews: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelDateNews: UILabel!
@@ -17,11 +17,20 @@ class NewsDetailViewController: GenericViewController,HeaderProtocol{
     var newsDetail:NewsDetail?
     var idNewsDetail = ""
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        checkConnectivity()
         headerView.delegateGoBack = self
         headerView.delegateSesion = self
+    }
+    func checkConnectivity(){
+        /*if NetworkMonitor.shared.isConnected{
+            getNewsDetail()
+        }else{
+            showErrorView("network", self)
+        }*/
     }
     func getNewsDetail(){
         self.createSpinnerView()
@@ -49,5 +58,11 @@ class NewsDetailViewController: GenericViewController,HeaderProtocol{
     func goBack() {
         super.goToBack()
     }
-
+    func tryAgain() {
+       /* if NetworkMonitor.shared.isConnected{
+            getNewsDetail()
+       }else{
+           showErrorView("network", self)
+       }*/
+    }
 }

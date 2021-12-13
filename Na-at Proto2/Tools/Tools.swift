@@ -26,10 +26,14 @@ class SpinnerViewController: UIViewController {
     }
 }
 
-func showErrorView(_ type:String, viewController:UIViewController){
-    var dialog:ErrorsViewController!
-    dialog = ErrorsViewController(nibName: "ErrorsViewController", bundle: nil)
-    dialog.delegate = viewController.self as? ErrorsViewController
-   // NetworkErrors
-}
+func formattedDate() -> String {
+     let dateformatGet = DateFormatter()
+     dateformatGet.dateFormat = "aaaa-MM-dd"
+    
+    let formatDateInProject = DateFormatter()
+    formatDateInProject.dateFormat = "EEEE d MMM"
+    
+    let date = dateformatGet.date(from: "2021-12-10")!
+    return formatDateInProject.string(from: date)
+ }
 
